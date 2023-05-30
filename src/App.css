@@ -49,5 +49,18 @@
   height: 80%;
   object-fit: contain;
 }
+
+.singleReview {
+  border: 1px solid white;
+  padding:10px;
+}
+.singleReview img{
+  width: 60%;
+  height:60%;
+  object-fit: contain;
+}
+ul{
+  list-style: none;
+}
   
 

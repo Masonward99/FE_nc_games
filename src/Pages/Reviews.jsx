@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../utils/utils";
-import ReviewCard from "./ReviewCard";
+import ReviewCard from "../components/ReviewCard";
+import { Link } from "react-router-dom";
 
 function Reviews() {
     const [reviews, setReviews] = useState('')
@@ -16,10 +17,9 @@ function Reviews() {
     }
     return (
         <ul>
-            {reviews.map((review, i) => {
-                return <ul key={review.review_id}><ReviewCard review={review} index={i} /></ul>
+            {reviews.map((review) => {
+                return <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} /></Link></li>
             })}
-
         </ul>
     )
 }
