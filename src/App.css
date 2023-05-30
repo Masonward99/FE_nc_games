@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+.reviewCard {
+  border: 1px solid white;
+  margin: 10px;
+}
+.reviewCard img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+  
+
