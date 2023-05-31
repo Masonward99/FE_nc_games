@@ -3,18 +3,20 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
+import SignIn from "./Pages/Signin";
 
 function App() {
   return (
     <div>
       <h1>nc_games</h1>
-      <Nav></Nav>
+      <Nav/>
       <Routes>
         <Route path="/" element={<Reviews />} />
         <Route
           path="/reviews/:review_id"
           element={<SingleReview />}
         />
+        <Route path= "/login" element={<SignIn/>}/>
       </Routes>
     </div>
   );
