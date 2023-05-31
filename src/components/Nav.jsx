@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
 function Nav() {
+    
     return (
         <div>
-            <button>reviews</button>
+            <Link to='/'><button>reviews</button></Link>
             <button>categories</button>
         </div>
     

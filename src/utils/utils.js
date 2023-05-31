@@ -8,5 +8,15 @@ const games = axios.create({
 
 export function getReviews() {
     return games.get('/reviews')
-    .then((data)=> data.data.reviews)
+        .then(({ data })=> data.reviews)
+}
+
+export function getReview(review_id) {
+    return games.get(`/reviews/${review_id}`)
+        .then(({ data })=>data.review)
+}
+
+export function getComments(review_id) {
+    return games.get(`/reviews/${review_id}/comments`)
+        .then(({ data })=>data.comments)
 }
