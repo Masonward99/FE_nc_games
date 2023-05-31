@@ -1,15 +1,29 @@
-import { Form } from "react-router-dom";
+import { getUsers } from "../utils/utils";
+import { useState } from "react";
 
-function SignIn() {
+function SignIn({ setUser }) {
+    const [users, setUsers] = useState('')
+    const [isLoading, setIsLoading]=useState(true)
+    getUsers()
+        .then((data) => {
+            setUsers(data)
+            setIsLoading(false)
+        })
+    if (isLoading) {
+        return<p>Loading</p>
+    }
+    function selectUser(event) {
+        if (event.target.value !== 0) {
+            setUser(event.target.value)
+        }
+    }
     return (
-        <div>
-        <label htmlFor="login">Username</label>
-        <select id="login" name='username'>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value='3'>3</option>
+        <form>
+            <select id="login" name='username' onChange={selectUser}>
+                <option value={0}>Select user</option>
+                {users.map((user) => <option key={user.username} value={user.username}>{user.username}</option>)}
         </select>
-      </div>
+      </form>
     );
 }
 export default SignIn
