@@ -20,3 +20,7 @@ export function getComments(review_id) {
     return games.get(`/reviews/${review_id}/comments`)
         .then(({ data })=>data.comments)
 }
+export function patchVotes(id, type, votes) {
+    return games.patch(`reviews/${id}`, {inc_votes:votes})
+        .then(({ data }) =>console.log(data.review.votes))
+}

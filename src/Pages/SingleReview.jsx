@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { getComments, getReview } from "../utils/utils"
 import { useState, useEffect } from "react"
 import CommentCard from "../components/CommentCard"
+import VoteButton from "../components/VoteButton"
 
 function SingleReview() {
     const { review_id } = useParams()
@@ -33,7 +34,7 @@ function SingleReview() {
           <img src={review.review_img_url} />
           <p>{review.review_body}/</p>
           <h3>{review.owner}</h3>
-          <button>votes: {review.votes}</button>
+                <VoteButton type='review' id={review.review_id} count={review.votes} />
             </div>
             <h3>Comments</h3>
             {comments.length === 0?
