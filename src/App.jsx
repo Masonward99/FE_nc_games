@@ -3,7 +3,6 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
-import { useState } from "react";
 
 function App() {
   return (
