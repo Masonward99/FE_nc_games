@@ -22,8 +22,8 @@ function VoteButton({ type, id, count }) {
     return (
         <div>
             <p>{count+incCount}</p>
-            <button onClick={changeVotes} value='+'>+</button>
-            <button onClick={changeVotes} value='-'>-</button>
+            <button onClick={changeVotes} value='+' className={incCount > 0 ? 'selectedButton' : ''}>+</button>
+            <button onClick={changeVotes} value='-' className={incCount <0 ? 'selectedButton' : ''}>-</button>
         </div>
     )
 }
