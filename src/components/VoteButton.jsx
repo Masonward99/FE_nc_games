@@ -5,18 +5,24 @@ function VoteButton({ type, id, count }) {
     const [incCount, setIncCount] = useState(0)
     function changeVotes(event) {
         if (incCount === 0 && event.target.value === '+') {
-            patchVotes(id,type,1)
-        } else if (incCount === -1 && event.target.value === '+') {
-            patchVotes(id,type,2)
-        } else if (incCount === 0 && event.target.value === '-') {
-            patchVotes(id,type,-1)
-        } else if (incCount === 1 && event.target.value === '-') {
-            patchVotes(id,type,-2)
-        }
-        if (event.target.value === '+') {
+            patchVotes(id, type, 1)
             setIncCount(1)
-        } else {
+        } else if (incCount === -1 && event.target.value === '+') {
+            patchVotes(id, type, 2)
+            setIncCount(1)
+        } else if (incCount === 0 && event.target.value === '-') {
+            patchVotes(id, type, -1)
             setIncCount(-1)
+        } else if (incCount === 1 && event.target.value === '-') {
+            patchVotes(id, type, -2)
+            setIncCount(-1)
+        }
+        else if (incCount === 1 && event.target.value === '+') {
+            patchVotes(id, type, -1)
+            setIncCount(0)
+        } else if (incCount === -1 && event.target.value === '-') {
+            patchVotes(id, type, 1)
+            setIncCount(0)
         }
     }
     return (
