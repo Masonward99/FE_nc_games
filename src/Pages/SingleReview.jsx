@@ -36,6 +36,9 @@ function SingleReview() {
           <button>votes: {review.votes}</button>
             </div>
             <h3>Comments</h3>
+            {comments.length === 0?
+                <p>There are no comments on this review yet, be the first to leave a comment!</p>:null
+            }
         {comments.map((comment) => {
           return <CommentCard comment={comment} key={comment.comment_id} />;
         })}
