@@ -29,7 +29,7 @@ function CreateComment({ user, review_id, count, setCount }) {
     return (
     <form onSubmit={handleSubmit}>
         <label htmlFor="commentInput">Post a comment</label>
-            <textarea type='textarea' onChange={handleChange} value={value}/>
+            <textarea type='textarea' onChange={handleChange} value={value} placeholder="Comment..."/>
             <button type='submit'>Post</button>
     </form>
     )
