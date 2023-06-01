@@ -3,11 +3,10 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
-import SignIn from "./Pages/Signin";
+import SignIn from "./Pages/SignIn";
 import { useState } from "react";
 
-function App() {
-  
+function App() {  
   const [user, setUser]=useState('0')
   return (
     <div>
