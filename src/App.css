@@ -71,5 +71,9 @@ ul{
 .selectedButton {
   background-color: blue;
 }
-  
+.catCard{
+  border: 1px solid white;
+  padding:10px;
+  margin-top:10px;
+}
 

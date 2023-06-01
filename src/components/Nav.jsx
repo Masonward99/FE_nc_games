@@ -4,7 +4,7 @@ function Nav() {
     return (
         <div>
             <Link to='/'><button>reviews</button></Link>
-            <button>categories</button>
+            <Link to='/categories'><button>categories</button></Link>
             <Link to='/login'><button>login</button></Link>
         </div>
     

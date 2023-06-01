@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
 import SignIn from "./Pages/Signin";
+import Categories from "./Pages/Categories";
+import FilteredReviews from "./Pages/FilteredReviews";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
           path="/reviews/:review_id"
           element={<SingleReview />}
         />
-        <Route path= "/login" element={<SignIn/>}/>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/reviews/category/:category" element={<FilteredReviews />} />
       </Routes>
     </div>
   );
