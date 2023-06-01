@@ -5,7 +5,7 @@ function Nav({ user }) {
         <div>
             <Link to='/'><button>reviews</button></Link>
             <button>categories</button>
-            <Link to='/login'><button>{user===0?'login':user}</button></Link>
+            <Link to='/login'><button>{user==='0'?'login':user}</button></Link>
         </div>
     
     )

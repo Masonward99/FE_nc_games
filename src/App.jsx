@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
   
-  const [user, setUser]=useState(0)
+  const [user, setUser]=useState('0')
   return (
     <div>
       <h1>nc_games</h1>

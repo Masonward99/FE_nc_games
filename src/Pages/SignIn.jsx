@@ -21,7 +21,7 @@ function SignIn({ setUser }) {
     return (
         <form>
             <select id="login" name='username' onChange={selectUser}>
-                <option value={0}>Select user</option>
+                <option value={'0'}>Select user</option>
                 {users.map((user) => <option key={user.username} value={user.username}>{user.username}</option>)}
         </select>
       </form>
