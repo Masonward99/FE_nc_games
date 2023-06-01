@@ -34,3 +34,8 @@ export function postComment(id, user, body) {
     return games.post(`/reviews/${id}/comments`, { username: user, body: body })
         .then(({data})=>console.log(data.comment))
 }
+
+export function removeComment(id) {
+    return games.delete(`/comments/${id}`)
+    .then(({data})=>console.log(data))
+}

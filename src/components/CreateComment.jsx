@@ -8,9 +8,6 @@ function CreateComment({ user, review_id, count, setCount }) {
     if (user === 0) {
         return <h3><Link to="/login">login</Link> to post a comment</h3>
     }
-    console.log(user)
-    console.log(review_id)
-    console.log(value)
     function handleSubmit(event) {
         event.preventDefault()
         setIsPosted(false)
