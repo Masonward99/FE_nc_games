@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { postComment } from "../utils/utils"
+import { Link } from "react-router-dom"
 
 function CreateComment({ user, review_id, count, setCount }) {
     const [isPosted, setIsPosted] = useState(true)
     const [value, setValue]=useState('')
     if (user === 0) {
-        return <p>login to post a comment</p>
+        return <h3><Link to="/login">login</Link> to post a comment</h3>
     }
     console.log(user)
     console.log(review_id)
