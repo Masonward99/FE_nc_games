@@ -14,7 +14,7 @@ function SignIn({ setUser }) {
         return<p>Loading</p>
     }
     function selectUser(event) {
-        if (event.target.value !== 0) {
+        if (event.target.value !== '0') {
             setUser(event.target.value)
         }
     }
