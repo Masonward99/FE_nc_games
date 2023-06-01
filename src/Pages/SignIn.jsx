@@ -3,7 +3,8 @@ import { useState } from "react";
 
 function SignIn({ setUser }) {
     const [users, setUsers] = useState('')
-    const [isLoading, setIsLoading]=useState(true)
+    const [isLoading, setIsLoading] = useState(true)
+    
     getUsers()
         .then((data) => {
             setUsers(data)
