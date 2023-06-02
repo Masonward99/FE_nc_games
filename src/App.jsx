@@ -3,7 +3,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
-import SignIn from "./Pages/Signin";
+import SignIn from "./Pages/SignIn";
 import Categories from "./Pages/Categories";
 import FilteredReviews from "./Pages/FilteredReviews";
 
