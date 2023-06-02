@@ -3,6 +3,8 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
+import Categories from "./Pages/Categories";
+import FilteredReviews from "./Pages/FilteredReviews";
 import SignIn from "./Pages/SignIn";
 import { useState } from "react";
 
@@ -18,7 +20,10 @@ function App() {
           path="/reviews/:review_id"
           element={<SingleReview user={user} />}
         />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/reviews/category/:category" element={<FilteredReviews />} />
         <Route path="/login" element={<SignIn setUser={setUser} />}/>
+
       </Routes>
     </div>
   );

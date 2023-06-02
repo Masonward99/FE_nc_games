@@ -25,6 +25,16 @@ export function patchVotes(id, type, votes) {
         .then(({ data }) =>console.log(data.review.votes))
 }
 
+export function getCategories() {
+    return games.get('/categories')
+    .then(({data})=>data.categories)
+}
+
+export function getReviewsByCategory(slug) {
+    return games.get(`/reviews?category=${slug}`)
+    .then(({data})=>data.reviews)
+}
+
 export function getUsers() {
     return games.get('/users')
     .then(({data})=>data.users)
