@@ -21,6 +21,16 @@ export function getComments(review_id) {
         .then(({ data })=>data.comments)
 }
 export function patchVotes(id, type, votes) {
-    return games.patch(`reviews/${id}`, {inc_votes:votes})
+    return games.patch(`/reviews/${id}`, {inc_votes:votes})
         .then(({ data }) =>console.log(data.review.votes))
+}
+
+export function getUsers() {
+    return games.get('/users')
+    .then(({data})=>data.users)
+}
+
+export function postComment(id, user, body) {
+    return games.post(`/reviews/${id}/comments`, { username: user, body: body })
+        .then(({data})=>console.log(data.comment))
 }

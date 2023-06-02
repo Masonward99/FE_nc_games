@@ -3,13 +3,15 @@ import { getComments, getReview } from "../utils/utils"
 import { useState, useEffect } from "react"
 import CommentCard from "../components/CommentCard"
 import VoteButton from "../components/VoteButton"
+import CreateComment from "../components/CreateComment"
 
-function SingleReview() {
+function SingleReview({user}) {
     const { review_id } = useParams()
     const [review, setReview] = useState('')
     const [isLoading, setIsLoading] = useState(true)
     const [isLoading2, setIsLoading2] = useState(true);
-    const [comments, setComments]=useState('')
+    const [comments, setComments] = useState('')
+    const [count, setCount]= useState(0)
     useEffect(() => {
         getReview(review_id)
             .then(data => {
@@ -23,7 +25,7 @@ function SingleReview() {
             setComments(data)
             setIsLoading2(false)
         })
-    },[])
+    },[count])
     if (isLoading || isLoading2) {
         return <h2>Loading</h2>
     }
@@ -37,6 +39,7 @@ function SingleReview() {
                 <VoteButton type='review' id={review.review_id} count={review.votes} />
             </div>
             <h3>Comments</h3>
+            <CreateComment user={user} review_id={review_id} count={count} setCount={setCount}/>
             {comments.length === 0?
                 <p>There are no comments on this review yet, be the first to leave a comment!</p>:null
             }
