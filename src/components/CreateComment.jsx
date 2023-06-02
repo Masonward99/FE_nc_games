@@ -10,8 +10,8 @@ function CreateComment({ user, review_id, count, setCount }) {
     }
     function handleSubmit(event) {
         event.preventDefault()
-        setIsPosted(false)
         if (value !== '') {
+            setIsPosted(false)
             postComment(review_id, user, value)
                 .then((data) => {
                     setValue('')
