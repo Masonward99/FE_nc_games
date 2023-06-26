@@ -44,7 +44,7 @@ function SingleReview({user}) {
                 <p>There are no comments on this review yet, be the first to leave a comment!</p>:null
             }
         {comments.map((comment) => {
-          return <CommentCard comment={comment} key={comment.comment_id} />;
+            return <CommentCard comment={comment} key={comment.comment_id} remove={comment.author===user? true:false } comments={comments} setComments={setComments} />;
         })}
       </div>
     );
