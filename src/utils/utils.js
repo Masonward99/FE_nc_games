@@ -6,8 +6,8 @@ const games = axios.create({
 });
 
 
-export function getReviews() {
-    return games.get('/reviews')
+export function getReviews(sort, order) {
+    return games.get(`/reviews?sort_by=${sort}&&order=${order}`)
         .then(({ data })=> data.reviews)
 }
 
