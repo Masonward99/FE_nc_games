@@ -16,17 +16,19 @@ function Reviews() {
        })
     }, [sort, order])
   if (isLoading) {
-    return <h2>loading</h2>
+    return (
+      <h2>loading</h2>
+    )
   }
   return (
     <div>
       <h2>Reviews</h2>
       <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
-        <ul>
-            {reviews.map((review) => {
-                return <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} /></Link></li>
-            })}
-        </ul>
+      <ul>
+        {reviews.map((review) => {
+          return <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} /></Link></li>
+        })}
+      </ul>
     </div>
     )
 }

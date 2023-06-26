@@ -13,13 +13,13 @@ function SortDropdown ({ setSort, order, setOrder}){
     return (
         <form>
             <label for='sortDropdown'>sort by: </label>
-        <select id="sortDropdown" onChange={handleChange}>
-          <option value="created_at">Date</option>
-          <option value="comment_count">comments</option>
-          <option value="votes">votes</option>
-        </select>
+            <select id="sortDropdown" onChange={handleChange}>
+                <option value="created_at">Date</option>
+                <option value="comment_count">comments</option>
+                <option value="votes">votes</option>
+            </select>
         <button onClick={handleButton} value={order}>{order!=="desc" ? "⬆️" : "⬇️"}</button>
       </form>
-    );
+    )
 }
 export default SortDropdown
