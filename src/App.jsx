@@ -23,7 +23,6 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/category/:category" element={<FilteredReviews />} />
         <Route path="/login" element={<SignIn setUser={setUser} />}/>
-
       </Routes>
     </div>
   );
