@@ -1,7 +1,7 @@
 function ReviewCard({ review, date }) {
     let reviewDate = new Date(review.created_at)
     let shortDate = reviewDate.toString().slice(4, 16); // temp date solution
-    
+
     // working time since posted calculation. To be used when users can post reviews.
     
     let dif = (date.getTime() - reviewDate.getTime()) /1000
@@ -18,15 +18,17 @@ function ReviewCard({ review, date }) {
         displayDate = `More than 1 week ago`
     }
 
-
-    
     return (
         <div className='reviewCard'>
+            
             < h2 > {review.title}</h2>
-            <p>{`Votes: ${review.votes}`}</p>
-            <p>{shortDate}</p>
-            <p>{`Comments: ${review.comment_count}`}</p>
-           <img src={review.review_img_url}/> 
+            <div className="dateText">
+                <p>{`Votes: ${review.votes}`}</p>
+                <p>{shortDate}</p>
+                <p>{`Comments: ${review.comment_count}`}</p>
+            </div>
+            <img src={review.review_img_url} /> 
+            
         </div>
        
     
