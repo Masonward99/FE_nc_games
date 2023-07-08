@@ -19,7 +19,10 @@ function SignIn({ setUser }) {
         }
     }
     return (
+        // temporary signin page until authentication is added
+        
         <div className="signIn">
+            <p>Plese select a user from this dropdown to login </p>
             <form>
                 <select id="login" name='username' onChange={selectUser}>
                     <option value={'0'}>Select user</option>

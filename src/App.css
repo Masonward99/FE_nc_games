@@ -20,7 +20,6 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
 .card {
   padding: 2em;
 }
@@ -38,6 +37,9 @@
   width: 80%;
   max-height: 50%;
   object-fit: contain;
+}
+.catCard img {
+  width: 50%;
 }
 
 .singleReview {
@@ -65,7 +67,8 @@ ul{
 .catCard{
   border: 1px solid white;
   padding:10px;
-  margin-top:10px;
+  margin:15px;
+  border-radius: 5%;
 }
 .dateText{
   display: flex;
@@ -79,4 +82,10 @@ ul{
 .pageTitle{
   margin-bottom: 10px;
 }
-
+.signIn{
+  height: 65vh;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+}
