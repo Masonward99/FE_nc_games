@@ -19,12 +19,17 @@ function SignIn({ setUser }) {
         }
     }
     return (
-        <form>
-            <select id="login" name='username' onChange={selectUser}>
-                <option value={'0'}>Select user</option>
-                {users.map((user) => <option key={user.username} value={user.username}>{user.username}</option>)}
-        </select>
-      </form>
+        // temporary signin page until authentication is added
+        
+        <div className="signIn">
+            <p>Plese select a user from this dropdown to login </p>
+            <form>
+                <select id="login" name='username' onChange={selectUser}>
+                    <option value={'0'}>Select user</option>
+                    {users.map((user) => <option key={user.username} value={user.username}>{user.username}</option>)}
+               </select>
+            </form>
+        </div>
     );
 }
 export default SignIn

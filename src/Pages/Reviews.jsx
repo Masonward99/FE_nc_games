@@ -9,6 +9,7 @@ function Reviews() {
   const [isLoading, setIsLoading] = useState(true)
   const [sort, setSort] = useState("created_at");
   const [order, setOrder] = useState('desc')
+  const date = new Date()
   useEffect(()=>{ getReviews(sort,order)
     .then((rev) => {
         setReviews(rev)
@@ -26,7 +27,7 @@ function Reviews() {
       <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
       <ul>
         {reviews.map((review) => {
-          return <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} /></Link></li>
+          return <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} date={date} /></Link></li>
         })}
       </ul>
     </div>

@@ -12,8 +12,10 @@ function App() {
   const [user, setUser]=useState('0')
   return (
     <div>
+      <div className="pageTitle">
       <h1>nc_games</h1>
       <Nav user={user} />
+      </div>
       <Routes>
         <Route path="/" element={<Reviews />} />
         <Route
@@ -23,7 +25,6 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/category/:category" element={<FilteredReviews />} />
         <Route path="/login" element={<SignIn setUser={setUser} />}/>
-
       </Routes>
     </div>
   );
