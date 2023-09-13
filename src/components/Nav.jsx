@@ -7,7 +7,8 @@ function Nav() {
         <div>
             <Link to='/'><button>reviews</button></Link>
             <Link to='/categories'><button>categories</button></Link>
-             <Link to='/login'><button>{user  ? 'profile': 'login'}</button></Link>
+            <Link to='/login'><button>{user ? 'profile' : 'login'}</button></Link>
+            <Link to='/addreview'><button>post review</button></Link>
             
         </div>
     
