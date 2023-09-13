@@ -1,18 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { postComment } from "../utils/utils"
 import { Link } from "react-router-dom"
+import { UserContext } from "../../Contexts/UserContext"
 
-function CreateComment({ user, review_id, count, setCount }) {
+function CreateComment({ review_id, count, setCount }) {
     const [isPosted, setIsPosted] = useState(true)
-    const [value, setValue]=useState('')
-    if (user === '0') {
+    const [value, setValue] = useState('')
+    const { user  } = useContext(UserContext)
+    console.log( user.username )
+    if (user === false) {
         return <h3><Link to="/login">login</Link> to post a comment</h3>
     }
     function handleSubmit(event) {
         event.preventDefault()
         if (value !== '') {
             setIsPosted(false)
-            postComment(review_id, user, value)
+            postComment(review_id, user.username, value)
                 .then((data) => {
                     setValue('')
                     setIsPosted(true)

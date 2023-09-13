@@ -1,34 +1,61 @@
-import { getUsers } from "../utils/utils";
-import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { getUsers, signIn } from "../utils/utils";
+import { useContext, useState } from "react";
+import { auth } from "../../firebase.config";
+import { SignUpModal } from "../modals/SignUpModal";
+import { UserContext } from "../../Contexts/UserContext";
 
-function SignIn({ setUser }) {
-    const [users, setUsers] = useState('')
-    const [isLoading, setIsLoading] = useState(true)
+function SignIn() {
+    const {user, setUser} = useContext(UserContext)
+    const[email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isModalVisible, setIsModalVisible] = useState(false)
     
-    getUsers()
-        .then((data) => {
-            setUsers(data)
-            setIsLoading(false)
-        })
-    if (isLoading) {
-        return<p>Loading</p>
+
+    // getUsers()
+    //     .then((data) => {
+    //         setUsers(data)
+    //         setIsLoading(false)
+    //     })
+    // function selectUser(event) {
+    //     if (event.target.value !== '0') {
+    //         setUser(event.target.value)
+    //     }
+    // }
+    function handleChange( event ) {
+        setEmail(event.target.value)
     }
-    function selectUser(event) {
-        if (event.target.value !== '0') {
-            setUser(event.target.value)
-        }
+    function handleSubmit(event) {
+        event.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then(({ user }) => signIn(user.uid))
+            .then(user => setUser(user))
     }
+    function openModal() {
+        setIsModalVisible(true)
+    }
+    console.log(password)
+    console.log(email)
     return (
         // temporary signin page until authentication is added
         
         <div className="signIn">
-            <p>Plese select a user from this dropdown to login </p>
+            <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <form>
-                <select id="login" name='username' onChange={selectUser}>
-                    <option value={'0'}>Select user</option>
-                    {users.map((user) => <option key={user.username} value={user.username}>{user.username}</option>)}
-               </select>
+                <h3>Login</h3>
+                <label>
+                    Email: 
+                    <input type="email" name='email' value={email} onChange={handleChange} required={true} />
+                </label>
+                <hr/>
+                <label>
+                    Password: 
+                    <input type='password' value={password} onChange={e=> setPassword(e.target.value)} name='password' />
+                </label>
+                <hr/>
+                <button name="submit" onClick={handleSubmit} value='Submit'>Submit</button>
             </form>
+            <p>Dont have an account? <button onClick={openModal }>Signup</button></p>
         </div>
     );
 }

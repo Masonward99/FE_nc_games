@@ -89,3 +89,114 @@ ul{
   display: flex;
   flex-flow: column;
 }
+.SignUpModal{
+  background-color: black;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  display: block;
+  padding:10px  ;
+  overflow: hidden;
+}
+.SignUpModalContainer{
+  background-color: black;
+  height: 365px;
+  width: 300px;
+  position: absolute;
+  top: 500px;
+  left: 500px;
+  text-align: left;
+  
+}
+.SingleButtonContainer{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+.TwoButtons{
+  text-align: center;
+}
+.HiddenForm{
+  display: none;
+}
+.VisibleForm{
+  display: block;
+}
+.progressBar {
+  display: flex;
+  flex-direction: row;
+  
+}
+.filledProgress {
+  flex-grow: 1;
+  background-color: orange;
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+}
+.unfilledProgress {
+  flex-grow: 1;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+}
+button {
+  margin: 3px;
+}
+
+.profileContainer {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 15% 15% 50% 10%;
+  height: 30vh;
+  text-align: left;
+  width: 80vw;
+}
+.profileImgContainer {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  overflow: hidden;
+}
+.profileImg {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+  border: 2px solid black;
+  border-radius: 20%;
+}
+.profileUsername {
+  grid-column: 3;
+  grid-row: 1;
+  margin-left: 25px;
+  font-size: 30px;
+}
+.profileName {
+  grid-column: 3;
+  grid-row: 2;
+  margin-left: 25px;
+  font-size: 30px;
+}
+.profileEditButton {
+  grid-column: 4;
+  grid-row: 1;
+}
+.profileSignOut {
+  grid-row: 2;
+  grid-column: 4;
+}
+.SignOutModal {
+  height:200px;
+  width: 400px ;
+  background-color: white;
+  border: 1px solid black ;
+  position: absolute;
+  top:50vh;
+  left: 45vw;
+}
+.modalDiv {
+  color:black;
+  text-align: center;
+}

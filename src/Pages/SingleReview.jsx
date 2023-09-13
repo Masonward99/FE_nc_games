@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom"
 import { getComments, getReview } from "../utils/utils"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import CommentCard from "../components/CommentCard"
 import VoteButton from "../components/VoteButton"
 import CreateComment from "../components/CreateComment"
+import { UserContext } from "../../Contexts/UserContext"
 
-function SingleReview({user}) {
+function SingleReview() {
+    const {user} = useContext(UserContext)
     const { review_id } = useParams()
     const [review, setReview] = useState('')
     const [isLoading, setIsLoading] = useState(true)
@@ -39,12 +41,12 @@ function SingleReview({user}) {
                 <VoteButton type='review' id={review.review_id} count={review.votes} />
             </div>
             <h3>Comments</h3>
-            <CreateComment user={user} review_id={review_id} count={count} setCount={setCount}/>
+            <CreateComment user={user.username} review_id={review_id} count={count} setCount={setCount}/>
             {comments.length === 0?
                 <p>There are no comments on this review yet, be the first to leave a comment!</p>:null
             }
         {comments.map((comment) => {
-            return <CommentCard comment={comment} key={comment.comment_id} remove={comment.author===user? true:false } comments={comments} setComments={setComments} />;
+            return <CommentCard comment={comment} key={comment.comment_id} remove={comment.author=== user.username ? true:false } comments={comments} setComments={setComments} />;
         })}
       </div>
     );
