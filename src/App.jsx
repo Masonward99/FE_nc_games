@@ -6,10 +6,12 @@ import SingleReview from "./Pages/SingleReview";
 import Categories from "./Pages/Categories";
 import FilteredReviews from "./Pages/FilteredReviews";
 import SignIn from "./Pages/SignIn";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../Contexts/UserContext";
+import OwnProfile from "./Pages/OwnProfile";
 
 function App() {  
-  const [user, setUser]=useState('0')
+  const {user} = useContext(UserContext)
   return (
     <div>
       <div className="pageTitle">
@@ -20,11 +22,11 @@ function App() {
         <Route path="/" element={<Reviews />} />
         <Route
           path="/reviews/:review_id"
-          element={<SingleReview user={user} />}
+          element={<SingleReview  />}
         />
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/category/:category" element={<FilteredReviews />} />
-        <Route path="/login" element={<SignIn setUser={setUser} />}/>
+        <Route path="/login" element={user? <OwnProfile />:<SignIn />}/>
       </Routes>
     </div>
   );

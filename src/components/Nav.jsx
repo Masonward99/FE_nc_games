@@ -1,11 +1,14 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
-function Nav({ user }) {
-   
+import { UserContext } from "../../Contexts/UserContext"
+function Nav() {
+    const { user } = useContext(UserContext);
     return (
         <div>
             <Link to='/'><button>reviews</button></Link>
             <Link to='/categories'><button>categories</button></Link>
-            <Link to='/login'><button>{user==='0'?'login':user}</button></Link>
+             <Link to='/login'><button>{user  ? 'profile': 'login'}</button></Link>
+            
         </div>
     
     )

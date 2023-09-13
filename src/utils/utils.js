@@ -49,3 +49,22 @@ export function removeComment(id) {
     return games.delete(`/comments/${id}`)
     .then(({data})=>console.log(data))
 }
+
+export function createUser(id, name, username, img) {
+    return games
+      .post(`/users/${username}`, { avatar_url: img, name, id })
+      .then(({ data }) => data);
+}
+
+export function signIn(id) {
+    console.log(id)
+    return games
+        .get(`/users/id/${id}`)
+    .then(({data})=>data.user)
+}
+
+export function getCommentsByUser(username) {
+    return games
+        .get(`/users/${username}/comments`)
+        .then(({data})=>data.comments)
+}
