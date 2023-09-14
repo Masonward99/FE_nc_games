@@ -9,6 +9,7 @@ import SignIn from "./Pages/SignIn";
 import { useContext, useState } from "react";
 import { UserContext } from "../Contexts/UserContext";
 import OwnProfile from "./Pages/OwnProfile";
+import PostReview from "./Pages/PostReview";
 
 function App() {  
   const {user} = useContext(UserContext)
@@ -26,7 +27,8 @@ function App() {
         />
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/category/:category" element={<FilteredReviews />} />
-        <Route path="/login" element={user? <OwnProfile />:<SignIn />}/>
+        <Route path="/login" element={user ? <OwnProfile /> : <SignIn />} />
+        <Route path="/addreview" element={<PostReview/>}/>
       </Routes>
     </div>
   );

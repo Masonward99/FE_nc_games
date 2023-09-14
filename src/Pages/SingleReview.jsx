@@ -13,7 +13,8 @@ function SingleReview() {
     const [isLoading, setIsLoading] = useState(true)
     const [isLoading2, setIsLoading2] = useState(true);
     const [comments, setComments] = useState('')
-    const [count, setCount]= useState(0)
+    const [count, setCount] = useState(0)
+    console.log('page')
     useEffect(() => {
         getReview(review_id)
             .then(data => {

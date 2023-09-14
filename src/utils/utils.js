@@ -1,4 +1,6 @@
 import axios from "axios";
+import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../../firebase.config";
 
 
 const games = axios.create({
@@ -67,4 +69,17 @@ export function getCommentsByUser(username) {
     return games
         .get(`/users/${username}/comments`)
         .then(({data})=>data.comments)
+}
+
+export  function uploadImage (file) {
+    const imgRef = ref(storage, `${file.name}`);
+    return uploadBytes(imgRef, file)
+        .then(snap => getDownloadURL(snap.ref))
+        .then (url => url)
+}
+
+export function addReview(username, title, body, category, img_url) {
+    return games
+        .post(`/reviews`, { owner: username, title, review_body: body, category: category, review_img_url: img_url })
+        .then(res => res.data.review.review_id)
 }
