@@ -10,7 +10,6 @@ function PostReview() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
-    const [imgUrl, setImgUrl] = useState('');
     const [img, setImg] = useState('')
     console.log(selectedCategory)
     function loadImg(event) {
@@ -23,15 +22,26 @@ function PostReview() {
     }
     function upload(event) {
         event.preventDefault()
-        uploadImage(img)
-            .then(img => addReview(
+        if (img != '') {
+            uploadImage(img)
+                .then(img => addReview(
+                    user.username,
+                    title,
+                    body,
+                    selectedCategory,
+                    img
+                ))
+                .then(id => navigate(`/reviews/${id}`))
+        } else {
+            addReview(
               user.username,
               title,
               body,
               selectedCategory,
-              img
-            ))
-            .then(id => navigate(`/reviews/${id}`))
+              "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+            )
+                .then((id) => navigate(`/reviews/${id}`)); 
+        }
     }
 
     return (
@@ -56,7 +66,7 @@ function PostReview() {
           />
           <img
             id="output"
-            src="https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
+            src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
           />
           <hr />
           <label>Review body: </label>
@@ -65,8 +75,9 @@ function PostReview() {
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-                <hr />
-            <button onClick={upload}>Post review</button>
+            <hr />
+            <p>Fill in all fields to submit</p>
+          <button onClick={upload} disabled={selectedCategory != false && title != '' && body != '' ? false : true }>Post review</button>
         </form>
       </div>
     );
