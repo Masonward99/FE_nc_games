@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useContext, useState } from "react"
 import Modal from "react-modal"
 import { auth } from "../../firebase.config";
-import { createUser } from "../utils/utils";
+import { createUser, uploadImage } from "../utils/utils";
 import { UserContext } from "../../Contexts/UserContext";
 
 export function SignUpModal({isModalVisible, setIsModalVisible}) {
@@ -15,6 +15,9 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
     const { user, setUser } = useContext(UserContext);
     const [passNotSame, setPassNotSame] = useState(false)
     const [passRequirementsMessage, setPassRequirements] = useState(false)
+    const [img, setImg] = useState(
+      "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
+    );
     function back(event) {
         event.preventDefault()
         setStep(step - 1);
@@ -46,31 +49,33 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
         }
         
     }
-    function handleSignUp(event) {
+    async function handleSignUp(event) {
         event.preventDefault();
-        createUserWithEmailAndPassword(auth, email, pass1)
-            .then(cred => {
-                let user = cred.user;
-                return user.uid 
-            })
-            .then(user => {
-            createUser(
-              user,
-              name,
-              username,
-              "https://cdn.britannica.com/16/236916-050-8B879535/West-Highland-white-terrier-dog.jpg"
-            )
-                .then(({ user }) => {
-                    console.log(user)
-                    setUser(user)
-                })
-        })
+        let cred = await createUserWithEmailAndPassword(auth, email, pass1)
+        console.log(name)
+        let url;
+        if (
+          img !=
+          "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
+        ) {
+          url = await uploadImage(img);
+        } else {
+          url =
+            "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729";
+        }
+        let newUser = await createUser(cred.user.uid, name, username, url)
+        setUser(newUser)
 
     }
-    function handleImage(event) {
-        event.preventDefault();
-
-    }
+     function loadImg(event) {
+       setImg(event.target.files[0]);
+       let output = document.getElementById("imgPickerProfileTest");
+       output.src = URL.createObjectURL(event.target.files[0]);
+       output.onLoad = function () {
+         URL.revokeObjectURL(output.src);
+       };
+     }
+   
     function closeModal() {
         setIsModalVisible(false)
     }
@@ -79,17 +84,19 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
       <Modal isOpen={isModalVisible} className="SignUpModalContainer">
         <div className="SignUpModal">
           <div className="progressBar">
-            <div className={step >= 1 ? "filledProgress" : 'unfilledProgress'}>
+            <div className={step >= 1 ? "filledProgress" : "unfilledProgress"}>
               <p>Step 1</p>
             </div>
-            <div className={step >= 2 ? "filledProgress" : 'unfilledProgress'}>
+            <div className={step >= 2 ? "filledProgress" : "unfilledProgress"}>
               <p>Step 2</p>
             </div>
-            <div className={step >= 3 ? "filledProgress" : 'unfilledProgress'}>
-                <p>Step 3</p>
+            <div className={step >= 3 ? "filledProgress" : "unfilledProgress"}>
+              <p>Step 3</p>
             </div>
             <div className="unfilledProgress">
-                <button className="modalCloseButton" onClick={closeModal}>x</button>            
+              <button className="modalCloseButton" onClick={closeModal}>
+                x
+              </button>
             </div>
           </div>
           <form className={step == 1 ? "VisbibleForm" : "HiddenForm"}>
@@ -112,9 +119,9 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 onChange={(e) => setPass1(e.target.value)}
                 required={true}
               />
-                </label>
-                <p>Passwords must be at least 6 characters in length</p>
-                {passNotSame ?  <p>Passwords do not match</p> : null }        
+            </label>
+            <p>Passwords must be at least 6 characters in length</p>
+            {passNotSame ? <p>Passwords do not match</p> : null}
             <hr />
             <label>
               Confirm Password:
@@ -161,8 +168,19 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
 
           <form className={step == 3 ? "VisbibleForm" : "HiddenForm"}>
             <h3>Choose profile image</h3>
+            <label htmlFor="imagePickerProfile">Select image: </label>
             <div className="SingleButtonContainer">
-              <button onClick={handleImage}>Upload image</button>
+              <input
+                type="file"
+                id="imagePickerProfile"
+                name="imagePickerProfile"
+                accept="image /*"
+                onChange={loadImg}
+              />
+              <img
+                            id="imgPickerProfileTest"
+                            src="https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729" 
+              />
             </div>
 
             <hr />

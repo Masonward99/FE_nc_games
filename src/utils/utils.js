@@ -53,9 +53,10 @@ export function removeComment(id) {
 }
 
 export function createUser(id, name, username, img) {
+    console.log('creating user')
     return games
       .post(`/users/${username}`, { avatar_url: img, name, id })
-      .then(({ data }) => data);
+      .then(({ data }) => data.user);
 }
 
 export function signIn(id) {
@@ -71,7 +72,8 @@ export function getCommentsByUser(username) {
         .then(({data})=>data.comments)
 }
 
-export  function uploadImage (file) {
+export function uploadImage(file) {
+    console.log(file)
     const imgRef = ref(storage, `${file.name}`);
     return uploadBytes(imgRef, file)
         .then(snap => getDownloadURL(snap.ref))

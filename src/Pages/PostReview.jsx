@@ -10,8 +10,8 @@ function PostReview() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
-    const [img, setImg] = useState('')
-    console.log(selectedCategory)
+  const [img, setImg] = useState('')
+  
     function loadImg(event) {
         setImg(event.target.files[0])
         let output = document.getElementById('output');
@@ -22,25 +22,23 @@ function PostReview() {
     }
     function upload(event) {
         event.preventDefault()
-        if (img != '') {
-            uploadImage(img)
-                .then(img => addReview(
-                    user.username,
-                    title,
-                    body,
-                    selectedCategory,
-                    img
-                ))
-                .then(id => navigate(`/reviews/${id}`))
-        } else {
-            addReview(
-              user.username,
-              title,
-              body,
-              selectedCategory,
-              "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+        if (
+          img !=
+          "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+        ) {
+          uploadImage(img)
+            .then((img) =>
+              addReview(user.username, title, body, selectedCategory, img)
             )
-                .then((id) => navigate(`/reviews/${id}`)); 
+            .then((id) => navigate(`/reviews/${id}`));
+        } else {
+          addReview(
+            user.username,
+            title,
+            body,
+            selectedCategory,
+            "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+          ).then((id) => navigate(`/reviews/${id}`));
         }
     }
 
