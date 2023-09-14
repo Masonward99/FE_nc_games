@@ -14,11 +14,8 @@ import PostReview from "./Pages/PostReview";
 function App() {  
   const {user} = useContext(UserContext)
   return (
-    <div>
-      <div className="pageTitle">
-      <h1>nc_games</h1>
+    <div className="pageBox">
       <Nav user={user} />
-      </div>
       <Routes>
         <Route path="/" element={<Reviews />} />
         <Route

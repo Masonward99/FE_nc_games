@@ -1,10 +1,14 @@
 #root {
+  width: max-content;
   max-width: 90vw;
-  height: 95vh;
+  height: auto ;
   padding: 2rem;
   text-align: center;
   margin: 0 auto;
   margin-top: 0;
+  min-height: 100vh;
+  min-width: min(1200px, 80vw);
+  padding: 0px;
 }
 
 .logo {
@@ -30,7 +34,7 @@
 .reviewCard {
   border: 1px solid white;
   border-radius: 5%;
-  margin: 15px;
+  margin-bottom:10 px;
   padding: 10px;
 }
 .reviewCard img {
@@ -67,7 +71,7 @@ ul{
 .catCard{
   border: 1px solid white;
   padding:10px;
-  margin:15px;
+  margin:0px;
   border-radius: 5%;
 }
 .dateText{
@@ -204,4 +208,47 @@ button {
 #imgPickerProfileTest {
   height: 40px;
   width: 40px;
+}
+
+.navItem{
+  flex-grow: 1;
+  border-left: 1px solid white;
+  text-align: center;
+}
+.navList {
+  display: flex;
+  flex-grow: 4;
+}
+.navBox{
+  display: flex;
+  position: sticky;
+  top: 0;
+  max-width: 90vw;
+  background-color: darkslategray;
+  color: black;
+  height: 55px;
+  width: 100%;
+}
+.logoNav{
+  object-fit: contain;
+  max-height: 40px;
+}
+.logoBox {
+  flex-grow: 1 ;
+}
+.pageBox  {
+  max-width: 90vw;
+  height:  auto;
+  min-height: 90vh;
+  width: 100;
+}
+Link{
+  color: white;
+}
+button {
+  color: white;
+}
+.navLink {
+  color: white ;
+  font-size: 1.5em;
 }
