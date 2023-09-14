@@ -14,6 +14,7 @@ function OwnProfile() {
     function handleSignOut() {
         setIsModalVisible(true)
     }
+    console.log(user)
 
 
     return (
