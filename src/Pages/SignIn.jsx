@@ -1,27 +1,16 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { getUsers, signIn } from "../utils/utils";
+import {  signIn } from "../utils/utils";
 import { useContext, useState } from "react";
 import { auth } from "../../firebase.config";
 import { SignUpModal } from "../modals/SignUpModal";
 import { UserContext } from "../../Contexts/UserContext";
 
 function SignIn() {
-    const {user, setUser} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isModalVisible, setIsModalVisible] = useState(false)
-    
 
-    // getUsers()
-    //     .then((data) => {
-    //         setUsers(data)
-    //         setIsLoading(false)
-    //     })
-    // function selectUser(event) {
-    //     if (event.target.value !== '0') {
-    //         setUser(event.target.value)
-    //     }
-    // }
     function handleChange( event ) {
         setEmail(event.target.value)
     }
@@ -37,12 +26,10 @@ function SignIn() {
     console.log(password)
     console.log(email)
     return (
-        // temporary signin page until authentication is added
-        
-        <div className="signIn">
+        <div className="pageContent">
             <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <form>
-                <h3>Login</h3>
+                <h2 className="pageHeading">Login</h2>
                 <label>
                     Email: 
                     <input type="email" name='email' value={email} onChange={handleChange} required={true} />

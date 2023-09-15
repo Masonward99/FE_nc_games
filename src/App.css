@@ -1,14 +1,18 @@
 #root {
-  width: max-content;
-  max-width: 90vw;
+  width: 100vw;
   height: auto ;
   padding: 2rem;
-  text-align: center;
-  margin: 0 auto;
+  margin: 0 ;
   margin-top: 0;
   min-height: 100vh;
-  min-width: min(1200px, 80vw);
   padding: 0px;
+}
+.pageBox  {
+  width: 100%;
+  height:  auto;
+  min-height: 90vh;
+  width: 100;
+  text-align: center;
 }
 
 .logo {
@@ -212,18 +216,27 @@ button {
 
 .navItem{
   flex-grow: 1;
-  border-left: 1px solid white;
   text-align: center;
+  flex-basis: 0;
+  height: 100%;
+  max-width: 150px;
+  margin: auto;
+  
 }
 .navList {
+  flex-grow: 1;
   display: flex;
-  flex-grow: 4;
+  height: 100%;
+  margin: auto;
+  max-width: 600px;
+  justify-content: stretch;
+  align-items: center;
+margin-right: 0;
 }
 .navBox{
-  display: flex;
+  display: block;
   position: sticky;
   top: 0;
-  max-width: 90vw;
   background-color: darkslategray;
   color: black;
   height: 55px;
@@ -232,16 +245,14 @@ button {
 .logoNav{
   object-fit: contain;
   max-height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  order:0;
 }
 .logoBox {
   flex-grow: 1 ;
 }
-.pageBox  {
-  max-width: 90vw;
-  height:  auto;
-  min-height: 90vh;
-  width: 100;
-}
+
 Link{
   color: white;
 }
@@ -251,4 +262,30 @@ button {
 .navLink {
   color: white ;
   font-size: 1.5em;
+}
+.pageHeading {
+  font-size: 3em;
+  margin: 10px;
+}
+.ddLabel{
+  font-size: 2em;
+}
+.dropdownForm {
+  text-align: left;
+}
+#sortDropdown {
+  font-size: 2em;
+}
+.pageContent {
+  max-width: 1200px;
+  margin: auto;
+  padding:5px;
+}
+.navFlexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  max-width: 1200px;
 }

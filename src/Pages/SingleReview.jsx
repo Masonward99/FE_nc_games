@@ -34,7 +34,7 @@ function SingleReview() {
     }
     return (
       <div>
-        <div className="singleReview">
+        <div className="pageContent">
           <h2>{review.title}</h2>
           <img src={review.review_img_url} />
           <p>{review.review_body}/</p>

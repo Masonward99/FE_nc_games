@@ -10,8 +10,8 @@ function FilteredReviews() {
     getReviewsByCategory(category)
     .then(data=>setReviews(data))
     return (
-        <div>
-            <h1>Reviews</h1>
+        <div className="pageContent">
+            <h2 className="pageHeading">Reviews</h2>
             <ul>
                 {reviews.map((review) => <li key={review.review_id}><Link to={`/reviews/${review.review_id}`}><ReviewCard review={review} date={date} /></Link></li>)}  
             </ul>

@@ -43,7 +43,7 @@ function PostReview() {
     }
 
     return (
-      <div>
+      <div className="pageContent">
         <form>
           <label htmlFor="reviewTitleInput">Review title: </label>
           <input

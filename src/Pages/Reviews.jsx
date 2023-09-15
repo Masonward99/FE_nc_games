@@ -22,8 +22,8 @@ function Reviews() {
     )
   }
   return (
-    <div>
-      <h2>Reviews</h2>
+    <div className="pageContent">
+      <h2 className="pageHeading">Reviews</h2>
       <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
       <ul>
         {reviews.map((review) => {

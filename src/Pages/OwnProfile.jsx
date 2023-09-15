@@ -18,7 +18,7 @@ function OwnProfile() {
 
 
     return (
-        <div className="ownProfilePage">
+        <div className="pageContent">
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
                 <div className="profileImgContainer">
