@@ -9,7 +9,7 @@ function CategoryDropDown({setSelectedCategory}) {
     }, [])
 
     return (
-        <div>
+        <div className="catDd">
             <label htmlFor="categoryDropdown">Choose a category: </label>
             <select id="categoryDropdown" onChange={e=>setSelectedCategory(e.target.value)}>
                 <option value={false}>Select category</option>

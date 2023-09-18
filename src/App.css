@@ -86,10 +86,8 @@ ul{
   background-color: black;
   height: 365px;
   width: 300px;
-  position: absolute;
-  top: 500px;
-  left: 500px;
   text-align: left;
+  margin: auto;
   
 }
 .SingleButtonContainer{
@@ -172,9 +170,7 @@ h3{
   width: 400px ;
   background-color: white;
   border: 1px solid black ;
-  position: absolute;
-  top:50vh;
-  left: 45vw;
+  margin: auto;
 }
 .modalDiv {
   color:black;
@@ -236,6 +232,11 @@ h3{
 button {
   color: white;
   margin: 3px;
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
 }
 
 .pageHeading {
@@ -248,10 +249,11 @@ button {
   text-align: left;
 }
 .pageContent {
-  max-width: 1200px;
+  max-width:  1200px;
   margin: auto;
   padding:5px;
   text-align: center;
+  height: 100%;
 }
 .horizontalVoteButtonContainer{
   display: flex;
@@ -299,7 +301,18 @@ button {
   text-align: left;
   align-self:top;
 }
-
+.linkBox {
+  height: 100%;
+  width: 100%;
+}
+.linkBox :hover {
+  background-color: white;
+  color: black;
+}
+a :hover {
+  background-color: white;
+  color: black;
+}
 .reviewContentRight {
   flex-grow: 2;
   max-width: 800px;
@@ -327,8 +340,6 @@ button {
 
 .singleReviewContainer {
   max-width: 1000px;
-  text-align: center;
-  justify-content: center;
   text-align: left;
   margin: auto;
 }
@@ -362,4 +373,73 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+.loginPageContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+.buttonBox {
+  text-align: center;
+}
+.buttonBox button {
+  width: 60%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.postReviewContainer {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+.postReviewContainer textarea {
+  width: 100%;
+  height: 150px;
+  background-color: #313639;
+  color: white;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 10px;
+}
+.catDd {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+.postReviewContainer input {
+  max-width: 400px;
+}
+.postReviewContainer button {
+  width: 60%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+#output {
+  max-height: 700px;
+  object-fit: contain;
+}
+.centered {
+  margin: auto;
 }

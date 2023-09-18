@@ -31,7 +31,6 @@ function Reviews() {
           <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
         </div>
         <div className="reviewsContentRight">
-          
           <ul className="reviewList">
             {reviews.map((review) => {
             return (

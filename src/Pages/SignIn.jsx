@@ -10,10 +10,6 @@ function SignIn() {
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isModalVisible, setIsModalVisible] = useState(false)
-
-    function handleChange( event ) {
-        setEmail(event.target.value)
-    }
     function handleSubmit(event) {
         event.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
@@ -23,26 +19,25 @@ function SignIn() {
     function openModal() {
         setIsModalVisible(true)
     }
-    console.log(password)
-    console.log(email)
+
     return (
         <div className="pageContent">
+            <div className="centered">
             <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
-            <form>
+            <div className="loginPageContainer">
                 <h2 className="pageHeading">Login</h2>
-                <label>
-                    Email: 
-                    <input type="email" name='email' value={email} onChange={handleChange} required={true} />
-                </label>
-                <hr/>
-                <label>
-                    Password: 
-                    <input type='password' value={password} onChange={e=> setPassword(e.target.value)} name='password' />
-                </label>
-                <hr/>
-                <button name="submit" onClick={handleSubmit} value='Submit'>Submit</button>
-            </form>
-            <p>Dont have an account? <button onClick={openModal }>Signup</button></p>
+                <form className="loginForm">
+                    <label htmlFor="signInEmail">Email: </label>
+                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail"/>
+                    <label htmlFor="signInPassword">Password: </label>
+                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password' id="signInPassword" />
+                    <div className="buttonBox">
+                        <button name="submit" onClick={handleSubmit} value='Submit'>Login</button>
+                    </div>
+                </form>
+                <p>Don't have an account? <button onClick={openModal }>Signup</button></p>
+            </div>
+            </div>
         </div>
     );
 }
