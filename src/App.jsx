@@ -14,7 +14,7 @@ import PostReview from "./Pages/PostReview";
 function App() {  
   const {user} = useContext(UserContext)
   return (
-    <div className="pageBox">
+    <>
       <Nav user={user} />
       <Routes>
         <Route path="/" element={<Reviews />} />
@@ -23,11 +23,10 @@ function App() {
           element={<SingleReview  />}
         />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/reviews/category/:category" element={<FilteredReviews />} />
         <Route path="/login" element={user ? <OwnProfile /> : <SignIn />} />
         <Route path="/addreview" element={<PostReview/>}/>
       </Routes>
-    </div>
+    </>
   );
 }
 

@@ -5,6 +5,7 @@ import CommentCard from "../components/CommentCard"
 import VoteButton from "../components/VoteButton"
 import CreateComment from "../components/CreateComment"
 import { UserContext } from "../../Contexts/UserContext"
+import UserImage from "../components/UserImage"
 
 function SingleReview() {
     const {user} = useContext(UserContext)
@@ -14,7 +15,6 @@ function SingleReview() {
     const [isLoading2, setIsLoading2] = useState(true);
     const [comments, setComments] = useState('')
     const [count, setCount] = useState(0)
-    console.log('page')
     useEffect(() => {
         getReview(review_id)
             .then(data => {
@@ -25,30 +25,55 @@ function SingleReview() {
     useEffect(() => {
         getComments(review_id)
         .then(data => {
-            setComments(data)
-            setIsLoading2(false)
+            setComments(data);
+            setIsLoading2(false);
         })
-    },[count])
+    }, [count])
+    
     if (isLoading || isLoading2) {
         return <h2>Loading</h2>
     }
     return (
-      <div>
         <div className="pageContent">
-          <h2>{review.title}</h2>
-          <img src={review.review_img_url} />
-          <p>{review.review_body}/</p>
-          <h3>{review.owner}</h3>
-                <VoteButton type='review' id={review.review_id} count={review.votes} />
-            </div>
-            <h3>Comments</h3>
-            <CreateComment user={user.username} review_id={review_id} count={count} setCount={setCount}/>
-            {comments.length === 0?
-                <p>There are no comments on this review yet, be the first to leave a comment!</p>:null
-            }
-        {comments.map((comment) => {
-            return <CommentCard comment={comment} key={comment.comment_id} remove={comment.author=== user.username ? true:false } comments={comments} setComments={setComments} />;
-        })}
+            <div className="singleReviewContainer">
+                <h2 className="pageHeading">{review.title}</h2>
+                <UserImage username={review.owner} date={review.created_at} />
+                <div className="testBox">
+                    <img src={review.review_img_url} />
+                </div>
+                <p>{review.review_body}/</p>
+                <div className="reviewCardBottomDetails">
+                    <VoteButton
+                        direction="horizontal"
+                        id={review.review_id}
+                        count={review.votes}
+                    />
+                    <p>Comments: {review.comment_count}</p>
+                </div>
+                <hr/>
+                <h3>Comments</h3>
+                <CreateComment
+                    user={user.username}
+                    review_id={review_id}
+                    count={count}
+                    setCount={setCount}
+                />
+                {
+                    comments.length === 0 ? (
+                        <p>There are no comments on this review yet, be the first to leave acomment!</p>
+                    ) : null}
+                    {comments.map((comment) => {
+                    return (
+                    <CommentCard
+                        comment={comment}
+                        key={comment.comment_id}
+                        remove={comment.author === user.username ? true : false}
+                        comments={comments}
+                        setComments={setComments}
+                    />
+                );
+            })}
+        </div>
       </div>
     );
 }

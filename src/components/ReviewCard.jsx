@@ -1,37 +1,34 @@
-function ReviewCard({ review, date }) {
-    let reviewDate = new Date(review.created_at)
-    let shortDate = reviewDate.toString().slice(4, 16); // temp date solution
+import { calculateTimePassed } from "../utils/utils";
+import UserImage from "./UserImage";
+import VoteButton from "./VoteButton";
+import { Link } from "react-router-dom";
 
-    // working time since posted calculation. To be used when users can post reviews.
-    
-    let dif = (date.getTime() - reviewDate.getTime()) /1000
-    let displayDate;
+function ReviewCard({ review }) {
 
-    if (dif < 60) {
-        displayDate = "now";
-    } else if (dif < 3600) {
-        displayDate = `${Math.floor(dif/60)} minutes ago`
-    }
-    else if (dif < 604800) {
-        displayDate = `${Math.floor(dif/3600)} hours ago`
-    } else {
-        displayDate = `More than 1 week ago`
-    }
-
+  let displayDate = calculateTimePassed(review.created_at);
     return (
-        <div className='reviewCard'>
-            
-            < h2 > {review.title}</h2>
-            <div className="dateText">
-                <p>{`Votes: ${review.votes}`}</p>
-                <p>{shortDate}</p>
-                <p>{`Comments: ${review.comment_count}`}</p>
-            </div>
-            <img src={review.review_img_url} /> 
-            
+      <div className="reviewCard">
+        {/* <div className="reviewCardTopDetails">
+          <p>{review.owner}</p>
+          <p>{displayDate}</p>
+        </div> */}
+        <UserImage date={review.created_at} username={review.owner}/>
+        <Link to={`/reviews/${review.review_id}`}>
+          <div className="reviewContent">
+            <h2> {review.title}</h2>
+            <img src={review.review_img_url} />
+          </div>
+        </Link>
+
+        <div className="reviewCardBottomDetails">
+            <VoteButton
+            direction="horizontal"
+            count={review.votes}
+            id={review.review_id}
+            />
+            <p>Comments: {review.comment_count}</p>
         </div>
-       
-    
-    )
+    </div>
+    );
 }
 export default ReviewCard

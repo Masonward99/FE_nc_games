@@ -1,4 +1,5 @@
 import { removeComment } from "../utils/utils";
+import UserImage from "./UserImage";
 
 function CommentCard({ comment, remove, comments, setComments }) {
     function handleDelete(event) {
@@ -10,12 +11,13 @@ function CommentCard({ comment, remove, comments, setComments }) {
 
     }
     return (
-        <div className="commentCard">
-            <h4>{comment.author}</h4>
-            { remove ? <button onClick={handleDelete}>delete</button>:null}
-            <p>{comment.body}</p>
-            <button>votes: {comment.votes}</button>
-        </div>
-    )
+      <div className="commentCard">
+        <UserImage username={comment.author} date={comment.created_at} />
+        {remove ? <button onClick={handleDelete}>delete</button> : null}
+        <button onClick={handleDelete}>delete</button>
+        <p>{comment.body}</p>
+        <button>votes: {comment.votes}</button>
+      </div>
+    );
 }
 export default CommentCard

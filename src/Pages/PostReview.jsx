@@ -10,14 +10,14 @@ function PostReview() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
-  const [img, setImg] = useState('')
+    const [img, setImg] = useState('')
   
     function loadImg(event) {
         setImg(event.target.files[0])
         let output = document.getElementById('output');
         output.src = URL.createObjectURL(event.target.files[0])
         output.onLoad = function() {
-            URL.revokeObjectURL(output.src)
+          URL.revokeObjectURL(output.src)
         }
     }
     function upload(event) {
@@ -44,6 +44,7 @@ function PostReview() {
 
     return (
       <div className="pageContent">
+        <h2 className="pageHeading">Post Review</h2>
         <form>
           <label htmlFor="reviewTitleInput">Review title: </label>
           <input

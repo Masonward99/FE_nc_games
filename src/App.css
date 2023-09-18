@@ -7,39 +7,16 @@
   min-height: 100vh;
   padding: 0px;
 }
-.pageBox  {
-  width: 100%;
-  height:  auto;
-  min-height: 90vh;
-  width: 100;
-  text-align: center;
-}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 .reviewCard {
-  border: 1px solid white;
   border-radius: 5%;
   margin-bottom:10 px;
-  padding: 10px;
+  padding: 20px;
+
+}
+.reviewListItem :hover {
+  background-color: white;
+  color: black;
 }
 .reviewCard img {
   width: 80%;
@@ -151,9 +128,6 @@ h3{
   text-align: center;
   color: black;
 }
-button {
-  margin: 3px;
-}
 
 .profileContainer {
   display: grid;
@@ -214,16 +188,23 @@ button {
   width: 40px;
 }
 
-.navItem{
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  max-width: 1200px;
+}
+.navbarItem{
   flex-grow: 1;
   text-align: center;
   flex-basis: 0;
   height: 100%;
   max-width: 150px;
-  margin: auto;
   
 }
-.navList {
+.navbarButtons {
   flex-grow: 1;
   display: flex;
   height: 100%;
@@ -231,9 +212,10 @@ button {
   max-width: 600px;
   justify-content: stretch;
   align-items: center;
-margin-right: 0;
+  margin-right: 0;
+  flex-direction: row-reverse;
 }
-.navBox{
+.navbarContainer{
   display: block;
   position: sticky;
   top: 0;
@@ -242,50 +224,139 @@ margin-right: 0;
   height: 55px;
   width: 100%;
 }
-.logoNav{
+.navbarLogo{
   object-fit: contain;
   max-height: 40px;
   margin-left: 10px;
   margin-right: 10px;
   order:0;
 }
-.logoBox {
-  flex-grow: 1 ;
-}
-
-Link{
-  color: white;
-}
-button {
-  color: white;
-}
-.navLink {
+.navbarLink {
   color: white ;
   font-size: 1.5em;
 }
+button {
+  color: white;
+  margin: 3px;
+}
+
 .pageHeading {
   font-size: 3em;
   margin: 10px;
+  text-align: center;
 }
-.ddLabel{
-  font-size: 2em;
-}
+
 .dropdownForm {
   text-align: left;
-}
-#sortDropdown {
-  font-size: 2em;
 }
 .pageContent {
   max-width: 1200px;
   margin: auto;
   padding:5px;
+  text-align: center;
 }
-.navFlexbox {
+.horizontalVoteButtonContainer{
   display: flex;
+  flex-direction: row;
+}
+.verticalVoteButtonContainer{
+  display: flex;
+  flex-direction: column;
+  max-width: 80px;
+}
+.reviewCardTopDetails {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.reviewCardTopDetails p {
+  margin:10px;
+}
+.reviewCardBottomDetails {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.reviewCardBottomDetails p {
+  margin: 10px;
+}
+.reviewListItem {
+  color: white;
+}
+.reviewList {
+  margin: 0px;
+}
+.reviewList li {
+  margin: 10px;
+}
+.reviewsPageContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
+}
+.reviewContentLeft {
+  flex-grow: 1;
+  max-width: 400px;
+  text-align: left;
+  align-self:top;
+}
+
+.reviewContentRight {
+  flex-grow: 2;
+  max-width: 800px;
+}
+.checkboxHeading {
+  margin-top: 40px ;
+}
+.commentImg {
+  height: 40px;
+  background-color: black;
+}
+.userImgContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+  max-height: 60px;
+  
+}
+.userImgContainer img{
+    grid-column: 1;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.singleReviewContainer {
+  max-width: 1000px;
+  text-align: center;
+  justify-content: center;
+  text-align: left;
   margin: auto;
-  max-width: 1200px;
+}
+.singleReviewContent {
+  max-width: 800px;
+  flex-grow: 2;
+}
+
+.userImgContainer p {
+  margin: 0;
+}
+.imgText {
+  display: flex;
+  flex-grow: 1;
+  max-height: 60px;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.testBox {
+  width: 100%;
+}
+.testBox img {
+  width: 100%;
+  object-fit: contain;
+  background-color: grey;
+}
+.navbar p {
+  color: white;
 }

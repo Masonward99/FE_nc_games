@@ -7,7 +7,6 @@ function CreateComment({ review_id, count, setCount }) {
     const [isPosted, setIsPosted] = useState(true)
     const [value, setValue] = useState('')
     const { user  } = useContext(UserContext)
-    console.log( user.username )
     if (user === false) {
         return <h3><Link to="/login">login</Link> to post a comment</h3>
     }

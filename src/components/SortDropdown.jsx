@@ -12,7 +12,7 @@ function SortDropdown ({ setSort, order, setOrder}){
     }
     return (
         <form className="dropdownForm">
-            <label htmlFor='sortDropdown' className="ddLabel">sort by: </label>
+            <label htmlFor='sortDropdown' className="ddLabel">Sort by: </label>
             <select id="sortDropdown" onChange={handleChange}>
                 <option value="created_at">Date</option>
                 <option value="comment_count">Comments</option>
