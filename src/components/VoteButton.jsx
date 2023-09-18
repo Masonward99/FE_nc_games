@@ -5,23 +5,23 @@ function VoteButton({ direction, id, count, type }) {
     const [incCount, setIncCount] = useState(0)
     function changeVotes(event) {
         if (incCount === 0 && event.target.value === '+') {
-            patchVotes(id,  1)
+            patchVotes(id,  1, type)
             setIncCount(1)
         } else if (incCount === -1 && event.target.value === '+') {
-            patchVotes(id,  2)
+            patchVotes(id,  2, type)
             setIncCount(1)
         } else if (incCount === 0 && event.target.value === '-') {
-            patchVotes(id,  -1)
+            patchVotes(id,  -1, type)
             setIncCount(-1)
         } else if (incCount === 1 && event.target.value === '-') {
-            patchVotes(id,  -2)
+            patchVotes(id,  -2, type)
             setIncCount(-1)
         }
         else if (incCount === 1 && event.target.value === '+') {
-            patchVotes(id,  -1)
+            patchVotes(id,  -1, type)
             setIncCount(0)
         } else if (incCount === -1 && event.target.value === '-') {
-            patchVotes(id, 1)
+            patchVotes(id, 1, type)
             setIncCount(0)
         }
     }

@@ -3,8 +3,6 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Reviews from "./Pages/Reviews";
 import SingleReview from "./Pages/SingleReview";
-import Categories from "./Pages/Categories";
-import FilteredReviews from "./Pages/FilteredReviews";
 import SignIn from "./Pages/SignIn";
 import { useContext, useState } from "react";
 import { UserContext } from "../Contexts/UserContext";
@@ -22,7 +20,6 @@ function App() {
           path="/reviews/:review_id"
           element={<SingleReview  />}
         />
-        <Route path="/categories" element={<Categories />} />
         <Route path="/login" element={user ? <OwnProfile /> : <SignIn />} />
         <Route path="/addreview" element={<PostReview/>}/>
       </Routes>

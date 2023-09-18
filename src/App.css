@@ -41,9 +41,7 @@ ul{
   padding-left: 0;
 }
 .commentCard {
-  border: 1px solid white;
-    padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .selectedButton {
@@ -318,7 +316,7 @@ button {
   flex-direction: row;
   max-width: 200px;
   max-height: 60px;
-  
+
 }
 .userImgContainer img{
     grid-column: 1;
@@ -355,8 +353,13 @@ button {
 .testBox img {
   width: 100%;
   object-fit: contain;
-  background-color: grey;
 }
 .navbar p {
   color: white;
+}
+
+.topCommentCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

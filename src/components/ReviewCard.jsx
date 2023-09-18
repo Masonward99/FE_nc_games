@@ -8,10 +8,6 @@ function ReviewCard({ review }) {
   let displayDate = calculateTimePassed(review.created_at);
     return (
       <div className="reviewCard">
-        {/* <div className="reviewCardTopDetails">
-          <p>{review.owner}</p>
-          <p>{displayDate}</p>
-        </div> */}
         <UserImage date={review.created_at} username={review.owner}/>
         <Link to={`/reviews/${review.review_id}`}>
           <div className="reviewContent">
@@ -25,6 +21,7 @@ function ReviewCard({ review }) {
             direction="horizontal"
             count={review.votes}
             id={review.review_id}
+            type='review'
             />
             <p>Comments: {review.comment_count}</p>
         </div>

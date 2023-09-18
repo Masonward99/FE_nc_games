@@ -47,6 +47,7 @@ function SingleReview() {
                         direction="horizontal"
                         id={review.review_id}
                         count={review.votes}
+                        type='review'
                     />
                     <p>Comments: {review.comment_count}</p>
                 </div>
