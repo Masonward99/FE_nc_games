@@ -8,9 +8,16 @@ const games = axios.create({
 });
 
 
-export function getReviews(sort, order) {
-    return games.get(`/reviews?sort_by=${sort}&&order=${order}`)
-        .then(({ data })=> data.reviews)
+export function getReviews(cat, sort, order) {
+    if (cat != 'false') {
+        return games
+            .get(`/reviews?sort_by=${sort}&&order=${order}&&category=${cat}`)
+            .then(({ data }) => data.reviews);
+    } else {
+        return games
+            .get(`/reviews?sort_by=${sort}&&order=${order}`)
+            .then(({ data }) => data.reviews)
+    }
 }
 
 export function getReview(review_id) {
@@ -22,9 +29,16 @@ export function getComments(review_id) {
     return games.get(`/reviews/${review_id}/comments`)
         .then(({ data })=>data.comments)
 }
-export function patchVotes(id, type, votes) {
-    return games.patch(`/reviews/${id}`, {inc_votes:votes})
-        .then(({ data }) =>console.log(data.review.votes))
+export function patchVotes(id, votes, type) {
+    if (type == 'review') {
+        console.log('in reviews')
+        return games.patch(`/reviews/${id}`, { inc_votes: votes })
+            .then(({ data }) => console.log(data.review.votes))
+    } else {
+        console.log('in comments')
+        return games.patch(`/comments/${id}`, { inc_votes: votes })
+            .then(({ data }) => console.log(data.comment.votes))
+    }
 }
 
 export function getCategories() {
@@ -81,7 +95,40 @@ export function uploadImage(file) {
 }
 
 export function addReview(username, title, body, category, img_url) {
+    console.log(img_url)
     return games
         .post(`/reviews`, { owner: username, title, review_body: body, category: category, review_img_url: img_url })
         .then(res => res.data.review.review_id)
+}
+
+export function getUserByUsername(username) {
+    return games
+        .get(`/users/${username}`)
+        .then(({ data }) => data.user)
+}
+
+export function calculateTimePassed(created_at) {
+    let date = new Date()
+    let reviewDate = new Date(created_at);
+    let dif = (date.getTime() - reviewDate.getTime()) / 1000;
+    let displayDate;
+    if (dif < 60) {
+      displayDate = "now";
+    } else if (dif < 3600) {
+      displayDate = `${Math.floor(dif / 60)} minutes ago`;
+    } else if (dif < 86400) {
+      displayDate = `${Math.floor(dif / 3600)} hours ago`;
+    } else if (dif < 604800) {
+      displayDate = `${Math.floor(dif / 86400)} days ago`;
+    } else if (dif < 31563000) {
+      displayDate = `${Math.floor(dif / 604800)} weeks ago`;
+    } else {
+      displayDate = `${Math.floor(dif / 31563000)} years ago`;
+    }
+    return displayDate;
+}
+
+export function getReviewsByUsername(username) {
+    return games.get(`/users/${username}/reviews`)
+    .then(({data}) => data.reviews)
 }

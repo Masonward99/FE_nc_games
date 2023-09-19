@@ -2,7 +2,8 @@ import { useContext, useState } from "react"
 import { UserContext } from "../../Contexts/UserContext"
 import CategoryDropDown from "../components/CategoryDropDown";
 import { addReview, uploadImage } from "../utils/utils";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import ImagePicker from "./ImagePicker";
 
 function PostReview() {
     let navigate = useNavigate()
@@ -10,26 +11,18 @@ function PostReview() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
-  const [img, setImg] = useState('')
+    const [file, setFile] = useState(
+      "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+    );
   
-    function loadImg(event) {
-        setImg(event.target.files[0])
-        let output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0])
-        output.onLoad = function() {
-            URL.revokeObjectURL(output.src)
-        }
-    }
     function upload(event) {
         event.preventDefault()
         if (
-          img !=
+          file !=
           "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
         ) {
-          uploadImage(img)
-            .then((img) =>
-              addReview(user.username, title, body, selectedCategory, img)
-            )
+          uploadImage(file)
+            .then((img) => addReview(user.username, title, body, selectedCategory, img))
             .then((id) => navigate(`/reviews/${id}`));
         } else {
           addReview(
@@ -43,40 +36,31 @@ function PostReview() {
     }
 
     return (
-      <div>
-        <form>
-          <label htmlFor="reviewTitleInput">Review title: </label>
-          <input
-            type="text"
-            id="reviewTitleInput"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <hr />
-          <CategoryDropDown setSelectedCategory={setSelectedCategory} />
-          <label htmlFor="imagePicker">Choose an image:</label>
-          <input
-            type="file"
-            id="imagePicker"
-            name="imagePicker"
-            accept="image /*"
-            onChange={loadImg}
-          />
-          <img
-            id="output"
-            src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
-          />
-          <hr />
-          <label>Review body: </label>
-          <textarea
-            id="reviewBodyInput"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-            <hr />
+      <div className="pageContent">
+        <div className="postReviewContainer">
+          <h2 className="pageHeading">Post Review</h2>
+          <form className="reviewForm">
+            <label htmlFor="reviewTitleInput">Review title: </label>
+            <input
+              type="text"
+              id="reviewTitleInput"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <CategoryDropDown setSelectedCategory={setSelectedCategory} />
+            <ImagePicker setFile={setFile}/>
+            <label htmlFor="reviewBodyInput">Review body: </label>
+            <textarea
+              id="reviewBodyInput"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            />
             <p>Fill in all fields to submit</p>
-          <button onClick={upload} disabled={selectedCategory != false && title != '' && body != '' ? false : true }>Post review</button>
-        </form>
+            <div className="buttonBox">
+              <button onClick={upload} disabled={selectedCategory != false && title != '' && body != '' ? false : true }>Post review</button>
+            </div>
+          </form>
+        </div>
       </div>
     );
 }

@@ -1,21 +1,23 @@
 import { removeComment } from "../utils/utils";
+import UserImage from "./UserImage";
+import VoteButton from "./VoteButton";
 
 function CommentCard({ comment, remove, comments, setComments }) {
     function handleDelete(event) {
-        const id = comment.comment_id;
-        const filter = comments.filter((com) => com.comment_id !== id)
+        const filter = comments.filter((com) => com.comment_id !== comment.comment_id)
         setComments([...filter])
-        removeComment(id)
+        removeComment(comment.comment_id)
         .then()
-
     }
     return (
         <div className="commentCard">
-            <h4>{comment.author}</h4>
-            { remove ? <button onClick={handleDelete}>delete</button>:null}
-            <p>{comment.body}</p>
-            <button>votes: {comment.votes}</button>
-        </div>
-    )
+            <div className="topCommentCard"> 
+                <UserImage username={comment.author} date={comment.created_at} />
+                {remove ? <button onClick={handleDelete}>delete</button> : null}
+            </div>
+        <p>{comment.body}</p>
+        <VoteButton direction='horizontal' type='comments' id={comment.comment_id} count={comment.votes}/>
+      </div>
+    );
 }
 export default CommentCard

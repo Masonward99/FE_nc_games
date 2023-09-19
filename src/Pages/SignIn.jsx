@@ -1,30 +1,15 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { getUsers, signIn } from "../utils/utils";
+import {  signIn } from "../utils/utils";
 import { useContext, useState } from "react";
 import { auth } from "../../firebase.config";
 import { SignUpModal } from "../modals/SignUpModal";
 import { UserContext } from "../../Contexts/UserContext";
 
 function SignIn() {
-    const {user, setUser} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isModalVisible, setIsModalVisible] = useState(false)
-    
-
-    // getUsers()
-    //     .then((data) => {
-    //         setUsers(data)
-    //         setIsLoading(false)
-    //     })
-    // function selectUser(event) {
-    //     if (event.target.value !== '0') {
-    //         setUser(event.target.value)
-    //     }
-    // }
-    function handleChange( event ) {
-        setEmail(event.target.value)
-    }
     function handleSubmit(event) {
         event.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
@@ -34,28 +19,36 @@ function SignIn() {
     function openModal() {
         setIsModalVisible(true)
     }
-    console.log(password)
-    console.log(email)
+
+    function handleGuest (){
+        setUser(
+            {
+                "username": "grumpy19",
+                "name": "Paul Grump",
+                "avatar_url": "https://vignette.wikia.nocookie.net/mrmen/images/7/78/Mr-Grumpy-3A.PNG/revision/latest?cb=20170707233013",
+                "id": null
+        })
+    }
+
     return (
-        // temporary signin page until authentication is added
-        
-        <div className="signIn">
+        <div className="pageContent">
+            <div className="centered">
             <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
-            <form>
-                <h3>Login</h3>
-                <label>
-                    Email: 
-                    <input type="email" name='email' value={email} onChange={handleChange} required={true} />
-                </label>
-                <hr/>
-                <label>
-                    Password: 
-                    <input type='password' value={password} onChange={e=> setPassword(e.target.value)} name='password' />
-                </label>
-                <hr/>
-                <button name="submit" onClick={handleSubmit} value='Submit'>Submit</button>
-            </form>
-            <p>Dont have an account? <button onClick={openModal }>Signup</button></p>
+            <div className="loginPageContainer">
+                <h2 className="pageHeading">Login</h2>
+                <form className="loginForm">
+                    <label htmlFor="signInEmail">Email: </label>
+                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail"/>
+                    <label htmlFor="signInPassword">Password: </label>
+                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password' id="signInPassword" />
+                    <div className="buttonBox">
+                        <button name="submit" onClick={handleSubmit} value='Submit'>Login</button>
+                    </div>
+                </form>
+                    <p>Don't have an account? <button onClick={openModal}>Signup</button></p>
+                    <p>Sign in as guest <button onClick={handleGuest}>Guest Login</button></p>
+            </div>
+            </div>
         </div>
     );
 }

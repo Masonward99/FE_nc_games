@@ -1,14 +1,21 @@
-import { useContext, useState } from "react"
-import { UserContext } from "../../Contexts/UserContext"
+import { useContext, useState } from "react";
+import { useParams } from "react-router-dom"
+import { UserContext } from "../../Contexts/UserContext";
+import { useUserByUsername } from "../hooks/useUserByUsername";
 import SignOutModal from "../modals/SignOutModal";
 import ProfileComments from "../components/ProfileComments";
 import ProfileReview from "../components/ProfileReview";
 
-function OwnProfile() {
-    const { user } = useContext(UserContext);
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    function handleSignOut() {
-        setIsModalVisible(true)
+function Profile() {
+    let { username } = useParams();
+    let signedInUser = useContext(UserContext)
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    let { user, isLoading } = useUserByUsername(username)
+      function handleSignOut() {
+          setIsModalVisible(true);
+      }
+    if (isLoading) {
+        return 'Loading... '
     }
     return (
         <div className="profilePage">
@@ -23,18 +30,17 @@ function OwnProfile() {
                     <p >Name: {user.name}</p>    
                 </div>
                 </div>
-                    <button className="profileSignOut" onClick={handleSignOut}>sign out</button>    
+                {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
             </div>
                 <h2>Recent reviews:</h2>
             <div className="reviewsShowcase">
                 <ProfileReview username={user.username}/>
             </div>
-                <h2>Recent comments:</h2>
+            <h2>Recent comments:</h2>
             <div className="commentsList">
                 <ProfileComments username={user.username}/>
             </div>
-       </div> 
-
+        </div> 
     )
 }
-export default OwnProfile
+export default Profile

@@ -11,12 +11,12 @@ function SortDropdown ({ setSort, order, setOrder}){
         }
     }
     return (
-        <form>
-            <label htmlFor='sortDropdown'>sort by: </label>
+        <form className="dropdownForm">
+            <label htmlFor='sortDropdown' className="ddLabel">Sort by: </label>
             <select id="sortDropdown" onChange={handleChange}>
                 <option value="created_at">Date</option>
-                <option value="comment_count">comments</option>
-                <option value="votes">votes</option>
+                <option value="comment_count">Comments</option>
+                <option value="votes">Votes</option>
             </select>
         <button onClick={handleButton} value={order}>{order!=="desc" ? "⬆️" : "⬇️"}</button>
       </form>

@@ -1,41 +1,22 @@
 #root {
-  width: max-content;
-  max-width: 90vw;
+  width: 100vw;
   height: auto ;
   padding: 2rem;
-  text-align: center;
-  margin: 0 auto;
+  margin: 0 ;
   margin-top: 0;
   min-height: 100vh;
-  min-width: min(1200px, 80vw);
   padding: 0px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 .reviewCard {
-  border: 1px solid white;
   border-radius: 5%;
   margin-bottom:10 px;
-  padding: 10px;
+  padding: 20px;
+
+}
+.reviewListItem :hover {
+  background-color: white;
+  color: black;
 }
 .reviewCard img {
   width: 80%;
@@ -60,9 +41,7 @@ ul{
   padding-left: 0;
 }
 .commentCard {
-  border: 1px solid white;
-    padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .selectedButton {
@@ -102,14 +81,12 @@ ul{
   display: block;
   padding:10px  ;
   overflow: hidden;
+  margin: auto;
 }
 .SignUpModalContainer{
   background-color: black;
   height: 365px;
   width: 300px;
-  position: absolute;
-  top: 500px;
-  left: 500px;
   text-align: left;
   
 }
@@ -147,17 +124,15 @@ h3{
   text-align: center;
   color: black;
 }
-button {
-  margin: 3px;
-}
 
 .profileContainer {
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 15% 15% 50% 10%;
+  display: flex;
+  flex-direction: row;
   height: 30vh;
+  max-height: 300px;
   text-align: left;
-  width: 80vw;
+  width: 100%;
+  justify-content: space-between;
 }
 .profileImgContainer {
   grid-column: 1 / span 2;
@@ -178,31 +153,34 @@ button {
   font-size: 30px;
 }
 .profileName {
-  grid-column: 3;
-  grid-row: 2;
-  margin-left: 25px;
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 10px;
 }
 .profileEditButton {
   grid-column: 4;
   grid-row: 1;
 }
 .profileSignOut {
-  grid-row: 2;
-  grid-column: 4;
+  height: 80px;
+  width: 150px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 .SignOutModal {
   height:200px;
   width: 400px ;
   background-color: white;
   border: 1px solid black ;
-  position: absolute;
-  top:50vh;
-  left: 45vw;
 }
 .modalDiv {
   color:black;
   text-align: center;
+  margin: auto;
 }
 
 #imgPickerProfileTest {
@@ -210,45 +188,297 @@ button {
   width: 40px;
 }
 
-.navItem{
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  max-width: 1200px;
+}
+.navbarItem{
   flex-grow: 1;
-  border-left: 1px solid white;
   text-align: center;
+  flex-basis: 0;
+  height: 100%;
+  max-width: 150px;
+  
 }
-.navList {
+.navbarButtons {
+  flex-grow: 1;
   display: flex;
-  flex-grow: 4;
+  height: 100%;
+  margin: auto;
+  max-width: 600px;
+  justify-content: stretch;
+  align-items: center;
+  margin-right: 0;
+  flex-direction: row-reverse;
 }
-.navBox{
-  display: flex;
+.navbarContainer{
+  display: block;
   position: sticky;
   top: 0;
-  max-width: 90vw;
   background-color: darkslategray;
   color: black;
   height: 55px;
   width: 100%;
 }
-.logoNav{
+.navbarLogo{
   object-fit: contain;
   max-height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  order:0;
 }
-.logoBox {
-  flex-grow: 1 ;
-}
-.pageBox  {
-  max-width: 90vw;
-  height:  auto;
-  min-height: 90vh;
-  width: 100;
-}
-Link{
-  color: white;
+.navbarLink {
+  color: white ;
+  font-size: 1.5em;
 }
 button {
   color: white;
+  margin: 3px;
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
 }
-.navLink {
-  color: white ;
-  font-size: 1.5em;
+
+.pageHeading {
+  font-size: 3em;
+  margin: 10px;
+  text-align: center;
+}
+
+.dropdownForm {
+  text-align: left;
+}
+.pageContent {
+  max-width:  1200px;
+  margin: auto;
+  padding:5px;
+  text-align: center;
+  height: 100%;
+}
+.horizontalVoteButtonContainer{
+  display: flex;
+  flex-direction: row;
+}
+.verticalVoteButtonContainer{
+  display: flex;
+  flex-direction: column;
+  max-width: 80px;
+}
+.reviewCardTopDetails {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.reviewCardTopDetails p {
+  margin:10px;
+}
+.reviewCardBottomDetails {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.reviewCardBottomDetails p {
+  margin: 10px;
+}
+.reviewListItem {
+  color: white;
+}
+.reviewList {
+  margin: 0px;
+}
+.reviewList li {
+  margin: 10px;
+}
+.reviewsPageContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.reviewContentLeft {
+  flex-grow: 1;
+  max-width: 400px;
+  text-align: left;
+  align-self:top;
+}
+.linkBox {
+  height: 100%;
+  width: 100%;
+}
+.linkBox :hover {
+  background-color: white;
+  color: black;
+}
+a :hover {
+  background-color: white;
+  color: black;
+}
+.reviewContentRight {
+  flex-grow: 2;
+  max-width: 800px;
+}
+.checkboxHeading {
+  margin-top: 40px ;
+}
+.commentImg {
+  height: 40px;
+  background-color: black;
+}
+.userImgContainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+  max-height: 60px;
+
+}
+.userImgContainer img{
+    grid-column: 1;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.singleReviewContainer {
+  max-width: 1000px;
+  text-align: left;
+  margin: auto;
+}
+.singleReviewContent {
+  max-width: 800px;
+  flex-grow: 2;
+}
+
+.userImgContainer p {
+  margin: 0;
+}
+.imgText {
+  display: flex;
+  flex-grow: 1;
+  max-height: 60px;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.testBox {
+  width: 100%;
+}
+.testBox img {
+  width: 100%;
+  object-fit: contain;
+}
+.navbar p {
+  color: white;
+}
+
+.topCommentCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+.loginPageContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+.buttonBox {
+  text-align: center;
+}
+.buttonBox button {
+  width: 60%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.postReviewContainer {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+.postReviewContainer textarea {
+  width: calc (100% - 22px);
+  height: 150px;
+  background-color: #313639;
+  color: white;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 10px;
+}
+.catDd {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+.postReviewContainer input {
+  max-width: 400px;
+}
+.postReviewContainer button {
+  width: 60%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+#output {
+  max-height: 700px;
+  object-fit: contain;
+}
+.centered {
+  margin: auto;
+}
+.reviewsShowcase {
+  display: flex;
+  flex-direction: row;
+  margin:auto;
+  width: fit-content;
+}
+.profilePage {
+  max-width: 1000px;
+  margin: auto;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+}
+.cont2 {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+.csstest {
+  height: 100%;
+  justify-content: center;
+}
+.commentTextArea {
+  width: calc(100% - 22px);
+    height: 75px;
+    background-color: #313639;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+.profileCommentCard {
+  border-bottom: 1px dotted white;
 }
