@@ -36,7 +36,7 @@ function Profile() {
             <div className="reviewsShowcase">
                 <ProfileReview username={user.username}/>
             </div>
-                <h2>Recent comments:</h2>
+            <h2>Recent comments:</h2>
             <div className="commentsList">
                 <ProfileComments username={user.username}/>
             </div>

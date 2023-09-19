@@ -1,11 +1,9 @@
-import { calculateTimePassed } from "../utils/utils";
 import UserImage from "./UserImage";
 import VoteButton from "./VoteButton";
 import { Link } from "react-router-dom";
 
 function ReviewCard({ review }) {
 
-  let displayDate = calculateTimePassed(review.created_at);
     return (
       <div className="reviewCard">
         <UserImage date={review.created_at} username={review.owner}/>
@@ -15,7 +13,6 @@ function ReviewCard({ review }) {
             <img src={review.review_img_url} />
           </div>
         </Link>
-
         <div className="reviewCardBottomDetails">
             <VoteButton
             direction="horizontal"

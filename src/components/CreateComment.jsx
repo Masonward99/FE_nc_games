@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 import { UserContext } from "../../Contexts/UserContext"
 
 function CreateComment({ review_id, count, setCount }) {
-    const [isPosted, setIsPosted] = useState(true)
-    const [value, setValue] = useState('')
-    const { user  } = useContext(UserContext)
+    const [isPosted, setIsPosted] = useState(true);
+    const [value, setValue] = useState('');
+    const { user } = useContext(UserContext);
     if (user === false) {
         return <h3><Link to="/login">login</Link> to post a comment</h3>
     }
@@ -31,7 +31,7 @@ function CreateComment({ review_id, count, setCount }) {
     return (
     <form onSubmit={handleSubmit}>
         <label htmlFor="commentInput">Post a comment</label>
-            <textarea type='textarea' onChange={handleChange} value={value} placeholder="Comment..."/>
+            <textarea type='textarea' onChange={handleChange} value={value} placeholder="Comment..." className="commentTextArea"/>
             <button type='submit'>Post</button>
     </form>
     )

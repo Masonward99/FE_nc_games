@@ -6,22 +6,15 @@ import VoteButton from "../components/VoteButton"
 import CreateComment from "../components/CreateComment"
 import { UserContext } from "../../Contexts/UserContext"
 import UserImage from "../components/UserImage"
+import { useReviewById } from "../hooks/useReviewById"
 
 function SingleReview() {
     const { user } = useContext(UserContext);
     const { review_id } = useParams();
-    const [review, setReview] = useState('')
-    const [isLoading, setIsLoading] = useState(true)
+    const [count, setCount] = useState(0)
+    const { review, isLoading } = useReviewById(review_id);
     const [isLoading2, setIsLoading2] = useState(true);
     const [comments, setComments] = useState('')
-    const [count, setCount] = useState(0)
-    useEffect(() => {
-        getReview(review_id)
-            .then(data => {
-                setReview(data)
-                setIsLoading(false)
-            })
-    },[])
     useEffect(() => {
         getComments(review_id)
         .then(data => {

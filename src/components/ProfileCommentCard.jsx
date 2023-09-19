@@ -8,7 +8,7 @@ function ProfileCommentCard({ comment }) {
     }
     return (
         <Link to={`/reviews/${comment.review_id}`} >
-            <div>
+            <div className="profileCommentCard">
                 <p>{review.title}</p>
                 <p>{comment.body}</p>
             </div>

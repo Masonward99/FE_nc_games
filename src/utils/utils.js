@@ -95,6 +95,7 @@ export function uploadImage(file) {
 }
 
 export function addReview(username, title, body, category, img_url) {
+    console.log(img_url)
     return games
         .post(`/reviews`, { owner: username, title, review_body: body, category: category, review_img_url: img_url })
         .then(res => res.data.review.review_id)

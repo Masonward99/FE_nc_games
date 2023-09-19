@@ -415,7 +415,7 @@ a :hover {
   text-align: left;
 }
 .postReviewContainer textarea {
-  width: 100%;
+  width: calc (100% - 22px);
   height: 150px;
   background-color: #313639;
   color: white;
@@ -470,4 +470,15 @@ a :hover {
 .csstest {
   height: 100%;
   justify-content: center;
+}
+.commentTextArea {
+  width: calc(100% - 22px);
+    height: 75px;
+    background-color: #313639;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+.profileCommentCard {
+  border-bottom: 1px dotted white;
 }
