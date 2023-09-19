@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 function ProfileCommentCard({ comment }) {
     const { review, isLoading } = useReviewById(comment.review_id)
-    console.log(comment)
     if (isLoading) {
         return <p>loading</p>
     }

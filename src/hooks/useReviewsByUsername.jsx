@@ -4,7 +4,6 @@ import { getReviews, getReviewsByUsername } from "../utils/utils";
 export function useReviewsByUsername(username) {
     const [reviews, setReviews] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    console.log(username)
     useEffect(() => {
         getReviewsByUsername(username)
             .then((res) => {

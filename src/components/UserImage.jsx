@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react"
 import { calculateTimePassed, getUserByUsername } from "../utils/utils"
+import { Link } from "react-router-dom"
+import { useUserByUsername } from "../hooks/useUserByUsername"
 
 function UserImage({ username, date }) {
-    const [details, setDetails] = useState(false)
-    useEffect(() => {
-        getUserByUsername(username)
-        .then(user =>setDetails(user))
-    })
+    const { user, isLoading } = useUserByUsername(username);
     let newDate = calculateTimePassed(date)
+    if (isLoading) {
+        return 'Loading...'
+    }
     return (
-        //will link to user profile
+        <Link to={`/profile/${user.username}`}>
         <div className="userImgContainer">
-            <img src={details.avatar_url} />
+            <img src={user.avatar_url} />
             <div className="imgText">
                 <p className="userImgName">{username}</p>
                 <p>{newDate}</p>  
             </div>
-        </div>
+            </div>
+            </Link>
     )
 }
 export default UserImage
