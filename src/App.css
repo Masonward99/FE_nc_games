@@ -443,3 +443,16 @@ a :hover {
 .centered {
   margin: auto;
 }
+.reviewsShowcase {
+  display: flex;
+  flex-direction: row;
+  margin:auto;
+  width: fit-content;
+}
+.profilePage {
+  max-width: 1000px;
+  margin: auto;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+}

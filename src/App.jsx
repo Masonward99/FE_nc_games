@@ -21,6 +21,7 @@ function App() {
           element={<SingleReview  />}
         />
         <Route path="/login" element={user ? <OwnProfile /> : <SignIn />} />
+        <Route path="/profile/:id" element={<OwnProfile/>}/>
         <Route path="/addreview" element={<PostReview/>}/>
       </Routes>
     </>

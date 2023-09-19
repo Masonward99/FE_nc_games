@@ -3,7 +3,7 @@ import { UserContext } from "../../Contexts/UserContext"
 import CategoryDropDown from "../components/CategoryDropDown";
 import { addReview, uploadImage } from "../utils/utils";
 import {  useNavigate } from "react-router-dom";
-import ImagePicker from "./ImagePicker";
+import ImagePicker from "../components/ImagePicker";
 
 function PostReview() {
     let navigate = useNavigate()

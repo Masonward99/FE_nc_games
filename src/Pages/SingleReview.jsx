@@ -8,8 +8,8 @@ import { UserContext } from "../../Contexts/UserContext"
 import UserImage from "../components/UserImage"
 
 function SingleReview() {
-    const {user} = useContext(UserContext)
-    const { review_id } = useParams()
+    const { user } = useContext(UserContext);
+    const { review_id } = useParams();
     const [review, setReview] = useState('')
     const [isLoading, setIsLoading] = useState(true)
     const [isLoading2, setIsLoading2] = useState(true);

@@ -1,24 +1,17 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../../Contexts/UserContext"
-import { getCommentsByUser } from "../utils/utils";
 import SignOutModal from "../modals/SignOutModal";
+import ProfileComments from "../components/ProfileComments";
+import ProfileReview from "../components/ProfileReview";
 
 function OwnProfile() {
     const { user } = useContext(UserContext);
-    const [comments, setComments] = useState(false)
-    const [isModalVisible, setIsModalVisible] = useState(false)
-    useEffect(() => {
-        getCommentsByUser(user.username)
-        .then(res => setComments(res))
-    }, [])
+    const [isModalVisible, setIsModalVisible] = useState(false);
     function handleSignOut() {
         setIsModalVisible(true)
     }
-    console.log(user)
-
-
     return (
-        <div className="pageContent">
+        <div className="profilePage">
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
                 <div className="profileImgContainer">
@@ -26,14 +19,15 @@ function OwnProfile() {
                 </div>
                 <p className="profileUsername">Username: {user.username}</p>
                 <p className="profileName">Name: {user.name}</p>
-                {/* <button className="profileEditButton">edit profile</button> */}
                 <button className="profileSignOut" onClick={handleSignOut}>sign out</button>
             </div>
+                <h2>Recent reviews:</h2>
             <div className="reviewsShowcase">
-
+                <ProfileReview username={user.username}/>
             </div>
+                <h2>Recent comments:</h2>
             <div className="commentsList">
-
+                <ProfileComments username={user.username}/>
             </div>
        </div> 
 

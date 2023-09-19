@@ -126,3 +126,8 @@ export function calculateTimePassed(created_at) {
     }
     return displayDate;
 }
+
+export function getReviewsByUsername(username) {
+    return games.get(`/users/${username}/reviews`)
+    .then(({data}) => data.reviews)
+}
