@@ -34,7 +34,7 @@ function SingleReview() {
                 <div className="testBox">
                     <img src={review.review_img_url} />
                 </div>
-                <p>{review.review_body}/</p>
+                <p>{review.review_body}</p>
                 <div className="reviewCardBottomDetails">
                     <VoteButton
                         direction="horizontal"
