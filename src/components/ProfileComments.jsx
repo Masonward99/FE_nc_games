@@ -3,7 +3,6 @@ import ProfileCommentCard from "./ProfileCommentCard"
 
 function ProfileComments({ username }) {
     const { comments, isLoading } = useComments(username)
-    
     {
         return isLoading ? 'Loading...' : (
             <>

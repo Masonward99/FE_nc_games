@@ -3,7 +3,6 @@ import VoteButton from "./VoteButton";
 import { Link } from "react-router-dom";
 
 function ReviewCard({ review }) {
-
     return (
       <div className="reviewCard">
         <UserImage date={review.created_at} username={review.owner}/>
