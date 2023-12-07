@@ -30,7 +30,7 @@ function Reviews() {
           <CategoryCheckBox setSelectedCategory={setSelectedCategory} />
           <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
         </div>
-        <div className="reviewsContentRight">
+        <div className="reviewContentRight">
           <ul className="reviewList">
             {reviews.map((review) => {
             return (
