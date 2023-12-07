@@ -11,7 +11,7 @@ function Nav() {
                 <ul className="navbarButtons">
                     <li className="navbarItem"><Link to='/login' className="navbarLink"><div className="linkBox">{user ? 'Profile' : 'Login'}</div></Link></li>
                     <li className="navbarItem"><Link to='/addreview' className="navbarLink"><div className="linkBox">Post Review</div></Link></li>
-                    <li className="navbarItem"><div className="linkBox"><Link to='/' className="navbarLink">Reviews </Link></div></li>
+                    <li className="navbarItem"><Link to='/' className="navbarLink"><div className="linkBox">Reviews </div></Link></li>
                 </ul>
             </div>
         </div>
