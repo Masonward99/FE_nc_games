@@ -11,7 +11,7 @@ function OwnProfile() {
         setIsModalVisible(true)
     }
     return (
-        <div className="profilePage">
+        < div className="profilePage">
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
                 <div className="cont2">
@@ -25,14 +25,8 @@ function OwnProfile() {
                 </div>
                     <button className="profileSignOut" onClick={handleSignOut}>sign out</button>    
             </div>
-                <h2>Recent reviews:</h2>
-            <div className="reviewsShowcase">
                 <ProfileReview username={user.username}/>
-            </div>
-                <h2>Recent comments:</h2>
-            <div className="commentsList">
                 <ProfileComments username={user.username}/>
-            </div>
        </div> 
 
     )

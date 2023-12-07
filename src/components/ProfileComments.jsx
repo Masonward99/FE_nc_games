@@ -5,13 +5,18 @@ function ProfileComments({ username }) {
     const { comments, isLoading } = useComments(username)
     {
         return isLoading ? 'Loading...' : (
+                comments.length > 0 ?  (
             <>
-                <ul>
-                    {comments.map((comment) => {
-                        return <ProfileCommentCard comment={comment} />
-                    })}
-                </ul>
-            </>
+                <h2>Recent comments:</h2>
+                <div className="commentsList">
+                    <ul>
+                        {comments.map((comment) => {
+                         return <ProfileCommentCard comment={comment} />
+                     })}
+                    </ul>
+                </div>
+                </>
+                ) : null 
         )
     }
 }

@@ -20,13 +20,20 @@ function ProfileReview({ username }) {
            }
        }
    
-    {return  isLoading ? 'Loading...' : (
-        <>
-            <button onClick={handleBack}>back</button>    
-            <ProfileReviewCard review={reviews[selectedReview]} />
-            <button onClick={handleForward}>forward</button>
-        </>
-    )
+    {return isLoading ? (
+      "Loading..."
+    ) : reviews.length > 0 ? (
+      <>
+                <h2>Recent reviews:</h2>
+                <div className="reviewsShowcase">
+                    <button onClick={handleBack}>back</button>
+                    <ProfileReviewCard review={reviews[selectedReview]} />
+                    <button onClick={handleForward}>forward</button>
+                </div>
+        
+      </>
+    ) : null (
+    );
     }
 }
 export default ProfileReview
