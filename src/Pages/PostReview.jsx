@@ -7,7 +7,8 @@ import ImagePicker from "./ImagePicker";
 
 function PostReview() {
     let navigate = useNavigate()
-    const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  console.log(user.username)
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
@@ -23,7 +24,8 @@ function PostReview() {
         ) {
           uploadImage(file)
             .then((img) => addReview(user.username, title, body, selectedCategory, img))
-            .then((id) => navigate(`/reviews/${id}`));
+            .then((id) => navigate(`/reviews/${id}`))
+            .catch((err) => console.log(err))
         } else {
           addReview(
             user.username,
@@ -31,7 +33,8 @@ function PostReview() {
             body,
             selectedCategory,
             "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
-          ).then((id) => navigate(`/reviews/${id}`));
+          ).then((id) => navigate(`/reviews/${id}`))
+          .catch((err) => console.log(err))
         }
     }
 
@@ -55,9 +58,9 @@ function PostReview() {
               value={body}
               onChange={(e) => setBody(e.target.value)}
             />
-            <p>Fill in all fields to submit</p>
+            {user.username? selectedCategory != false && title != '' && body != '' ? null: <p className="errorText">All fields must be filled before submitting</p>  :<p className="errorText">You must be signed in to post a review</p>}
             <div className="buttonBox">
-              <button onClick={upload} disabled={selectedCategory != false && title != '' && body != '' ? false : true }>Post review</button>
+              <button onClick={upload} disabled={selectedCategory != false && title != '' && body != ''  && user.username ? false : true }>Post review</button>
             </div>
           </form>
         </div>

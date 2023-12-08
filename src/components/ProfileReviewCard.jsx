@@ -6,7 +6,7 @@ function ProfileReviewCard({ review }) {
             <Link to= {`/reviews/${review.review_id}`}>
                 <div>
                     <h3>{review.title}</h3>
-                    <img src={review.review_img_url}/>
+                    <img className= 'profileReviewImg' src={review.review_img_url}/>
                 </div>
             </Link>
         </>
