@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ImagePicker({ setFile }) {
+function ImagePicker({ setFile, defaultSrc, type }) {
   const [invalidFile, setInvalidFile] = useState(false);
   function loadImg(event) {
     if (event.target.files[0].type != 'image/png' && event.target.files[0].type != 'image/jpeg') {
@@ -28,9 +28,16 @@ function ImagePicker({ setFile }) {
         />
         <img
           id="output"
-          src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+          className={type == "profile" ? "imgPickerProfileTest" : null}
+          src={
+            defaultSrc
+              ? defaultSrc
+              : "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
+          }
         />
-        {invalidFile ?  <p className="errorText">Invalid image type selected</p> : null}
+        {invalidFile ? (
+          <p className="errorText">Invalid image type selected</p>
+        ) : null}
       </>
     );
 }

@@ -1,9 +1,10 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useContext, useState } from "react"
+import { createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
+import {  useContext, useState } from "react"
 import Modal from "react-modal"
 import { auth } from "../../firebase.config";
-import { createUser, uploadImage } from "../utils/utils";
+import { createUser, getUserByUsername, uploadImage } from "../utils/utils";
 import { UserContext } from "../../Contexts/UserContext";
+import ImagePicker from "../Pages/ImagePicker";
 
 export function SignUpModal({isModalVisible, setIsModalVisible}) {
     const [email, setEmail] = useState('');
@@ -12,53 +13,74 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [step, setStep] = useState(1);
-    const { user, setUser } = useContext(UserContext);
+    const {setUser } = useContext(UserContext);
     const [passNotSame, setPassNotSame] = useState(false)
+    const [invalidEmail, setInvalidEmail] = useState(false)
+    const [emailInUse, setEmailInUse] = useState(false)
     const [passRequirementsMessage, setPassRequirements] = useState(false)
-    const [img, setImg] = useState(
-      "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
-    );
-    function back(event) {
+    const [usernameInUse, setUsernameInUse] = useState(false)
+    const [missingFields, setMissingFields] = useState(false)
+    const [file, setFile] = useState("https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729")
+  function back(event) {
         event.preventDefault()
         setStep(step - 1);
     }
-    console.log(user)
-    function next(event) {
+    async function next(event) {
         event.preventDefault();
         if (step == 1) {
-            if (pass1 === pass2 && pass1 !== '' && email !== '' && pass1.length >= 6) {
-                setStep(step + 1);
-                setPassNotSame(false);
-                
+          if (pass1 === pass2 && pass1 !== '' && email !== '' && pass1.length >= 6) { 
+            setPassNotSame(false)
+            setPassRequirements(false)
+            let res = await fetchSignInMethodsForEmail(auth, email)
+              .catch(err => setInvalidEmail(true))
+            if (res.length == 1) {
+              setInvalidEmail(false)
+              setEmailInUse(true)
+            } else if (res) {
+              setEmailInUse(false)
+              setStep(step + 1);
+            }
             } else {
-                if (pass1 != pass2) {
-                    setPassNotSame(true);
-                }
-                if (pass1.length < 6) {
-                    setPassRequirements(true)
-                }
-
+              if (pass1 != pass2) {
+                setPassRequirements(false)
+                setEmailInUse(false)
+                setInvalidEmail(false)
+                setPassNotSame(true);
+              }
+              else if (pass1.length < 6) {
+                setPassNotSame(false)
+                setEmailInUse(false)
+                setInvalidEmail(false)
+                setPassRequirements(true)
+              }
             }
         }
-            if (step == 2) {
-                if (name != '' && username != '') {
+      if (step == 2) {
+        setUsernameInUse(false)
+        let res = await getUserByUsername(username)
+          .catch(err => {
+            if (name != '' && username != '') {
                 setStep(step + 1)
-                } else {
-                    //username message needed
+            } else {
+              setMissingFields(true)
+              }
             }
+        )
+        if (res) {
+          setUsernameInUse(true)
+        }
         }
         
     }
-    async function handleSignUp(event) {
+  async function handleSignUp(event) {
         event.preventDefault();
         let cred = await createUserWithEmailAndPassword(auth, email, pass1)
-        console.log(name)
         let url;
         if (
-          img !=
+          file !=
           "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"
         ) {
-          url = await uploadImage(img);
+          url = await uploadImage(file);
         } else {
           url =
             "https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729";
@@ -67,14 +89,6 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
         setUser(newUser)
 
     }
-     function loadImg(event) {
-       setImg(event.target.files[0]);
-       let output = document.getElementById("imgPickerProfileTest");
-       output.src = URL.createObjectURL(event.target.files[0]);
-       output.onLoad = function () {
-         URL.revokeObjectURL(output.src);
-       };
-     }
    
     function closeModal() {
         setIsModalVisible(false)
@@ -99,7 +113,7 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
               </button>
             </div>
           </div>
-          <form className={step == 1 ? "VisbibleForm" : "HiddenForm"}>
+          <form className={step == 1 ? "VisibleForm" : "HiddenForm"}>
             <h3>Create Account</h3>
             <label>
               Email:
@@ -110,7 +124,6 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 required={true}
               />
             </label>
-            <hr />
             <label>
               Password:
               <input
@@ -120,9 +133,10 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 required={true}
               />
             </label>
-            <p>Passwords must be at least 6 characters in length</p>
-            {passNotSame ? <p>Passwords do not match</p> : null}
-            <hr />
+            <p className={passRequirementsMessage ? 'errorText' : null}>Passwords must be at least 6 characters in length</p>
+            {passNotSame ? <p className="errorText">Passwords do not match</p> : null}
+            {invalidEmail ? <p className="errorText">Email is invalid</p> : null}
+            {emailInUse? <p className="errorText">Email is already in use</p>: null}
             <label>
               Confirm Password:
               <input
@@ -132,13 +146,13 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 required={true}
               />
             </label>
-            <hr />
+            
             <div className="SingleButtonContainer">
               <button onClick={next}>Next</button>
             </div>
           </form>
 
-          <form className={step == 2 ? "VisbibleForm" : "HiddenForm"}>
+          <form className={step == 2 ? "VisibleForm" : "HiddenForm"}>
             <h3>User Details</h3>
             <label>
               name:
@@ -149,7 +163,6 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 required={true}
               />
             </label>
-            <hr />
             <label>
               Username:
               <input
@@ -159,31 +172,17 @@ export function SignUpModal({isModalVisible, setIsModalVisible}) {
                 required={true}
               />
             </label>
-            <hr />
+            {missingFields ? <p className="errorText">Fill in all fields</p>: null}
+            {usernameInUse ? <p className="errorText">Username already in use</p> : null}
             <div className="TwoButtons">
               <button onClick={back}>Back</button>
               <button onClick={next}>Next</button>
             </div>
           </form>
 
-          <form className={step == 3 ? "VisbibleForm" : "HiddenForm"}>
+          <form className={step == 3 ? "VisibleForm": "HiddenForm"} >
             <h3>Choose profile image</h3>
-            <label htmlFor="imagePickerProfile">Select image: </label>
-            <div className="SingleButtonContainer">
-              <input
-                type="file"
-                id="imagePickerProfile"
-                name="imagePickerProfile"
-                accept="image /*"
-                onChange={loadImg}
-              />
-              <img
-                            id="imgPickerProfileTest"
-                            src="https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729" 
-              />
-            </div>
-
-            <hr />
+            <ImagePicker setFile={setFile} defaultSrc={"https://vignette1.wikia.nocookie.net/mrmen/images/7/7f/Mr_Happy.jpg/revision/latest?cb=20140102171729"} type='profile'/>
             <div className="TwoButtons">
               <button onClick={back}>Back</button>
               <button onClick={handleSignUp}>SignUp</button>
