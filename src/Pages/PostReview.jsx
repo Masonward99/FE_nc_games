@@ -15,7 +15,7 @@ function PostReview() {
     const [file, setFile] = useState(
       "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
     );
-  
+  console.log(file.type)
     function upload(event) {
         event.preventDefault()
         if (

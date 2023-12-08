@@ -1,13 +1,22 @@
+import { useState } from "react";
+
 function ImagePicker({ setFile }) {
-    
-    function loadImg(event) {
-        setFile(event.target.files[0])
-        let output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0])
-        output.onLoad = function() {
-          URL.revokeObjectURL(output.src)
-        }
+  const [invalidFile, setInvalidFile] = useState(false);
+  function loadImg(event) {
+    console.log(event.target.files[0].type)
+    if (event.target.files[0].type != 'image/png' && event.target.files[0].type != 'image/jpeg') {
+      setInvalidFile(true)
+    } else {
+      setInvalidFile(false)
+      setFile(event.target.files[0])
+      let output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0])
+      output.onLoad = function () {
+        URL.revokeObjectURL(output.src)
+      }
     }
+  }
+  
     return (
       <>
         <label htmlFor="imagePicker">Choose an image:</label>
@@ -22,6 +31,7 @@ function ImagePicker({ setFile }) {
           id="output"
           src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
         />
+        {invalidFile ?  <p className="errorText">Invalid image type selected</p> : null}
       </>
     );
 }
