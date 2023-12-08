@@ -85,9 +85,8 @@ ul{
 }
 .SignUpModalContainer{
   background-color: black;
-  height: 365px;
-  width: 300px;
   text-align: left;
+  max-width: max-content;
   
 }
 .SingleButtonContainer{
@@ -103,7 +102,10 @@ h3{
   display: none;
 }
 .VisibleForm{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
 }
 .progressBar {
   display: flex;
@@ -183,9 +185,10 @@ h3{
   margin: auto;
 }
 
-#imgPickerProfileTest {
-  height: 40px;
-  width: 40px;
+.imgPickerProfileTest {
+  max-height: 250px;
+  max-width: 250px;
+  text-align: center;
 }
 
 .navbar {

@@ -132,3 +132,7 @@ export function getReviewsByUsername(username) {
     return games.get(`/users/${username}/reviews`)
     .then(({data}) => data.reviews)
 }
+
+export function checkEmail(email) {
+    return 
+}
