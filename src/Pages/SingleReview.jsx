@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom"
-import { getComments, getReview } from "../utils/utils"
+import { useNavigate, useParams } from "react-router-dom"
+import { deleteReviewById, getComments, getReview } from "../utils/utils"
 import { useState, useEffect, useContext } from "react"
 import CommentCard from "../components/CommentCard"
 import VoteButton from "../components/VoteButton"
@@ -15,6 +15,7 @@ function SingleReview() {
     const { review, isLoading } = useReviewById(review_id);
     const [isLoading2, setIsLoading2] = useState(true);
     const [comments, setComments] = useState('')
+    let navigate = useNavigate()
     useEffect(() => {
         getComments(review_id)
         .then(data => {
@@ -26,11 +27,19 @@ function SingleReview() {
     if (isLoading || isLoading2) {
         return <h2>Loading</h2>
     }
+    function handleDelete() {
+        console.log(review.review_id)
+        deleteReviewById(review.review_id)
+            .then(()=> navigate('/'))
+    }
     return (
         <div className="pageContent">
             <div className="singleReviewContainer">
                 <h2 className="pageHeading">{review.title}</h2>
-                <UserImage username={review.owner} date={review.created_at} />
+                <div className="singleReviewTop">
+                    <UserImage username={review.owner} date={review.created_at} />
+                    {user.username == review.owner? <button onClick={handleDelete}>Delete</button> : null}
+                </div>
                 <div className="testBox">
                     <img src={review.review_img_url} />
                 </div>

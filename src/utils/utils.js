@@ -77,7 +77,7 @@ export function signIn(id) {
     console.log(id)
     return games
         .get(`/users/id/${id}`)
-    .then(({data})=>data.user)
+        .then(({data})=>data.user)
 }
 
 export function getCommentsByUser(username) {
@@ -133,6 +133,7 @@ export function getReviewsByUsername(username) {
     .then(({data}) => data.reviews)
 }
 
-export function checkEmail(email) {
-    return 
+export function deleteReviewById(id) {
+    return games.delete(`/reviews/${id}`)
+        .then(res => console.log(res))
 }

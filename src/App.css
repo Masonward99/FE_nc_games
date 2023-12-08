@@ -501,3 +501,13 @@ a :hover {
   object-fit: contain;
   max-width:  min( 600px, 60%);
 }
+
+.singleReviewTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.singleReviewTop button {
+  width: 100px;
+  height: 100%;
+}
