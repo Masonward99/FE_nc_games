@@ -54,7 +54,7 @@ function SingleReview() {
                 />
                 {
                     comments.length === 0 ? (
-                        <p>There are no comments on this review yet, be the first to leave acomment!</p>
+                        <p>There are no comments on this review yet, be the first to leave a comment!</p>
                     ) : null}
                     {comments.map((comment) => {
                     return (

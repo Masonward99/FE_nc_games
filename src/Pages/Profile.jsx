@@ -32,14 +32,8 @@ function Profile() {
                 </div>
                 {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
             </div>
-                <h2>Recent reviews:</h2>
-            <div className="reviewsShowcase">
                 <ProfileReview username={user.username}/>
-            </div>
-            <h2>Recent comments:</h2>
-            <div className="commentsList">
                 <ProfileComments username={user.username}/>
-            </div>
         </div> 
     )
 }

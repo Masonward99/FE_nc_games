@@ -482,3 +482,19 @@ a :hover {
 .profileCommentCard {
   border-bottom: 1px dotted white;
 }
+.buttonBox :disabled {
+  color: white;
+  opacity: 10%;
+  pointer-events: none;
+}
+.errorText {
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.profileReviewImg {
+  object-fit: contain;
+  max-width:  min( 600px, 60%);
+}
