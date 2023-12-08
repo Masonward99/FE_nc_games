@@ -18,8 +18,8 @@ function SortDropdown ({ setSort, order, setOrder}){
                 <option value="comment_count">Comments</option>
                 <option value="votes">Votes</option>
             </select>
-        <button onClick={handleButton} value={order}>{order!=="desc" ? "⬆️" : "⬇️"}</button>
-      </form>
+            <button onClick={handleButton} value={order}>{order!=="desc" ? "⬆️" : "⬇️"}</button>
+        </form>
     )
 }
 export default SortDropdown

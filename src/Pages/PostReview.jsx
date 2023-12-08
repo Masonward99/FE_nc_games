@@ -7,15 +7,13 @@ import ImagePicker from "./ImagePicker";
 
 function PostReview() {
     let navigate = useNavigate()
-  const { user } = useContext(UserContext);
-  console.log(user.username)
+    const { user } = useContext(UserContext);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [selectedCategory, setSelectedCategory] = useState(false);
     const [file, setFile] = useState(
       "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
     );
-  console.log(file.type)
     function upload(event) {
         event.preventDefault()
         if (
@@ -33,8 +31,9 @@ function PostReview() {
             body,
             selectedCategory,
             "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
-          ).then((id) => navigate(`/reviews/${id}`))
-          .catch((err) => console.log(err))
+          )
+            .then((id) => navigate(`/reviews/${id}`))
+            .catch((err) => console.log(err))
         }
     }
 

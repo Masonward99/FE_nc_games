@@ -22,18 +22,18 @@ function Profile() {
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
                 <div className="cont2">
-                <div className="profileImgContainer">
-                    <img src={user.avatar_url} className="profileImg" />
-                </div>
-                <div className="profileName">
-                    <p >Username: {user.username}</p>
-                    <p >Name: {user.name}</p>    
-                </div>
+                    <div className="profileImgContainer">
+                        <img src={user.avatar_url} className="profileImg" />
+                    </div>
+                    <div className="profileName">
+                        <p >Username: {user.username}</p>
+                        <p >Name: {user.name}</p>    
+                    </div>
                 </div>
                 {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
             </div>
-                <ProfileReview username={user.username}/>
-                <ProfileComments username={user.username}/>
+            <ProfileReview username={user.username}/>
+            <ProfileComments username={user.username}/>
         </div> 
     )
 }

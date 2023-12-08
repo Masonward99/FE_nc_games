@@ -15,19 +15,19 @@ function OwnProfile() {
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
                 <div className="cont2">
-                <div className="profileImgContainer">
-                    <img src={user.avatar_url} className="profileImg" />
+                    <div className="profileImgContainer">
+                        <img src={user.avatar_url} className="profileImg" />
+                    </div>
+                    <div className="profileName">
+                        <p >Username: {user.username}</p>
+                        <p >Name: {user.name}</p>    
+                    </div>
                 </div>
-                <div className="profileName">
-                    <p >Username: {user.username}</p>
-                    <p >Name: {user.name}</p>    
-                </div>
-                </div>
-                    <button className="profileSignOut" onClick={handleSignOut}>sign out</button>    
+                <button className="profileSignOut" onClick={handleSignOut}>sign out</button>    
             </div>
-                <ProfileReview username={user.username}/>
-                <ProfileComments username={user.username}/>
-       </div> 
+            <ProfileReview username={user.username} />
+            <ProfileComments username={user.username}/>
+        </div> 
 
     )
 }

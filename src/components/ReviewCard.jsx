@@ -21,7 +21,7 @@ function ReviewCard({ review }) {
             />
             <p>Comments: {review.comment_count}</p>
         </div>
-    </div>
+      </div>
     );
 }
 export default ReviewCard

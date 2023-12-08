@@ -15,9 +15,9 @@ function CommentCard({ comment, remove, comments, setComments }) {
                 <UserImage username={comment.author} date={comment.created_at} />
                 {remove ? <button onClick={handleDelete}>delete</button> : null}
             </div>
-        <p>{comment.body}</p>
-        <VoteButton direction='horizontal' type='comments' id={comment.comment_id} count={comment.votes}/>
-      </div>
+            <p>{comment.body}</p>
+            <VoteButton direction='horizontal' type='comments' id={comment.comment_id} count={comment.votes}/>
+        </div>
     );
 }
 export default CommentCard

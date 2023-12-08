@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReviews, getReviewsByUsername } from "../utils/utils";
+import {  getReviewsByUsername } from "../utils/utils";
 
 export function useReviewsByUsername(username) {
     const [reviews, setReviews] = useState('');

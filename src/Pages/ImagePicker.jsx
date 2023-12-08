@@ -3,7 +3,6 @@ import { useState } from "react";
 function ImagePicker({ setFile }) {
   const [invalidFile, setInvalidFile] = useState(false);
   function loadImg(event) {
-    console.log(event.target.files[0].type)
     if (event.target.files[0].type != 'image/png' && event.target.files[0].type != 'image/jpeg') {
       setInvalidFile(true)
     } else {
