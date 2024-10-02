@@ -12,15 +12,14 @@
   border-radius: 5%;
   margin-bottom:10 px;
   padding: 20px;
-
 }
 .reviewListItem :hover {
   background-color: white;
   color: black;
 }
 .reviewCard img {
-  width: 80%;
-  max-height: 50%;
+  height: 500px;
+  width: 700px;
   object-fit: contain;
 }
 .catCard img {
@@ -130,49 +129,40 @@ h3{
 .profileContainer {
   display: flex;
   flex-direction: row;
-  height: 30vh;
-  max-height: 300px;
-  text-align: left;
   width: 100%;
-  justify-content: space-between;
 }
-.profileImgContainer {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  overflow: hidden;
-  flex-grow: 1;
-}
-.profileImg {
-  object-fit: cover;
-  width: 100%;
-  max-height: 100%;
+
+.profileContainer img {
+  object-fit: contain;
+  height: 150px;
+  width: 150px;
   border: 2px solid black;
   border-radius: 20%;
+  background-color: white;
 }
-.profileUsername {
-  grid-column: 3;
-  grid-row: 1;
-  margin-left: 25px;
-  font-size: 30px;
-}
+
 .profileName {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin: 10px;
+  justify-content: flex-start;
 }
-.profileEditButton {
-  grid-column: 4;
-  grid-row: 1;
+
+.profileName h3 {
+  color: white;
+  margin: 0px;
+  font-size: 35px;
 }
+
+.profileName p{
+  margin-top: 5px;
+}
+
 .profileSignOut {
   height: 80px;
   width: 150px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  margin-left: auto;
 }
 .SignOutModal {
   height:200px;
@@ -460,16 +450,11 @@ a :hover {
   width: fit-content;
 }
 .profilePage {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
     padding: 5px;
     text-align: center;
     height: 100%;
-}
-.cont2 {
-  display: flex;
-  flex-direction: row;
-  width: max-content;
 }
 .csstest {
   height: 100%;

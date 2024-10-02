@@ -10,10 +10,19 @@ function Profile() {
     let { username } = useParams();
     let signedInUser = useContext(UserContext)
     const [isModalVisible, setIsModalVisible] = useState(false)
-    let { user, isLoading } = useUserByUsername(username)
-      function handleSignOut() {
-          setIsModalVisible(true);
-      }
+    let isLoading, user
+    if (signedInUser.username == username || !username) {
+        user = signedInUser.user
+        isLoading = false
+    } else {
+        let contextDetails = useUserByUsername(username)
+        user = contextDetails.user
+        isLoading = contextDetails.isLoading
+    }
+
+    function handleSignOut() {
+        setIsModalVisible(true);
+    }
     if (isLoading) {
         return 'Loading... '
     }
@@ -21,14 +30,10 @@ function Profile() {
         <div className="profilePage">
             <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
             <div className="profileContainer">
-                <div className="cont2">
-                    <div className="profileImgContainer">
-                        <img src={user.avatar_url} className="profileImg" />
-                    </div>
-                    <div className="profileName">
-                        <p >Username: {user.username}</p>
-                        <p >Name: {user.name}</p>    
-                    </div>
+                <img src={user.avatar_url} />
+                <div className="profileName">
+                    <h3 >{user.username}</h3>
+                    <p >{user.name}</p>    
                 </div>
                 {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
             </div>
