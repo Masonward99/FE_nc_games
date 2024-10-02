@@ -159,7 +159,7 @@ h3{
   margin-top: 5px;
 }
 
-.profileSignOut {
+.profileContainer button {
   height: 80px;
   width: 150px;
   margin-left: auto;
@@ -190,7 +190,13 @@ h3{
   margin: auto;
   max-width: 1200px;
 }
-.navbarItem{
+
+.navbar p {
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+}
+.navbar li{
   flex-grow: 1;
   text-align: center;
   flex-basis: 0;
@@ -198,7 +204,7 @@ h3{
   max-width: 150px;
   
 }
-.navbarButtons {
+.navbar ul {
   flex-grow: 1;
   display: flex;
   height: 100%;
@@ -218,17 +224,14 @@ h3{
   height: 55px;
   width: 100%;
 }
-.navbarLogo{
+.navbar img{
   object-fit: contain;
   max-height: 40px;
   margin-left: 10px;
   margin-right: 10px;
   order:0;
 }
-.navbarLink {
-  color: white ;
-  font-size: 1.5em;
-}
+
 button {
   color: white;
   margin: 3px;

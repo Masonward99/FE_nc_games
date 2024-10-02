@@ -6,16 +6,15 @@ function Nav() {
     return (
         <div className="navbarContainer">
             <div className="navbar">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq_2KJjeIbznu0Sg-mf55vqjuhzsHycpgh8w&usqp=CAU" className="navbarLogo" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq_2KJjeIbznu0Sg-mf55vqjuhzsHycpgh8w&usqp=CAU"  />
                 <p >NC Games</p>
-                <ul className="navbarButtons">
-                    <li className="navbarItem"><Link to='/login' className="navbarLink"><div className="linkBox">{user ? 'Profile' : 'Login'}</div></Link></li>
-                    <li className="navbarItem"><Link to='/addreview' className="navbarLink"><div className="linkBox">Post Review</div></Link></li>
-                    <li className="navbarItem"><Link to='/' className="navbarLink"><div className="linkBox">Reviews </div></Link></li>
+                <ul >
+                    <li ><Link to='/login' ><div className="linkBox"><p>{user ? 'Profile' : 'Login'}</p></div></Link></li>
+                    <li ><Link to='/addreview' ><div className="linkBox"><p>Post Review</p></div></Link></li>
+                    <li ><Link to='/' ><div className="linkBox"><p>Reviews</p></div></Link></li>
                 </ul>
             </div>
         </div>
-    
     )
 }
 export default Nav

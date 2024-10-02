@@ -4,8 +4,7 @@ import ProfileCommentCard from "./ProfileCommentCard"
 function ProfileComments({ username }) {
     const { comments, isLoading } = useComments(username)
     {
-        return isLoading ? 'Loading...' : (
-                comments.length > 0 ?  (
+        return  comments.length > 0 ?  (
             <>
                 <h2>Recent comments:</h2>
                 <div className="commentsList">
@@ -17,7 +16,6 @@ function ProfileComments({ username }) {
                 </div>
             </>
             ) : null 
-        )
     }
 }
 export default ProfileComments

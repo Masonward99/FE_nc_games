@@ -3,7 +3,7 @@ import { useReviewsByUsername } from "../hooks/useReviewsByUsername";
 import ProfileReviewCard from "./ProfileReviewCard";
 
 function ProfileReview({ username }) {
-    const { reviews, isLoading } = useReviewsByUsername(username);
+    const { reviews } = useReviewsByUsername(username);
     const [selectedReview, setSelectedReview] = useState(0);
     function handleForward() {
         if (selectedReview < reviews.length - 1) {
@@ -20,9 +20,7 @@ function ProfileReview({ username }) {
            }
        }
    
-    {return isLoading ? (
-      "Loading..."
-    ) : reviews.length > 0 ? (
+    { return reviews.length > 0 ? (
         <>
             <h2>Recent reviews:</h2>
             <div className="reviewsShowcase">

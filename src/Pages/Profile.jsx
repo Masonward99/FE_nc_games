@@ -35,7 +35,7 @@ function Profile() {
                     <h3 >{user.username}</h3>
                     <p >{user.name}</p>    
                 </div>
-                {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
+                {signedInUser.user.username == user.username ? <button onClick={handleSignOut}>sign out</button> : null}   
             </div>
             <ProfileReview username={user.username}/>
             <ProfileComments username={user.username}/>
