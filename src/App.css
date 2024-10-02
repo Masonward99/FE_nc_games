@@ -140,6 +140,7 @@ h3{
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
   overflow: hidden;
+  flex-grow: 1;
 }
 .profileImg {
   object-fit: cover;
@@ -277,18 +278,15 @@ button {
   display: flex;
   flex-direction: row;
   text-align: left;
+  width: 100%;
+  justify-content: space-around;
 }
 .reviewCardTopDetails p {
   margin:10px;
+  flex-grow: 1;
+  text-align: center;
 }
-.reviewCardBottomDetails {
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-}
-.reviewCardBottomDetails p {
-  margin: 10px;
-}
+
 .reviewListItem {
   color: white;
 }
@@ -523,4 +521,7 @@ a :hover {
   .navbar p {
     display: none;
   }
+}
+Link {
+  width: 100%;
 }

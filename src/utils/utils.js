@@ -2,11 +2,9 @@ import axios from "axios";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase.config";
 
-
 const games = axios.create({
   baseURL: "https://nc-games-83l3.onrender.com/api"
 });
-
 
 export function getReviews(cat, sort, order) {
     if (cat != 'false') {
