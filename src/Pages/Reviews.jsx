@@ -3,6 +3,7 @@ import { getReviews } from "../utils/utils";
 import ReviewCard from "../components/ReviewCard";
 import SortDropdown from "../components/SortDropdown";
 import CategoryCheckBox from "../components/CategoryCheckbox";
+import SkeletonReviewCard from "../components/SkeletonReviewCard";
 
 function Reviews() {
   const [reviews, setReviews] = useState('')
@@ -17,11 +18,7 @@ function Reviews() {
        })
   }, [selectedCategory, sort, order])
   
-  if (isLoading) {
-    return (
-      <h2>loading</h2>
-    )
-  }
+  
   return (
     <div className="pageContent">
       <h2 className="pageHeading">Reviews</h2>
@@ -30,16 +27,16 @@ function Reviews() {
           <CategoryCheckBox setSelectedCategory={setSelectedCategory} />
           <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
         </div>
-        <div className="reviewContentRight">
-          <ul className="reviewList">
-            {reviews.map((review) => {
-            return (
-              <li key={review.review_id} className="reviewListItem ">
-                <ReviewCard review={review} />
-              </li>
-            );
-            })}
-          </ul>
+         <div className="reviewContentRight">
+			{isLoading ? <SkeletonReviewCard count={8}/> : <ul className="reviewList">
+				{reviews.map((review) => {
+					return (
+						<li key={review.review_id} className="reviewListItem ">
+							<ReviewCard review={review} />
+						</li>
+					);
+				})}
+			</ul>}
         </div>
       </div>
     </div>

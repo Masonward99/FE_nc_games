@@ -1,10 +1,12 @@
 import { useCategories } from "../hooks/useCategories";
 
 function CategoryDropDown({ setSelectedCategory }) {
-    const { categories, isLoading } = useCategories();
-    
+    const categories = JSON.parse(localStorage.getItem('categories'))
+    if (!categories) {
+        useCategories()
+    }
     {
-        return isLoading ? 'Loading...' : (
+        return !categories ? 'Loading...' : (
             <div className="catDd">
                 <label htmlFor="categoryDropdown">Choose a category: </label>
                 <select id="categoryDropdown" onChange={e => setSelectedCategory(e.target.value)}>
