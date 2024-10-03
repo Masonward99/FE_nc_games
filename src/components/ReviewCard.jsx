@@ -21,6 +21,6 @@ function ReviewCard({ review }) {
 			<img src={review.review_img_url} />
 		</Link>
 	</div>
-    );
+      );
 }
 export default ReviewCard

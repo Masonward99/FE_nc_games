@@ -223,6 +223,7 @@ h3{
   color: black;
   height: 55px;
   width: 100%;
+  z-index: 9999;
 }
 .navbar img{
   object-fit: contain;
@@ -449,8 +450,21 @@ a :hover {
 .reviewsShowcase {
   display: flex;
   flex-direction: row;
-  margin:auto;
-  width: fit-content;
+  width: 100%;
+  justify-content: space-around;
+  border: 1px solid white ;
+}
+.reviewsShowcase img {
+  height: 300px;
+  width: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
+  object-fit: contain;
+}
+.reviewsShowcase button {
+  height: 80px;
+  width: 100px;
+  margin: auto;
 }
 .profilePage {
   max-width: 1200px;
@@ -479,6 +493,10 @@ a :hover {
   opacity: 10%;
   pointer-events: none;
 }
+.profileReviewCard {
+  position: relative;
+  color: white;
+}
 .errorText {
   background-color: red;
   color: white;
@@ -501,9 +519,19 @@ a :hover {
   height: 100%;
 }
 
-.profileReviewCard {
-  max-width: 700px;
+.profileReviewCard img {
+  width: 700px;
+  height: 500px;
+  object-fit: contain;
 }
+
+.profileReviewCard h3 {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 @media only screen and (max-width: 600px){ 
   .navbar p {
