@@ -130,6 +130,8 @@ h3{
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
 }
 
 .profileContainer img {
@@ -473,6 +475,9 @@ a :hover {
     text-align: center;
     height: 100%;
 }
+.profilePage h2 {
+  font-size: 45px;
+}
 .csstest {
   height: 100%;
   justify-content: center;
@@ -486,7 +491,31 @@ a :hover {
     padding: 10px;
 }
 .profileCommentCard {
-  border-bottom: 1px dotted white;
+  width: 380px;
+  height: 100px;
+  background-color: lightblue;
+  color: black;
+  margin: 10px;
+  overflow: hidden;
+}
+.profileCommentCard h3 {
+  color: darkblue;
+  margin: 10px;
+  display: -webkit-box;
+  line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.profileCommentCard p{
+  margin: 10px;
+  display: -webkit-box;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .buttonBox :disabled {
   color: white;
@@ -527,9 +556,17 @@ a :hover {
 
 .profileReviewCard h3 {
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 80px;
+    left: 16px;
+    color: darkblue;
+    z-index: 1;
+    backdrop-filter: 5px;
+}
+
+.commentsList {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
 }
 
 

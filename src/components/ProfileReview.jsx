@@ -19,7 +19,6 @@ function ProfileReview({ username }) {
     }
     let prev = calculateIndex(false, selectedReview, reviews.length)
     let next = calculateIndex(true, selectedReview, reviews.length)
-    console.log(prev)
     function handleForward() {
         setSelectedReview(next)
     }
@@ -29,7 +28,7 @@ function ProfileReview({ username }) {
     
     { return reviews.length > 0 ? (
       <>
-        <h2>Recent reviews:</h2>
+        <h2>Reviews</h2>
         <div className="reviewsShowcase">
           <img src={reviews[prev].review_img_url} />
           <button onClick={handleBack}>back</button>
