@@ -28,10 +28,10 @@ function Reviews() {
           <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
         </div>
          <div className="reviewContentRight">
-			{isLoading ? <SkeletonReviewCard count={8}/> : <ul className="reviewList">
+			    {isLoading ? <SkeletonReviewCard count={20}/> : <ul className="reviewList">
 				{reviews.map((review) => {
 					return (
-						<li key={review.review_id} className="reviewListItem ">
+						<li key={review.review_id} >
 							<ReviewCard review={review} />
 						</li>
 					);

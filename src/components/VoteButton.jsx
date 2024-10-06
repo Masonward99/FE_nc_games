@@ -4,6 +4,7 @@ import { patchVotes } from "../utils/utils"
 function VoteButton({ direction, id, count, type }) {
     const [incCount, setIncCount] = useState(0)
     function changeVotes(event) {
+        event.preventDefault()
         if (incCount === 0 && event.target.value === '+') {
             patchVotes(id,  1, type)
             setIncCount(1)

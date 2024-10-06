@@ -35,14 +35,12 @@ function SingleReview() {
     return (
         <div className="pageContent">
             <div className="singleReviewContainer">
-                <h2 className="pageHeading">{review.title}</h2>
                 <div className="singleReviewTop">
                     <UserImage username={review.owner} date={review.created_at} />
                     {user.username == review.owner? <button onClick={handleDelete}>Delete</button> : null}
                 </div>
-                <div className="testBox">
-                    <img src={review.review_img_url} />
-                </div>
+                <h2 >{review.title}</h2>
+                <img src={review.review_img_url} />
                 <p>{review.review_body}</p>
                 <div className="reviewCardBottomDetails">
                     <VoteButton
