@@ -8,10 +8,14 @@
   padding: 0px;
 }
 
+svg{
+  pointer-events: none;
+}
+
 .reviewCard {
   padding: 10px;
   width: 800px;
-  border-top: 1px dotted white;
+  border-bottom: 1px dotted white;
 }
 .reviewCard img {
   height: 500px;
@@ -29,15 +33,16 @@
   font-size: 30px;
   text-align: left;
 }
+.reviewCard a{
+  color: white;
+}
 
 .reviewCardBottom {
   display: flex;
   flex-direction: row;
   text-align: left;
   width: 100%;
-}
-.reviewCardBottom p {
-  margin:10px;
+  gap: 10px;
 }
 
 .reviewList {
@@ -49,10 +54,6 @@
 }
 .reviewList li {
   color: white;
-}
-.reviewList li :hover {
-  background-color: white;
-  color: black;
 }
 
 .singleReview {
@@ -284,10 +285,6 @@ button {
   text-align: center;
   height: 100%;
 }
-.horizontalVoteButtonContainer{
-  display: flex;
-  flex-direction: row;
-}
 
 .reviewsPageContainer {
   display: flex;
@@ -313,10 +310,7 @@ button {
   background-color: white;
   color: black;
 }
-a :hover {
-  background-color: white;
-  color: black;
-}
+
 .reviewContentRight {
   flex-grow: 2;
   max-width: 900px;
@@ -567,7 +561,24 @@ a :hover {
   width: 100%;
   flex-flow: row wrap;
 }
-
+.numComments {
+  display: flex;
+  width: 100px;
+  border-radius: 20px;
+    border: 1px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+.numComments p{
+  margin: auto;
+}
+.numComments svg{
+  margin: auto;
+}
 
 @media only screen and (max-width: 600px){ 
   .navbar p {
@@ -576,4 +587,7 @@ a :hover {
 }
 Link {
   width: 100%;
+}
+.upArrow :hover{
+  fill: red
 }
