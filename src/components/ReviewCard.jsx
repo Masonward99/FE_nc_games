@@ -8,7 +8,7 @@ function ReviewCard({ review }) {
     return (
 		<div className="reviewCard">
 			<UserImage date={review.created_at} username={review.owner} />
-			<Link to={`/reviews/${review.review_id}`}>
+			<Link to={`/reviews/${review.review_id}`} className='reviewLink'>
 				<div>
 					<h3> {review.title} </h3>
 					<img src={review.review_img_url} />

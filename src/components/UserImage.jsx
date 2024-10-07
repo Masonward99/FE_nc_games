@@ -1,6 +1,7 @@
 import { calculateTimePassed, getUserByUsername } from "../utils/utils"
 import { Link } from "react-router-dom"
 import { useUserByUsername } from "../hooks/useUserByUsername"
+import './css/userImage.css'
 
 function UserImage({ username, date }) {
     const { user, isLoading } = useUserByUsername(username);
@@ -9,7 +10,7 @@ function UserImage({ username, date }) {
         return 'Loading...'
     }
     return (
-        <Link to={`/profile/${user.username}`}>
+        <Link to={`/profile/${user.username}`} className="imgLink">
             <div className="userImgContainer">
                 <img src={user.avatar_url} />
                 <div className="imgText">
