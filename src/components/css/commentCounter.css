@@ -1,0 +1,27 @@
+.reviewCardBottom {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    gap: 10px;
+}
+.numComments {
+    display: flex;
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+
+.numComments p {
+    margin: auto;
+}
+
+.numComments svg {
+    margin: auto;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useReviewsByUsername } from "../hooks/useReviewsByUsername";
+import {useReviewsByUsername} from '../../../../hooks/useReviewsByUsername'
 import ProfileReviewCard from "./ProfileReviewCard";
+import './ProfileReviews.css'
 
 function ProfileReview({ username }) {
     const { reviews } = useReviewsByUsername(username);

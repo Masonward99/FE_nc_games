@@ -1,0 +1,21 @@
+.singleReview {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.singleReview img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.singleReviewTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.singleReviewTop button {
+    width: 100px;
+    height: 100%;
+}

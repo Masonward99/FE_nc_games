@@ -1,5 +1,6 @@
-import { useReviewById } from "../hooks/useReviewById"
+import { useReviewById } from "../../../../hooks/useReviewById"
 import { Link } from "react-router-dom"
+import './ProfileComments.css'
 
 function ProfileCommentCard({ comment }) {
     const { review, isLoading } = useReviewById(comment.review_id)

@@ -1,0 +1,9 @@
+.commentTextArea {
+    width: calc(100% - 22px);
+    height: 75px;
+    background-color: #313639;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    resize: none;
+}

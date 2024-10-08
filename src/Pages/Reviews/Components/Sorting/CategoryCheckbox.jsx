@@ -1,4 +1,4 @@
-import { useCategories } from "../hooks/useCategories"
+import { useCategories } from "../../../../hooks/useCategories";
 
 function CategoryCheckBox({ setSelectedCategory }) {
     const categories = JSON.parse(localStorage.getItem('categories'))
@@ -9,7 +9,7 @@ function CategoryCheckBox({ setSelectedCategory }) {
         return !categories ? (
           "Loading..."
         ) : (
-          <>
+          <div className="catCheckbox">
             <h2 className="checkboxHeading">Choose category:</h2>
             <form onChange={(e) => setSelectedCategory(e.target.value)}>
               <input
@@ -34,7 +34,7 @@ function CategoryCheckBox({ setSelectedCategory }) {
                 );
               })}
             </form>
-          </>
+          </div>
         );
     }
 }

@@ -1,0 +1,15 @@
+.singleReviewContent {
+    width: min(96vw, 1200px);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.singleReviewContent img {
+    width: 96%;
+    margin: auto;
+}
+
+.singleReviewContent h2 {
+    text-align: center;
+}

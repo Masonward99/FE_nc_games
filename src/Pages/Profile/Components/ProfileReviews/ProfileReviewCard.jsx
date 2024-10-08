@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import './ProfileReviews.css'
 
 function ProfileReviewCard({ review }) {
     return (

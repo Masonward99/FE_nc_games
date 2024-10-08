@@ -1,0 +1,29 @@
+.profileCommentCard {
+    width: 380px;
+    height: 100px;
+    background-color: lightblue;
+    color: black;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.profileCommentCard h3 {
+    color: darkblue;
+    margin: 10px;
+    display: -webkit-box;
+    line-clamp: 1;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.profileCommentCard p {
+    margin: 10px;
+    display: -webkit-box;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

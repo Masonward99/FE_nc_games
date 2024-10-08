@@ -1,6 +1,8 @@
+import "./nav.css"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { UserContext } from "../../Contexts/UserContext"
+import { UserContext } from "../../../Contexts/UserContext";
+
 function Nav() {
     const { user } = useContext(UserContext);
     return (

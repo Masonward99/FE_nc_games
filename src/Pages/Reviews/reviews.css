@@ -1,0 +1,54 @@
+.reviewsPageContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reviewContentLeft {
+    flex-grow: 1;
+    width: min(400px, 25%);
+    text-align: left;
+    align-self: top;
+    border-right: 1px dotted white;
+}
+
+.reviewContentRight {
+    flex-grow: 2;
+    width: min(800px, 75%);
+}
+
+.reviewList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.reviewList li {
+    color: white;
+}
+.catDd{
+    display: none;
+}
+@media screen and (max-width:650px) {
+    .reviewsPageContainer{
+        flex-direction: column;
+    }
+    .reviewContentRight, .reviewContentLeft {
+        width: 100%;
+    }
+    .reviewContentLeft{
+        display: flex;
+        gap: 20px;
+    }
+    .catCheckbox {
+        display: none;
+    }
+    .catDd {
+        display: flex;
+    }
+    .catDd label{
+        margin: auto;
+    }
+}

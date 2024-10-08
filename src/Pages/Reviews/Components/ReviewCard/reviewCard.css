@@ -1,0 +1,35 @@
+.reviewCard {
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px dotted white;
+}
+
+.reviewCard img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.reviewCard h3 {
+    display: -webkit-box;
+    line-clamp: 1;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: white;
+    font-size: 30px;
+    text-align: left;
+}
+
+.reviewCard a {
+    color: white;
+}
+
+.reviewCard:hover {
+    background-color: darkgrey;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
