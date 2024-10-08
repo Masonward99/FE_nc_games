@@ -1,3 +1,7 @@
+import DownArrow from "./icons/DownArrow"
+import UpArrow from "./icons/UpArrow"
+import './css/sortDropdown.css'
+
 function SortDropdown ({ setSort, order, setOrder}){ 
     function handleChange(event) {
         setSort(event.target.value)
@@ -12,13 +16,13 @@ function SortDropdown ({ setSort, order, setOrder}){
     }
     return (
         <form className="dropdownForm">
-            <label htmlFor='sortDropdown' className="ddLabel">Sort by: </label>
+            <label htmlFor='sortDropdown'>Sort by: </label>
             <select id="sortDropdown" onChange={handleChange}>
                 <option value="created_at">Date</option>
                 <option value="comment_count">Comments</option>
                 <option value="votes">Votes</option>
             </select>
-            <button onClick={handleButton} value={order}>{order!=="desc" ? "⬆️" : "⬇️"}</button>
+            <button onClick={handleButton} value={order}>{order!=="desc" ? <UpArrow/> : <DownArrow/>}</button>
         </form>
     )
 }

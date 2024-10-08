@@ -5,35 +5,39 @@ import { useUserByUsername } from "../hooks/useUserByUsername";
 import SignOutModal from "../modals/SignOutModal";
 import ProfileComments from "../components/ProfileComments";
 import ProfileReview from "../components/ProfileReview";
+import SkeletonProfileTop from "../components/SkeletonProfileTop";
 
 function Profile() {
     let { username } = useParams();
     let signedInUser = useContext(UserContext)
     const [isModalVisible, setIsModalVisible] = useState(false)
-    let { user, isLoading } = useUserByUsername(username)
-      function handleSignOut() {
-          setIsModalVisible(true);
-      }
-    if (isLoading) {
-        return 'Loading... '
+    let  user
+    if (signedInUser.username == username || !username) {
+        user = signedInUser.user
+    } else {
+        user = useUserByUsername(username).user
+    }
+
+    function handleSignOut() {
+        setIsModalVisible(true);
     }
     return (
         <div className="profilePage">
-            <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
-            <div className="profileContainer">
-                <div className="cont2">
-                    <div className="profileImgContainer">
-                        <img src={user.avatar_url} className="profileImg" />
+            {!user ? <SkeletonProfileTop /> : 
+                <>     
+                    <SignOutModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
+                    <div className="profileContainer">
+                        <img src={user.avatar_url} /> 
+                        <div className="profileName">
+                            <h3 >{user.username} </h3>
+                            <p >{user.name}</p>    
+                        </div>
+                        {signedInUser.user.username == user.username ? <button onClick={handleSignOut}>sign out</button> : null}   
                     </div>
-                    <div className="profileName">
-                        <p >Username: {user.username}</p>
-                        <p >Name: {user.name}</p>    
-                    </div>
-                </div>
-                {signedInUser.user.username == user.username ? <button className="profileSignOut" onClick={handleSignOut}>sign out</button> : null}   
-            </div>
-            <ProfileReview username={user.username}/>
-            <ProfileComments username={user.username}/>
+                    <ProfileReview username={user.username}/>
+                    <ProfileComments username={user.username} />
+                </>
+            }
         </div> 
     )
 }

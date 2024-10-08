@@ -1,0 +1,35 @@
+.userImgContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    max-height: 60px;
+    margin-bottom: 10px;
+    text-align: left;
+
+}
+
+.userImgContainer img {
+    grid-column: 1;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.userImgContainer p {
+    margin: 0;
+}
+
+.imgText {
+    display: flex;
+    flex-grow: 1;
+    max-height: 60px;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.imgLink div:hover {
+    color: blue;
+    background-color: darkgrey;
+}

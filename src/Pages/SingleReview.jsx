@@ -7,6 +7,7 @@ import CreateComment from "../components/CreateComment"
 import { UserContext } from "../../Contexts/UserContext"
 import UserImage from "../components/UserImage"
 import { useReviewById } from "../hooks/useReviewById"
+import CommentBubble from "../components/icons/CommentBubble"
 
 function SingleReview() {
     const { user } = useContext(UserContext);
@@ -33,49 +34,54 @@ function SingleReview() {
             .then(()=> navigate('/'))
     }
     return (
-        <div className="pageContent">
-            <div className="singleReviewContainer">
-                <h2 className="pageHeading">{review.title}</h2>
-                <div className="singleReviewTop">
-                    <UserImage username={review.owner} date={review.created_at} />
-                    {user.username == review.owner? <button onClick={handleDelete}>Delete</button> : null}
-                </div>
-                <div className="testBox">
-                    <img src={review.review_img_url} />
-                </div>
-                <p>{review.review_body}</p>
-                <div className="reviewCardBottomDetails">
-                    <VoteButton
-                        direction="horizontal"
-                        id={review.review_id}
-                        count={review.votes}
-                        type='review'
-                    />
-                    <p>Comments: {review.comment_count}</p>
-                </div>
-                <hr/>
-                <h3>Comments</h3>
-                <CreateComment
-                    user={user.username}
-                    review_id={review_id}
-                    count={count}
-                    setCount={setCount}
-                />
-                {
-                    comments.length === 0 ? (
-                        <p>There are no comments on this review yet, be the first to leave a comment!</p>
-                    ) : null}
-                    {comments.map((comment) => {
-                    return (
-                    <CommentCard
-                        comment={comment}
-                        key={comment.comment_id}
-                        remove={comment.author === user.username ? true : false}
-                        comments={comments}
-                        setComments={setComments}
-                    />
-                );
-            })}
+      <div className="pageContent">
+        <div className="singleReviewContainer">
+          <div className="singleReviewTop">
+            <UserImage username={review.owner} date={review.created_at} />
+            {user.username == review.owner ? (
+              <button onClick={handleDelete}>Delete</button>
+            ) : null}
+          </div>
+          <h2>{review.title}</h2>
+          <img src={review.review_img_url} />
+          <p>{review.review_body}</p>
+          <div className="reviewCardBottom">
+            <VoteButton
+              direction="horizontal"
+              id={review.review_id}
+              count={review.votes}
+              type="review"
+            />
+            <div className="numComments">
+              <CommentBubble color={"white"}/>
+              <p>{review.comment_count}</p>
+            </div>
+          </div>
+          <hr />
+          <h3>Comments</h3>
+          <CreateComment
+            user={user.username}
+            review_id={review_id}
+            count={count}
+            setCount={setCount}
+          />
+          {comments.length === 0 ? (
+            <p>
+              There are no comments on this review yet, be the first to leave a
+              comment!
+            </p>
+          ) : null}
+          {comments.map((comment) => {
+            return (
+              <CommentCard
+                comment={comment}
+                key={comment.comment_id}
+                remove={comment.author === user.username ? true : false}
+                comments={comments}
+                setComments={setComments}
+              />
+            );
+          })}
         </div>
       </div>
     );

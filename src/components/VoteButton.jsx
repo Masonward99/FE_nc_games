@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { patchVotes } from "../utils/utils"
+import DownArrow from "./icons/DownArrow"
+import UpArrow from "./icons/UpArrow"
+import './css/voteButton.css'
 
-function VoteButton({ direction, id, count, type }) {
+function VoteButton({  id, count, type }) {
     const [incCount, setIncCount] = useState(0)
     function changeVotes(event) {
+        event.preventDefault()
         if (incCount === 0 && event.target.value === '+') {
             patchVotes(id,  1, type)
             setIncCount(1)
@@ -26,10 +30,10 @@ function VoteButton({ direction, id, count, type }) {
         }
     }
     return (
-        <div className={direction == 'vertical' ? 'verticalVoteButtonContainer' : 'horizontalVoteButtonContainer'}>
-            <button onClick={changeVotes} value='+' className={incCount > 0 ? 'selectedButton' : ''}>+</button>
+        <div  className={incCount >0 ? 'voteButtons upSelected' : incCount <0? 'voteButtons downSelected': 'voteButtons'} >
+            <button onClick={changeVotes} value='+'><UpArrow/></button>
             <p>{count+incCount}</p>
-            <button onClick={changeVotes} value='-' className={incCount <0 ? 'selectedButton' : ''}>-</button>
+            <button onClick={changeVotes} value='-'><DownArrow /></button>
         </div>
     )
 }
