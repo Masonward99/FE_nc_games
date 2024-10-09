@@ -1,4 +1,5 @@
 import { useCategories } from "../../../../hooks/useCategories";
+import "./sortDropdown.css"
 
 function CategoryCheckBox({ setSelectedCategory }) {
     const categories = JSON.parse(localStorage.getItem('categories'))
@@ -9,8 +10,8 @@ function CategoryCheckBox({ setSelectedCategory }) {
         return !categories ? (
           "Loading..."
         ) : (
-          <div className="catCheckbox">
-            <h2 className="checkboxHeading">Choose category:</h2>
+          <div className="catCheckbox ui">
+              <h2 id="catHeading">Category:</h2>
             <form onChange={(e) => setSelectedCategory(e.target.value)}>
               <input
                 type="radio"

@@ -1,18 +1,14 @@
 #root {
-  width: 100vw;
-  height: auto ;
-  padding: 2rem;
   margin: 0 ;
-  margin-top: 0;
   min-height: 100vh;
+  width: 100vw;
   padding: 0px;
   background-color: var(--main-bg-color);
 }
 .pageContent{
   color: var(--text-color);
-  width: min(1200px, 95%);
+  width: min(1200px, 100%);
   margin: auto;
-  padding: 5px;
   height: 100%;
 }
 
@@ -28,7 +24,12 @@ svg{
 a{
   color: white;
 }
-
+label {
+  font: var(--bigui);
+}
+option {
+  font: var(--pui)
+}
 
 .dateText{
   display: flex;
@@ -66,15 +67,7 @@ a{
   max-width: max-content;
   
 }
-.SingleButtonContainer{
-  text-align: center;
-}
-h3{
-  text-align: center;
-}
-.TwoButtons{
-  text-align: center;
-}
+
 .HiddenForm{
   display: none;
 }
@@ -162,10 +155,8 @@ h3{
   text-align: center;
 }
 
-
-
 button {
-  margin: 3px;
+  background-color: var(--accent-color);
   border-radius: 25%;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
@@ -242,11 +233,7 @@ button {
   -o-border-radius: 15px;
   padding: 10px;
 }
-.catDd {
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-}
+
 .postReviewContainer input {
   max-width: 400px;
 }
@@ -316,4 +303,7 @@ button {
   display: flex;
   width: 100%;
   flex-flow: row wrap;
+}
+.catDD  {
+  min-width: 200px;
 }

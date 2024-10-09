@@ -14,7 +14,7 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    background-color: black;
+    background-color: var(--main-bg-color);
     color: white;
 }
 

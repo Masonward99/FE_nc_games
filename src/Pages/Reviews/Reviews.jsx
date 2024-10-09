@@ -21,7 +21,7 @@ function Reviews() {
   }, [selectedCategory, sort, order]);
   return (
     <div className="pageContent">
-      <h2>Reviews</h2>
+      <h2 className="reviewHeading">Reviews</h2>
       <div className="reviewsPageContainer">
         <div className="reviewContentLeft">
           <CategoryDropDown id='categorySmall' setSelectedCategory={setSelectedCategory}/>
@@ -30,7 +30,7 @@ function Reviews() {
         </div>
         <div className="reviewContentRight">
           {isLoading ? (
-            <SkeletonReviewCard count={20} />
+            <SkeletonReviewCard count={10} />
           ) : (
             <ul className="reviewList">
               {reviews.map((review) => {

@@ -3,3 +3,16 @@
     height:20px;
     width: 20px;
 }
+#catHeading {
+    font: var(--h3ui);
+    margin: var(--margin-xs) 0;
+}
+.dropdownForm {
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+}
+.dropdownForm button { 
+    height: 100%;
+    margin: 0;
+}

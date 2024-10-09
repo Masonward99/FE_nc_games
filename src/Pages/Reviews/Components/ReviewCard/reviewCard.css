@@ -1,12 +1,14 @@
 .reviewCard {
-    padding: 10px;
-    width: 100%;
+    width: cal(100% - 2 *var(--margin-s));
     border-bottom: 1px dotted white;
+    margin: auto;
+    padding: var(--margin-s);
 }
 
 .reviewCard img {
     width: 100%;
     object-fit: contain;
+    
 }
 
 .reviewCard h3 {
@@ -17,8 +19,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: white;
-    font-size: 30px;
     text-align: left;
+    font: var(--h4);
+    margin: var(--margin-m) 0 ;
 }
 
 .reviewCard a {

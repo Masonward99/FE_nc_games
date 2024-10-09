@@ -3,15 +3,16 @@
     position: sticky;
     top: 0;
     background-color: var(--head-color);
-    
-    height: 55px;
+    height: 70px;
     width: 100%;
     z-index: 9999;
 }
 
+
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     margin: auto;
@@ -19,51 +20,84 @@
     color: var(--head-text);
 }
 
-.navbar p {
-    font-size: 1.5em;
-    margin: 0;
-}
-
 .navbar li {
-    flex-grow: 1;
-    text-align: center;
-    flex-basis: 0;
     height: 100%;
-    max-width: 150px;
+    max-width: 200px;
+}
+.navbar  :first-child{
+    margin-right: auto;
 }
 
-.navbar ul {
-    flex-grow: 1;
-    display: flex;
-    height: 100%;
-    margin: auto;
-    max-width: 600px;
-    justify-content: stretch;
-    align-items: center;
-    margin-right: 0;
-    flex-direction: row-reverse;
-}
-
-
-.navbar img {
-    object-fit: contain;
-    max-height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-    order: 0;
-}
-.navbar a{
+.navbar a,
+.sidebar a {
+    padding: 0 var(--margin-l);
     color: var(--head-text);
-}
-.linkBox {
     text-align: center;
     height: 100%;
-    width: 100%;
-    line-height: 55px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font: var(--h4ui);
+}
+.hideOnDesktop {
+    display: flex;
+    align-items: center;
+     
+}
+.hamburger {
+    height: 35px;
+    width: 35px;
+    fill: var(--accent-color);
+    padding: var(--margin-m);
+}
+.navbar  :hover,
+.sidebar :hover {
+    background-color: var(--alternate-bg-color);
 }
 
-.linkBox :hover {
-    background-color: white;
-    color: black;
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 250px;
+    background-color: var(--head-color);
+    color: var(--head-text);
+    display: none 
+}
+.sidebar li{
+    width: 100%;
+}
+.navbar .hideOnDesktop {
+    display: none;
+}
+.logoIcon {
+    margin: auto;
+    height: 35px;
+    width: 35px;
+    fill: var(--accent-color );
+}
+
+@media screen and (max-width:800px) {
+    .sidebar{
+        display: flex;
+    }
+    .navbar .hideOnMobile {
+        display: none;
+    }
+    .navbar .hideOnDesktop {
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:400px){
+    .sidebar {
+        width: 100%;
+    }
+    
 }
