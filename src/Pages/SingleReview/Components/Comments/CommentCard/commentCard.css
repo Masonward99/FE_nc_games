@@ -1,7 +1,11 @@
 .topCommentCard {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: var(--margin-s);
+}
+.topCommentCard :first-child{
+    margin-right: auto;
 }
 
 .commentCard {
@@ -9,13 +13,4 @@
     border-bottom: 1px dotted white;
     padding-bottom: 10px;
 }
-.bottomCommentCard{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
 
-.commentCard .voteButtons{
-    flex-shrink: 0;
-    margin-top: auto;
-}

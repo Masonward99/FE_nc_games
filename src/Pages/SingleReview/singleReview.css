@@ -19,3 +19,9 @@
     width: 100px;
     height: 100%;
 }
+
+.pageContent h2 {
+    text-align: left;
+    font: var(--h3);
+    margin: var(--margin-m) 0 ;
+}

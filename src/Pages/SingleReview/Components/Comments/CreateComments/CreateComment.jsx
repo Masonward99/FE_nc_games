@@ -10,9 +10,7 @@ function CreateComment({ review_id, count, setCount }) {
   const { user } = useContext(UserContext);
   if (user === false) {
     return (
-      <h3>
-        <Link to="/login">login</Link> to post a comment
-      </h3>
+        <Link to="/login" className="loginButton">login to post a comment</Link>   
     );
   }
   function handleSubmit(event) {
@@ -33,13 +31,13 @@ function CreateComment({ review_id, count, setCount }) {
     return <p>posting: {value}</p>;
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="commentInput">Post a comment</label>
+    <form onSubmit={handleSubmit} className="addComment ui">
+      <label htmlFor="commentInput">Add a comment</label>
       <textarea
         type="textarea"
         onChange={handleChange}
         value={value}
-        placeholder="Comment..."
+        placeholder="Add a comment..."
         className="commentTextArea"
       />
       <button type="submit">Post</button>

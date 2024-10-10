@@ -7,7 +7,8 @@
 }
 .pageContent{
   color: var(--text-color);
-  width: min(1200px, 100%);
+  width: min(calc(1200px - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
+  padding: var(--margin-s);
   margin: auto;
   height: 100%;
 }

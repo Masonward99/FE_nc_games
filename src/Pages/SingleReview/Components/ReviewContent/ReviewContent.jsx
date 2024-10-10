@@ -15,7 +15,7 @@ function ReviewContent({ review }) {
           <DeleteButton review={review.review_id} />
         ) : null}
       </div>
-      <h2>{review.title}</h2>
+      <h1>{review.title}</h1>
       <img src={review.review_img_url} />
       <p>{review.review_body}</p>
       <CommentCounter review={review} />

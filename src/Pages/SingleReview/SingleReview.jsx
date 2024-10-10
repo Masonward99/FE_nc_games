@@ -26,10 +26,9 @@ function SingleReview() {
   }
   return (
     <div className="pageContent">
-      <div className="singleReviewContainer">
         <ReviewContent review={review} />
         <hr />
-        <h3>Comments</h3>
+        <h2>Comments</h2>
         <CreateComment
           user={user.username}
           review_id={review_id}
@@ -37,7 +36,6 @@ function SingleReview() {
           setCount={setCount}
         />
         <CommentList comments={comments} setComments={setComments} />
-      </div>
     </div>
   );
 }

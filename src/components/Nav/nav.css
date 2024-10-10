@@ -46,7 +46,7 @@
 .hamburger {
     height: 35px;
     width: 35px;
-    fill: var(--accent-color);
+    fill: var(--main-bg-color);
     padding: var(--margin-m);
 }
 .navbar  :hover,
@@ -79,13 +79,10 @@
     margin: auto;
     height: 35px;
     width: 35px;
-    fill: var(--accent-color );
+    fill: var(--main-bg-color);
 }
 
 @media screen and (max-width:800px) {
-    .sidebar{
-        display: flex;
-    }
     .navbar .hideOnMobile {
         display: none;
     }

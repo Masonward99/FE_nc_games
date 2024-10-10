@@ -2,12 +2,12 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size:20px;
+  font-size:  20px;
   --margin-xxs: .25rem;
   --margin-xs:  .5rem;
   --margin-s: .75rem;
   --margin-m: 1rem;
-  --margin-l:1.25rem;
+  --margin-l: 1.25rem;
   --margin-xl: 1.75rem;
   --margin-xxl: 2.5rem;
 
@@ -37,13 +37,15 @@
   -webkit-text-size-adjust: 100%;
 
   --main-bg-color: #1A1E3C;
-  --accent-color:#bc9898;
+  --accent-color:#FF8800;
   --hover-color: #A8C8A0;
   --alternate-bg-color: #E7CFC5;
   --text-color:#ffffff;
-  --secondary-text-color: #696b6f;
-  --head-color:#FF6F61;
+  --secondary-text-color: #7D7D7D;
+  --head-color:#ff8800;
   --head-text: #333333;
+  --red: #DC143C;
+  --green: #50C878;
 }
 
 a {
@@ -57,10 +59,10 @@ display: flex;
 place-items: center;
 min-width: 320px;
 min-height: 100vh;
-  font-family: var(--ff);
-  text-wrap: balance;
-  background: var(--main-bg-color);
-  color: (white);
+font-family: var(--ff);
+text-wrap: balance;
+background: var(--main-bg-color);
+color: (white);
 }
     
   /* landing page */
@@ -91,6 +93,7 @@ p {
 .small {
   font: var(--small);
 }
+
 /* UIs */
 .ui h1 {
   font: var(--h1ui);
@@ -123,20 +126,6 @@ p {
 button:hover {
   border-color: var(--hover-color);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
+
