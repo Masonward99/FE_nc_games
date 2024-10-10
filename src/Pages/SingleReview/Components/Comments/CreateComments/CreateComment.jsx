@@ -3,6 +3,7 @@ import { postComment } from "../../../../../utils/utils";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../../../../Contexts/UserContext";
 import './CreateComment.css'
+import CommentCard from "../CommentCard/CommentCard";
 
 function CreateComment({ review_id, count, setCount }) {
   const [isPosted, setIsPosted] = useState(true);
@@ -10,7 +11,7 @@ function CreateComment({ review_id, count, setCount }) {
   const { user } = useContext(UserContext);
   if (user === false) {
     return (
-        <Link to="/login" className="loginButton">login to post a comment</Link>   
+      <Link to="/login" className="loginButton">login to post a comment</Link>   
     );
   }
   function handleSubmit(event) {
@@ -28,7 +29,7 @@ function CreateComment({ review_id, count, setCount }) {
     setValue(event.target.value);
   }
   if (!isPosted) {
-    return <p>posting: {value}</p>;
+    return <CommentCard comment={{ author: user.username, body: value, votes: 0, comment_id: 'test', created_at: Date.now() }} remove={false} />
   }
   return (
     <form onSubmit={handleSubmit} className="addComment ui">

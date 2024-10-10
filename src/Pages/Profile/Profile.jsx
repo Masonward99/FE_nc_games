@@ -6,6 +6,7 @@ import SignOutModal from "../../modals/SignOutModal";
 import ProfileComments from "./Components/ProfileComments/ProfileComments";
 import ProfileReview from "./Components/ProfileReviews/ProfileReview";
 import SkeletonProfileTop from "./Components/ProfileTop/SkeletonProfileTop";
+import './Profile.css'
 
 function Profile() {
   let { username } = useParams();
@@ -22,7 +23,7 @@ function Profile() {
     setIsModalVisible(true);
   }
   return (
-    <div className="profilePage">
+    <div className="pageContent">
       {!user ? (
         <SkeletonProfileTop />
       ) : (
@@ -34,7 +35,7 @@ function Profile() {
           <div className="profileContainer">
             <img src={user.avatar_url} />
             <div className="profileName">
-              <h3>{user.username} </h3>
+              <h1>{user.username} </h1>
               <p>{user.name}</p>
             </div>
             {signedInUser.user.username == user.username ? (

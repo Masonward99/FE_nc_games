@@ -6,7 +6,7 @@ import SingleReview from "./Pages/SingleReview/SingleReview";
 import SignIn from "./Pages/SignIn";
 import { useContext, useState } from "react";
 import { UserContext } from "../Contexts/UserContext";
-import PostReview from "./Pages/PostReview";
+import PostReview from "./Pages/PostReview/PostReview";
 import Profile from "./Pages/Profile/Profile";
 
 function App() {

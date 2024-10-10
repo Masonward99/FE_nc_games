@@ -1,29 +1,38 @@
 .profileCommentCard {
-    width: 380px;
-    height: 100px;
-    background-color: lightblue;
-    color: black;
-    margin: 10px;
+    width: 300px;
+    min-height: 100px;
+    flex-grow: 1;
+    background-color: var(--alternate-bg-color);
+    color: var(--secondary-text-color);
+    padding: var(--margin-xxs);
     overflow: hidden;
 }
 
 .profileCommentCard h3 {
-    color: darkblue;
-    margin: 10px;
-    display: -webkit-box;
-    line-clamp: 1;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.profileCommentCard p {
-    margin: 10px;
+    color: black;
+    font: var(--p);
+    margin: 0;
     display: -webkit-box;
     line-clamp: 2;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.profileCommentCard p {
+    margin: var(--margin-xxs) 0;
+    display: -webkit-box;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.commentsList {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    gap: var(--margin-xs);
+    align-items: stretch;
 }

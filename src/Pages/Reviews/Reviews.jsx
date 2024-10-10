@@ -21,7 +21,7 @@ function Reviews() {
   }, [selectedCategory, sort, order]);
   return (
     <div className="pageContent">
-      <h2 className="reviewHeading">Reviews</h2>
+      <h1 className="reviewHeading">Reviews</h1>
       <div className="reviewsPageContainer">
         <div className="reviewContentLeft">
           <CategoryDropDown id='categorySmall' setSelectedCategory={setSelectedCategory}/>

@@ -8,7 +8,7 @@ function CategoryDropDown({ setSelectedCategory, className }) {
     {
         return !categories ? 'Loading...' : (
             <div className="catDd ui">
-                <label htmlFor="categoryDropdown">Category: </label>
+                <label htmlFor="categoryDropdown" className="visually-hidden">Category: </label>
                 <select id="categoryDropdown" onChange={e => setSelectedCategory(e.target.value)}>
                     <option value={false}>Select category</option>
                     {categories.map((cat) =><option value={cat.slug} key={cat.slug}>{cat.slug}</option>)}

@@ -8,11 +8,9 @@ function ProfileCommentCard({ comment }) {
         return <p>loading</p>
     }
     return (
-        <Link to={`/reviews/${comment.review_id}`} >
-            <div className="profileCommentCard">
+        <Link to={`/reviews/${comment.review_id}`} className="profileCommentCard">
                 <h3>{review.title}</h3>
                 <p>{comment.body}</p>
-            </div>
         </Link>
     )
 }

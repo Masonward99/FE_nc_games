@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../components/css/ImagePicker.css'
 
 function ImagePicker({ setFile, defaultSrc, type }) {
   const [invalidFile, setInvalidFile] = useState(false);

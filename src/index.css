@@ -2,7 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size:  20px;
   --margin-xxs: .25rem;
   --margin-xs:  .5rem;
   --margin-s: .75rem;
@@ -39,7 +38,7 @@
   --main-bg-color: #1A1E3C;
   --accent-color:#FF8800;
   --hover-color: #A8C8A0;
-  --alternate-bg-color: #E7CFC5;
+  --alternate-bg-color: #313639;
   --text-color:#ffffff;
   --secondary-text-color: #7D7D7D;
   --head-color:#ff8800;

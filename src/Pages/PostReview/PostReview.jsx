@@ -1,9 +1,10 @@
 import { useContext, useState } from "react"
-import { UserContext } from "../../Contexts/UserContext"
-import CategoryDropDown from "../components/CategoryDropDown";
-import { addReview, uploadImage } from "../utils/utils";
+import { UserContext } from "../../../Contexts/UserContext"
+import CategoryDropDown from "../../components/CategoryDropDown";
+import { addReview, uploadImage } from "../../utils/utils";
 import {  useNavigate } from "react-router-dom";
-import ImagePicker from "./ImagePicker";
+import ImagePicker from "../ImagePicker";
+import './PostReview.css'
 
 function PostReview() {
     let navigate = useNavigate()
@@ -40,26 +41,50 @@ function PostReview() {
     return (
       <div className="pageContent">
         <div className="postReviewContainer">
-          <h2 className="pageHeading">Post Review</h2>
+          <h2>Post Review</h2>
           <form className="reviewForm">
-            <label htmlFor="reviewTitleInput">Review title: </label>
+            <label htmlFor="reviewTitleInput" className="visually-hidden">Title</label>
             <input
               type="text"
               id="reviewTitleInput"
               value={title}
+              placeholder="Title"
               onChange={(e) => setTitle(e.target.value)}
             />
             <CategoryDropDown setSelectedCategory={setSelectedCategory} />
-            <ImagePicker setFile={setFile}/>
-            <label htmlFor="reviewBodyInput">Review body: </label>
+            <ImagePicker setFile={setFile} />
+            <label htmlFor="reviewBodyInput" className="visually-hidden">Review body:</label>
             <textarea
               id="reviewBodyInput"
               value={body}
               onChange={(e) => setBody(e.target.value)}
+              placeholder="Body..."
             />
-            {user.username? selectedCategory != false && title != '' && body != '' ? null: <p className="errorText">All fields must be filled before submitting</p>  :<p className="errorText">You must be signed in to post a review</p>}
+            {user.username ? (
+              selectedCategory != false && title != "" && body != "" ? null : (
+                <p className="errorText">
+                  All fields must be filled before submitting
+                </p>
+              )
+            ) : (
+              <p className="errorText">
+                You must be signed in to post a review
+              </p>
+            )}
             <div className="buttonBox">
-              <button onClick={upload} disabled={selectedCategory != false && title != '' && body != ''  && user.username ? false : true }>Post review</button>
+              <button
+                onClick={upload}
+                disabled={
+                  selectedCategory != false &&
+                  title != "" &&
+                  body != "" &&
+                  user.username
+                    ? false
+                    : true
+                }
+              >
+                Post review
+              </button>
             </div>
           </form>
         </div>

@@ -1,0 +1,8 @@
+.catDd{
+    width: 300px;
+}
+.catDd select{
+    width: 100%;
+    padding: var(--margin-s);
+    appearance: none;
+}

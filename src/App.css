@@ -32,15 +32,6 @@ option {
   font: var(--pui)
 }
 
-.dateText{
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  color: white;
-}
 .pageTitle{
   margin-bottom: 10px;
 }
@@ -97,47 +88,6 @@ option {
   text-align: center;
   color: black;
 }
-
-.profileContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-bottom: 5px;
-  border-bottom: 1px solid white;
-}
-
-.profileContainer img {
-  object-fit: contain;
-  height: 150px;
-  width: 150px;
-  border: 2px solid black;
-  border-radius: 20%;
-  background-color: white;
-}
-
-.profileName {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 10px;
-  justify-content: flex-start;
-}
-
-.profileName h3 {
-  color: white;
-  margin: 0px;
-  font-size: 35px;
-}
-
-.profileName p{
-  margin-top: 5px;
-}
-
-.profileContainer button {
-  height: 80px;
-  width: 150px;
-  margin-left: auto;
-}
 .SignOutModal {
   height:200px;
   width: 400px ;
@@ -165,15 +115,6 @@ button {
   -o-border-radius: 25%;
 }
 
-.pageHeading {
-  font-size: 3em;
-  margin: 10px;
-  text-align: center;
-}
-
-
-
-
 
 .checkboxHeading {
   margin-top: 40px ;
@@ -188,11 +129,6 @@ button {
 }
 
 
-
-.reviewForm {
-  display: flex;
-  flex-direction: column;
-}
 .loginPageContainer {
   display: flex;
   flex-direction: column;
@@ -217,71 +153,12 @@ button {
   -o-border-radius: 25px;
 }
 
-.postReviewContainer {
-  max-width: 1000px;
-  margin: auto;
-  text-align: left;
-}
-.postReviewContainer textarea {
-  width: calc (100% - 22px);
-  height: 150px;
-  background-color: #313639;
-  color: white;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  padding: 10px;
-}
 
-.postReviewContainer input {
-  max-width: 400px;
-}
-.postReviewContainer button {
-  width: 60%;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-}
-#output {
-  max-height: 700px;
-  object-fit: contain;
-}
 .centered {
   margin: auto;
 }
-.reviewsShowcase {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  border: 1px solid white ;
-}
-.reviewsShowcase img {
-  height: 300px;
-  width: 200px;
-  margin-top: auto;
-  margin-bottom: auto;
-  object-fit: contain;
-}
-.reviewsShowcase button {
-  height: 80px;
-  width: 100px;
-  margin: auto;
-}
-.profilePage {
-  max-width: 1200px;
-  margin: auto;
-    padding: 5px;
-    text-align: center;
-    height: 100%;
-}
-.profilePage h2 {
-  font-size: 45px;
-}
+
+
 .csstest {
   height: 100%;
   justify-content: center;
@@ -305,6 +182,14 @@ button {
   width: 100%;
   flex-flow: row wrap;
 }
-.catDD  {
-  min-width: 200px;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
