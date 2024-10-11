@@ -12,14 +12,7 @@
 }
 
 .reviewCard h3 {
-    display: -webkit-box;
-    line-clamp: 1;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    color: white;
-    text-align: left;
+    text-wrap: wrap;
     font: var(--h4);
     margin: var(--margin-m) 0 ;
 }
@@ -29,7 +22,7 @@
 }
 
 .reviewCard:hover {
-    background-color: darkgrey;
+    background-color: var(--hover-color);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;

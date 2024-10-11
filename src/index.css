@@ -38,11 +38,12 @@
 
   --main-bg-color: #1A1E3C;
   --accent-color:#FF8800;
-  --hover-color: #A8C8A0;
+  --hover-color: #a9a9a9;
   --alternate-bg-color: #313639;
   --text-color:#ffffff;
   --secondary-text-color: #7D7D7D;
   --head-color:#ff8800;
+  --head-hover: #ffaa33;
   --head-text: #333333;
   --red: #DC143C;
   --green: #50C878;
