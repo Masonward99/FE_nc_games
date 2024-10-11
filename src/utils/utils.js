@@ -7,7 +7,7 @@ const games = axios.create({
 });
 
 export function getReviews(cat, sort, order) {
-    if (cat != 'false') {
+    if (cat != 'Select category') {
         return games
             .get(`/reviews?sort_by=${sort}&&order=${order}&&category=${cat}`)
             .then(({ data }) => data.reviews);

@@ -2,10 +2,10 @@ import { useCategories } from "../../../../hooks/useCategories";
 import "./sortDropdown.css"
 
 function CategoryCheckBox({ setSelectedCategory }) {
-    const categories = JSON.parse(localStorage.getItem('categories'))
-    if (!categories) {
-        useCategories();
-    }
+  const categories = JSON.parse(localStorage.getItem('categories'))
+  if (!categories) {
+    useCategories();
+  }
     {
         return !categories ? (
           "Loading..."
@@ -16,12 +16,12 @@ function CategoryCheckBox({ setSelectedCategory }) {
               <input
                 type="radio"
                 name="catSelector"
-                value={false}
+                value={categories[0]}
                 id="noCat"
                 defaultChecked
               />
-              <label htmlFor="noCat">All</label>
-              {categories.map((cat) => {
+                <label htmlFor="noCat">{categories[0]}</label>
+              {categories.slice(1).map((cat) => {
                 return (
                   <div key={cat}>
                     <input

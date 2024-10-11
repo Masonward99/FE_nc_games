@@ -12,14 +12,14 @@ function Reviews() {
   const [isLoading, setIsLoading] = useState(true);
   const [sort, setSort] = useState("created_at");
   const [order, setOrder] = useState("desc");
-  const [selectedCategory, setSelectedCategory] = useState("strategy");
+  const [selectedCategory, setSelectedCategory] = useState("Select category");
   useEffect(() => {
     getReviews(selectedCategory, sort, order).then((rev) => {
       setReviews(rev);
       setIsLoading(false);
     });
   }, [selectedCategory, sort, order]);
-  
+
   return (
     <div className="pageContent">
       <h1 className="reviewHeading">Reviews</h1>

@@ -18,6 +18,7 @@
     font:var(--h3ui);
     display: flex;
     cursor: pointer;
+    position: relative;
 }
 
 .dropdown-list {
@@ -36,6 +37,8 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     overflow: hidden;
+    display: none;
+    margin: 0;
 }
 
 .dropdown-item {

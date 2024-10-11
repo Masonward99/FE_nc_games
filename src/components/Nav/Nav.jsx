@@ -10,10 +10,13 @@ function Nav() {
     const { user } = useContext(UserContext);
     const sidebar = useRef(null)
     function toggleOpen() {
-        if (sidebar.current.style.display === "none") {
-            sidebar.current.style.display = "block"
+        if (
+          sidebar.current.style.display === "none" ||
+          sidebar.current.style.display === ""
+        ) {
+          sidebar.current.style.display = "block";
         } else {
-            sidebar.current.style.display = "none"
+          sidebar.current.style.display = "none";
         }
     }
     return (

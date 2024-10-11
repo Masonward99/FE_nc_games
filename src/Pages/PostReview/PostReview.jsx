@@ -5,14 +5,13 @@ import { addReview, uploadImage } from "../../utils/utils";
 import {  useNavigate } from "react-router-dom";
 import ImagePicker from "../ImagePicker";
 import './PostReview.css'
-import Dropdown from "../../components/dropdown/Dropdown";
 
 function PostReview() {
     let navigate = useNavigate()
     const { user } = useContext(UserContext);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState("strategy");
+    const [selectedCategory, setSelectedCategory] = useState("Select category");
     const [file, setFile] = useState(
       "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?w=700&h=700"
     );

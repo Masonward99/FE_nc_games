@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import './Dropdown.css'
 function Dropdown({ array, item, setItem, className }) {
     const list = useRef(null)
@@ -6,7 +6,10 @@ function Dropdown({ array, item, setItem, className }) {
         if (event) {
             event.preventDefault();
         }
-         if (list.current.style.display === "none") {
+         if (
+           list.current.style.display === "none" ||
+           list.current.style.display === ""
+         ) {
            list.current.style.display = "block";
          } else {
            list.current.style.display = "none";
