@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../Contexts/UserContext";
 import PostReview from "./Pages/PostReview/PostReview";
 import Profile from "./Pages/Profile/Profile";
+import OwnProfile from "./Pages/Profile/OwnProfile";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Reviews />} />
         <Route path="/reviews/:review_id" element={<SingleReview />} />
-        <Route path="/login" element={user ? <Profile /> : <SignIn />} />
+        <Route path="/login" element={user ? <OwnProfile /> : <SignIn />} />
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/addreview" element={<PostReview />} />
       </Routes>

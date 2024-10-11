@@ -37,7 +37,7 @@ textarea::placeholder{
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 } */
-#reviewTitleInput {
+#reviewTitleInput{
     background-color: var(--alternate-bg-color);
     width: 100%;
     border: 1px solid white;

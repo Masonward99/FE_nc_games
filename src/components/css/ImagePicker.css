@@ -3,3 +3,22 @@
     max-height: 500px;
     object-fit: contain;
 }
+
+.image-picker {
+    display: none;
+}
+.image-picker-label {
+    cursor: pointer;
+    width: 12.5rem;
+    background-color: var(--alternate-bg-color);
+    width: 12.5rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    font: var(--uih2);
+    color: var(--main-text-color);
+    padding: var(--margin-xs);
+}

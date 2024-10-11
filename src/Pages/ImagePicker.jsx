@@ -19,13 +19,14 @@ function ImagePicker({ setFile, defaultSrc, type }) {
   
     return (
       <>
-        <label htmlFor="imagePicker">Choose an image:</label>
+        <label htmlFor="imagePicker" className="image-picker-label">Choose Image</label>
         <input
           type="file"
           id="imagePicker"
           name="imagePicker"
           accept="image /*"
           onChange={loadImg}
+          className="image-picker"
         />
         <img
           id="output"
