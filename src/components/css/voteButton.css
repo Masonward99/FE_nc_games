@@ -2,21 +2,22 @@
     display: flex;
     flex-direction: row;
     width: 150px;
+    height: 70px;
     border-radius: 20px;
     border: 1px solid white;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    background-color: black;
+    background-color: var(--main-bg-color);
 }
 
 .upSelected{
-background-color: green;
+background-color: var(--green);
 }
 
 .downSelected{
-    background-color: red;
+    background-color: var(--red);
 }
 
 .voteButtons p {
@@ -26,19 +27,20 @@ background-color: green;
 
 .voteButtons button {
     background-color: transparent;
-    padding: 10px;
+    padding: var(--margin-xs);
+    border: 0px;
 }
 
 .voteButtons button:hover {
-    background-color: darkgrey;
+    background-color: var(--hover-color);
 }
 
 .voteButtons button:hover > .upArrow{
-    stroke: green
+    stroke: var(--green)
 }
 
 .voteButtons button:hover > .downArrow{
-    stroke: red
+    stroke: var(--red)
 }
 
 .downSelected button .downArrow{

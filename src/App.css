@@ -1,94 +1,37 @@
 #root {
-  width: 100vw;
-  height: auto ;
-  padding: 2rem;
   margin: 0 ;
-  margin-top: 0;
   min-height: 100vh;
+  width: 100vw;
   padding: 0px;
+  background-color: var(--main-bg-color);
+}
+.pageContent{
+  color: var(--text-color);
+  width: min(calc(1200px - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
+  padding: var(--margin-s);
+  margin: auto;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 svg{
   pointer-events: none;
 }
+
 a{
   color: white;
 }
-
-.reviewCard {
-  padding: 10px;
-  width: 800px;
-  border-bottom: 1px dotted white;
+label {
+  font: var(--bigui);
 }
-.reviewCard img {
-  height: 500px;
-  width: 800px;
-  object-fit: contain;
-}
-.reviewCard h3{
-  display: -webkit-box;
-  line-clamp: 1;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  color: white;
-  font-size: 30px;
-  text-align: left;
-}
-.reviewCard a{
-  color: white;
+option {
+  font: var(--pui)
 }
 
-.reviewCardBottom {
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  width: 100%;
-  gap: 10px;
-}
-
-.reviewList {
-  margin: 0px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-}
-.reviewList li {
-  color: white;
-}
-
-.singleReview {
-  border: 1px solid white;
-  padding:10px;
-}
-.singleReview img{
-  width: 60%;
-  height:60%;
-  object-fit: contain;
-}
-ul{
-  list-style: none;
-  padding-left: 0;
-}
-.commentCard {
-    margin-top: 20px;
-}
-
-.selectedButton {
-  background-color: blue;
-}
-
-.dateText{
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  color: white;
-}
 .pageTitle{
   margin-bottom: 10px;
 }
@@ -116,15 +59,7 @@ ul{
   max-width: max-content;
   
 }
-.SingleButtonContainer{
-  text-align: center;
-}
-h3{
-  text-align: center;
-}
-.TwoButtons{
-  text-align: center;
-}
+
 .HiddenForm{
   display: none;
 }
@@ -153,47 +88,6 @@ h3{
   text-align: center;
   color: black;
 }
-
-.profileContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-bottom: 5px;
-  border-bottom: 1px solid white;
-}
-
-.profileContainer img {
-  object-fit: contain;
-  height: 150px;
-  width: 150px;
-  border: 2px solid black;
-  border-radius: 20%;
-  background-color: white;
-}
-
-.profileName {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 10px;
-  justify-content: flex-start;
-}
-
-.profileName h3 {
-  color: white;
-  margin: 0px;
-  font-size: 35px;
-}
-
-.profileName p{
-  margin-top: 5px;
-}
-
-.profileContainer button {
-  height: 80px;
-  width: 150px;
-  margin-left: auto;
-}
 .SignOutModal {
   height:200px;
   width: 400px ;
@@ -212,59 +106,8 @@ h3{
   text-align: center;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  margin: auto;
-  max-width: 1200px;
-}
-
-.navbar p {
-  font-size: 1.5em;
-  color: white;
-  margin: 0;
-}
-.navbar li{
-  flex-grow: 1;
-  text-align: center;
-  flex-basis: 0;
-  height: 100%;
-  max-width: 150px; 
-}
-.navbar ul {
-  flex-grow: 1;
-  display: flex;
-  height: 100%;
-  margin: auto;
-  max-width: 600px;
-  justify-content: stretch;
-  align-items: center;
-  margin-right: 0;
-  flex-direction: row-reverse;
-}
-.navbarContainer{
-  display: block;
-  position: sticky;
-  top: 0;
-  background-color: darkslategray;
-  color: black;
-  height: 55px;
-  width: 100%;
-  z-index: 9999;
-}
-.navbar img{
-  object-fit: contain;
-  max-height: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
-  order:0;
-}
-
 button {
-  color: white;
-  margin: 3px;
+  background-color: var(--accent-color);
   border-radius: 25%;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
@@ -272,69 +115,10 @@ button {
   -o-border-radius: 25%;
 }
 
-.pageHeading {
-  font-size: 3em;
-  margin: 10px;
-  text-align: center;
-}
 
-.pageContent {
-  max-width:  1200px;
-  margin: auto;
-  padding:5px;
-  text-align: center;
-  height: 100%;
-}
-
-.reviewsPageContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-}
-.reviewContentLeft {
-  flex-grow: 1;
-  max-width: 400px;
-  text-align: left;
-  align-self:top;
-  border-right: 1px dotted white;
-}
-.linkBox {
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  line-height: 55px;
-  overflow: hidden;
-}
-.linkBox :hover {
-  background-color: white;
-  color: black;
-}
-
-.reviewContentRight {
-  flex-grow: 2;
-  max-width: 900px;
-}
 .checkboxHeading {
   margin-top: 40px ;
 }
-.commentImg {
-  height: 40px;
-  background-color: black;
-}
-
-
-.singleReviewContainer {
-  max-width: 1000px;
-  text-align: left;
-  margin: auto;
-}
-.singleReviewContent {
-  max-width: 800px;
-  flex-grow: 2;
-}
-
-
 
 .testBox {
   width: 100%;
@@ -343,20 +127,8 @@ button {
   width: 100%;
   object-fit: contain;
 }
-.navbar p {
-  color: white;
-}
 
-.topCommentCard {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
-.reviewForm {
-  display: flex;
-  flex-direction: column;
-}
 .loginPageContainer {
   display: flex;
   flex-direction: column;
@@ -381,123 +153,23 @@ button {
   -o-border-radius: 25px;
 }
 
-.postReviewContainer {
-  max-width: 1000px;
-  margin: auto;
-  text-align: left;
-}
-.postReviewContainer textarea {
-  width: calc (100% - 22px);
-  height: 150px;
-  background-color: #313639;
-  color: white;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  padding: 10px;
-}
-.catDd {
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-}
-.postReviewContainer input {
-  max-width: 400px;
-}
-.postReviewContainer button {
-  width: 60%;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-}
-#output {
-  max-height: 700px;
-  object-fit: contain;
-}
+
 .centered {
   margin: auto;
 }
-.reviewsShowcase {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  border: 1px solid white ;
-}
-.reviewsShowcase img {
-  height: 300px;
-  width: 200px;
-  margin-top: auto;
-  margin-bottom: auto;
-  object-fit: contain;
-}
-.reviewsShowcase button {
-  height: 80px;
-  width: 100px;
-  margin: auto;
-}
-.profilePage {
-  max-width: 1200px;
-  margin: auto;
-    padding: 5px;
-    text-align: center;
-    height: 100%;
-}
-.profilePage h2 {
-  font-size: 45px;
-}
+
+
 .csstest {
   height: 100%;
   justify-content: center;
 }
-.commentTextArea {
-  width: calc(100% - 22px);
-    height: 75px;
-    background-color: #313639;
-    color: white;
-    border-radius: 15px;
-    padding: 10px;
-}
-.profileCommentCard {
-  width: 380px;
-  height: 100px;
-  background-color: lightblue;
-  color: black;
-  margin: 10px;
-  overflow: hidden;
-}
-.profileCommentCard h3 {
-  color: darkblue;
-  margin: 10px;
-  display: -webkit-box;
-  line-clamp: 1;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.profileCommentCard p{
-  margin: 10px;
-  display: -webkit-box;
-  line-clamp: 2;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+
+
 .buttonBox :disabled {
-  color: white;
   opacity: 10%;
   pointer-events: none;
 }
-.profileReviewCard {
-  position: relative;
-  color: white;
-}
+
 .errorText {
   background-color: red;
   color: white;
@@ -505,74 +177,19 @@ button {
   font-size: 1.5rem;
 }
 
-.profileReviewImg {
-  object-fit: contain;
-  max-width:  100%;
-}
-
-.singleReviewTop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.singleReviewTop button {
-  width: 100px;
-  height: 100%;
-}
-
-.profileReviewCard img {
-  width: 700px;
-  height: 500px;
-  object-fit: contain;
-}
-
-.profileReviewCard h3 {
-  position: absolute;
-    bottom: 80px;
-    left: 16px;
-    color: darkblue;
-    z-index: 1;
-    backdrop-filter: 5px;
-}
-
 .commentsList {
   display: flex;
   width: 100%;
   flex-flow: row wrap;
 }
-.numComments {
-  display: flex;
-  width: 100px;
-  border-radius: 20px;
-    border: 1px solid white;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    background-color: black;
-    color: white;
-}
-.numComments p{
-  margin: auto;
-}
-.numComments svg{
-  margin: auto;
-}
 
-@media only screen and (max-width: 600px){ 
-  .navbar p {
-    display: none;
-  }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
-Link {
-  width: 100%;
-}
-.reviewCard:hover {
-  background-color: darkgrey;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-

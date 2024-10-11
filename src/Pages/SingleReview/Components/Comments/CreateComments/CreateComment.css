@@ -1,0 +1,22 @@
+.commentTextArea {
+    width: calc(100% - 22px);
+    height: 75px;
+    background-color:var(--main-bg-color) ;
+    color: var(--text-color);
+    font:--bigui;
+    border-radius: 15px;
+    padding: 10px;
+    resize: none;
+}
+.addComment {
+    display: flex;
+    flex-direction: column;
+}
+.addComment button {
+    margin-top: var(--margin-xxs);
+    margin-left: auto;
+    height: 50px;
+    width: 100px;
+    flex-grow: 0;
+    font: var(--bigui);
+}

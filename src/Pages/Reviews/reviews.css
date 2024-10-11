@@ -1,0 +1,61 @@
+.reviewsPageContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.reviewContentLeft {
+    flex-grow: 1;
+    padding: var(--margin-xs);
+    width: calc(25% - 2* var(--margin-xs));
+    border-right: 1px dotted white;
+}
+
+.reviewContentRight {
+    width:  75%;
+}
+
+.reviewList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.reviewList li {
+    margin: auto;
+    width: 100%;
+}
+
+.reviewHeading{
+    text-align: center;
+    margin: var(--margin-l)0 ;
+}
+.reviewContentLeft .catDd {
+    display: none;
+}
+@media screen and (max-width:900px) {
+    .reviewsPageContainer{
+        flex-direction: column;
+    }
+    .reviewContentRight {
+        width: 100%;
+    }
+    .reviewContentLeft{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        border: none;
+        padding: var(--margin-xs);
+        width: calc(100% - 2 * var(--margin-xs));
+    }
+    .catCheckbox {
+        display: none;
+    }
+    .reviewContentLeft .catDd {
+        display: flex;
+    }
+    .catDd label{
+        margin: auto;
+    }
+}

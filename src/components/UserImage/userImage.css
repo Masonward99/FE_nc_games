@@ -1,0 +1,33 @@
+.imgText {
+    display: flex;
+    flex-grow: 1;
+    max-height: 60px;
+    flex-direction: column;
+}
+
+.userImgContainer :hover {
+    color:var(--text-color);
+    background-color: var(--hover-color);
+}
+
+.userImgContainer {
+    display: flex;
+    flex-direction: row;
+    max-height: 60px;
+    margin-bottom: 10px;
+    gap:10px;
+    color: var(--secondary-text-color);
+}
+
+#userImg {
+    grid-column: 1;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.userImgContainer p {
+    margin: 0;
+}

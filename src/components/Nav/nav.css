@@ -1,0 +1,100 @@
+.navbarContainer {
+    display: block;
+    position: sticky;
+    top: 0;
+    background-color: var(--head-color);
+    height: 70px;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    max-width: 1200px;
+    color: var(--head-text);
+}
+
+.navbar li {
+    height: 100%;
+    max-width: 200px;
+}
+.navbar  :first-child{
+    margin-right: auto;
+}
+
+.navbar a,
+.sidebar a {
+    padding: 0 var(--margin-l);
+    color: var(--head-text);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font: var(--h4ui);
+}
+.hideOnDesktop {
+    display: flex;
+    align-items: center;
+     
+}
+.hamburger {
+    height: 35px;
+    width: 35px;
+    fill: var(--main-bg-color);
+    padding: var(--margin-m);
+}
+.navbar  :hover,
+.sidebar :hover {
+    background-color: var(--alternate-bg-color);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 250px;
+    background-color: var(--head-color);
+    color: var(--head-text);
+    display: none 
+}
+.sidebar li{
+    width: 100%;
+}
+.navbar .hideOnDesktop {
+    display: none;
+}
+.logoIcon {
+    margin: auto;
+    height: 35px;
+    width: 35px;
+    fill: var(--main-bg-color);
+}
+
+@media screen and (max-width:800px) {
+    .navbar .hideOnMobile {
+        display: none;
+    }
+    .navbar .hideOnDesktop {
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:400px){
+    .sidebar {
+        width: 100%;
+    }
+    
+}
