@@ -1,6 +1,7 @@
 .dropdown{
     position: relative;
     width: 12.5rem;
+    margin:var(--margin-xs) 0;
 }
 
 .dropdown-button {
@@ -15,7 +16,7 @@
     border: 1px solid white;
     padding: var(--margin-s);
     color: var(--main-text-color);
-    font:var(--h3ui);
+    font:var(--bigui);
     display: flex;
     cursor: pointer;
     position: relative;
@@ -44,7 +45,7 @@
 .dropdown-item {
     padding: var(--margin-xs);
     cursor: pointer;
-    font: var(--h3ui);
+    font: var(--bigui);
     margin: 0;
 }
 

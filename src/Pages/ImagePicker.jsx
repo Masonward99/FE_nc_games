@@ -18,7 +18,7 @@ function ImagePicker({ setFile, defaultSrc, type }) {
   }
   
     return (
-      <>
+      <div className="image-picker">
         <label htmlFor="imagePicker" className="image-picker-label">Choose Image</label>
         <input
           type="file"
@@ -26,7 +26,7 @@ function ImagePicker({ setFile, defaultSrc, type }) {
           name="imagePicker"
           accept="image /*"
           onChange={loadImg}
-          className="image-picker"
+          className="image-picker-input"
         />
         <img
           id="output"
@@ -40,7 +40,7 @@ function ImagePicker({ setFile, defaultSrc, type }) {
         {invalidFile ? (
           <p className="errorText">Invalid image type selected</p>
         ) : null}
-      </>
+      </div>
     );
 }
 export default ImagePicker

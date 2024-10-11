@@ -11,8 +11,12 @@
     display: flex;
     flex-direction: row;
     min-width: 200px;
+    align-items: center;
+    gap: var(--margin-xs);
 }
-.dropdownForm button { 
-    height: 100%;
+.dropdownForm .dropdown {
     margin: 0;
+}
+.order-button {
+    height: 100%;
 }

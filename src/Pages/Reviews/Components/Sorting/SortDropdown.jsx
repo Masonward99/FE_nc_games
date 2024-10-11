@@ -18,7 +18,7 @@ function SortDropdown({ setSort, sort, order, setOrder }) {
   return (
     <form className="dropdownForm">
       <Dropdown array={sortArray} item={sort} setItem={setSort}/>
-      <button onClick={handleButton} value={order}>
+      <button onClick={handleButton} value={order} className="order-button">
         {order !== "desc" ? <UpArrow /> : <DownArrow />}
       </button>
     </form>

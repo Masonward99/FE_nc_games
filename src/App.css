@@ -31,6 +31,18 @@ label {
 option {
   font: var(--pui)
 }
+button {
+  background-color: var(--accent-color);
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
+  cursor: pointer;
+  font: var(--bigui);
+  padding: var(--margin-s);
+  border: 1px solid white;
+}
 
 .pageTitle{
   margin-bottom: 10px;
@@ -106,16 +118,6 @@ option {
   text-align: center;
 }
 
-button {
-  background-color: var(--accent-color);
-  border-radius: 25%;
-  -webkit-border-radius: 25%;
-  -moz-border-radius: 25%;
-  -ms-border-radius: 25%;
-  -o-border-radius: 25%;
-}
-
-
 .checkboxHeading {
   margin-top: 40px ;
 }
@@ -129,45 +131,9 @@ button {
 }
 
 
-.loginPageContainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-}
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-
-}
-.buttonBox {
-  text-align: center;
-}
-.buttonBox button {
-  width: 60%;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-}
-
-
-.centered {
-  margin: auto;
-}
-
-
 .csstest {
   height: 100%;
   justify-content: center;
-}
-
-
-.buttonBox :disabled {
-  opacity: 10%;
-  pointer-events: none;
 }
 
 .errorText {

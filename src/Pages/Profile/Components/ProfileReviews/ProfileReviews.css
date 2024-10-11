@@ -8,6 +8,7 @@
 }
 #profileReviewImg {
     width: 100%;
+    /* aspect-ratio: 16/9; */
 }
 
 .profileReviewCard h3 {
@@ -42,6 +43,7 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    /* aspect-ratio: 16/9; */
 }
 
 .backButton {
@@ -80,6 +82,7 @@
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
+    padding: var(--margin-xxs);
 }
 
 .profileReviewCard::after{

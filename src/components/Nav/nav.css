@@ -36,7 +36,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    font: var(--h4ui);
+    font: var(--h3ui);
 }
 .hideOnDesktop {
     display: flex;

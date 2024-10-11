@@ -10,7 +10,7 @@
 }
 
 .postReviewContainer textarea {
-    width: 100%;
+    width: calc(100% - 2 * var(--margin-xs) -2px);
     height: 150px;
     background-color: var(--alternate-bg-color);
     color: var(--main-text-color);
@@ -22,6 +22,7 @@
     padding: var(--margin-xs);
     resize: vertical;
     font: var(--uih2);
+    border: 1px solid white;
 }
 
 textarea::placeholder{
@@ -29,17 +30,9 @@ textarea::placeholder{
 }
 
 
-/* .postReviewContainer button {
-    width: 60%;
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-} */
 #reviewTitleInput{
     background-color: var(--alternate-bg-color);
-    width: 100%;
+    width: calc(100% - 2 * var(--margin-xs) -2px);
     border: 1px solid white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -49,7 +42,26 @@ textarea::placeholder{
     font: var(--uih2);
     color: var(--main-text-color);
     padding: var(--margin-xs);
+    margin: var(--margin-s) 0;
 }
 #reviewTitleInput::placeholder{
     color: var(--main-text-color);
+}
+.post-review-button {
+    width: 12.5rem;
+    margin: auto;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+.alert-text {
+    font: var(--h4);
+}
+.alert-text button {
+    font: var(--h4);
+}
+.post-review-heading {
+    margin: var(--margin-l);
 }

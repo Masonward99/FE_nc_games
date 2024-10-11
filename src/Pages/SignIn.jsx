@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { auth } from "../../firebase.config";
 import { SignUpModal } from "../modals/SignUpModal";
 import { UserContext } from "../../Contexts/UserContext";
+import './Signin.css'
 
 function SignIn() {
     const {setUser} = useContext(UserContext)
@@ -33,23 +34,19 @@ function SignIn() {
 
     return (
         <div className="pageContent">
-            <div className="centered">
                 <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
                 <div className="loginPageContainer">
-                    <h2 className="pageHeading">Login</h2>
+                    <h1 className="pageHeading">Login</h1>
                     <form className="loginForm">
-                        <label htmlFor="signInEmail">Email: </label>
-                        <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail"/>
-                        <label htmlFor="signInPassword">Password: </label>
-                        <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password' id="signInPassword" />
-                        <div className="buttonBox">
-                            <button name="submit" onClick={handleSubmit} value='Submit'>Login</button>
-                        </div>
+                        <label htmlFor="signInEmail" className="visually-hidden">Email</label>
+                        <input type="email" name='email' value={email} className='text-input' onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail" placeholder="Email..."/>
+                        <label htmlFor="signInPassword" className="visually-hidden">Password</label>
+                        <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password' id="signInPassword" className="text-input" placeholder="Password..."/>
+                        <button name="submit" onClick={handleSubmit} value='Submit' className="login-button">Login</button>
                     </form>
-                    <p>Don't have an account? <button onClick={openModal}>Signup</button></p>
-                    <p>Sign in as guest <button onClick={handleGuest}>Guest Login</button></p>
+                    <p>Don't have an account? <button onClick={openModal} className="link-button">Signup</button></p>
+                    <button onClick={handleGuest} className="guest-button">Guest Login</button>
                 </div>
-            </div>
         </div>
     );
 }
