@@ -12,7 +12,7 @@ function ReviewContent({ review }) {
       <div className="singleReviewTop">
         <UserImage username={review.owner} date={review.created_at} />
         {user.username == review.owner ? (
-          <DeleteButton review={review.review_id} />
+          <DeleteButton id={review.review_id} />
         ) : null}
       </div>
       <h1>{review.title}</h1>

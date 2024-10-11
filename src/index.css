@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
   --margin-xxs: .25rem;
   --margin-xs:  .5rem;
   --margin-s: .75rem;
@@ -45,6 +46,8 @@
   --head-text: #333333;
   --red: #DC143C;
   --green: #50C878;
+  --link-color: #4A90E2;
+  --link-hover: #1C6CC7;
 }
 
 a {

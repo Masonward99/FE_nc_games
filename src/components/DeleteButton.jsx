@@ -2,7 +2,8 @@ import { deleteReviewById, removeComment } from "../utils/utils"
 import { useNavigate } from "react-router-dom"
 import Delete from "./icons/Delete"
 
-function DeleteButton({  id }) {
+function DeleteButton({ id }) {
+    console.log(id)
     let navigate = useNavigate()
     function handleDelete() {
             deleteReviewById(id)

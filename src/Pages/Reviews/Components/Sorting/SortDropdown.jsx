@@ -1,11 +1,11 @@
+import { useState } from "react";
 import DownArrow from "../../../../components/icons/DownArrow";
 import UpArrow from "../../../../components/icons/UpArrow";
 import "./sortDropdown.css";
+import Dropdown from "../../../../components/dropdown/Dropdown";
 
-function SortDropdown({ setSort, order, setOrder }) {
-  function handleChange(event) {
-    setSort(event.target.value);
-  }
+function SortDropdown({ setSort, sort, order, setOrder }) {
+  const sortArray = ["created_at", "comment_count", "votes"]
   function handleButton(event) {
     event.preventDefault();
     if (event.target.value === "asc") {
@@ -14,15 +14,11 @@ function SortDropdown({ setSort, order, setOrder }) {
       setOrder("asc");
     }
   }
+
   return (
     <form className="dropdownForm">
-      <label htmlFor="sortDropdown">Sort by:</label>
-      <select id="sortDropdown" onChange={handleChange}>
-        <option value="created_at">Date</option>
-        <option value="comment_count">Comments</option>
-        <option value="votes">Votes</option>
-      </select>
-      <button onClick={handleButton} value={order}>
+      <Dropdown array={sortArray} item={sort} setItem={setSort}/>
+      <button onClick={handleButton} value={order} className="order-button">
         {order !== "desc" ? <UpArrow /> : <DownArrow />}
       </button>
     </form>

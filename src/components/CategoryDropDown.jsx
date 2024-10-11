@@ -1,19 +1,16 @@
 import { useCategories } from "../hooks/useCategories";
+import Dropdown from "./dropdown/Dropdown";
 
-function CategoryDropDown({ setSelectedCategory, className }) {
+function CategoryDropDown({ setSelectedCategory, selectedCategory, className }) {
     const categories = JSON.parse(localStorage.getItem('categories'))
     if (!categories) {
         useCategories()
     }
     {
         return !categories ? 'Loading...' : (
-            <div className="catDd ui">
-                <label htmlFor="categoryDropdown" className="visually-hidden">Category: </label>
-                <select id="categoryDropdown" onChange={e => setSelectedCategory(e.target.value)}>
-                    <option value={false}>Select category</option>
-                    {categories.map((cat) =><option value={cat.slug} key={cat.slug}>{cat.slug}</option>)}
-                </select>
-            </div>
+            <>
+                <Dropdown array={categories} setItem={setSelectedCategory} item={selectedCategory} className={className}/>
+            </>
         )
     }
 }
