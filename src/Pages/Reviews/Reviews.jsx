@@ -8,25 +8,26 @@ import './reviews.css'
 import CategoryDropDown from "../../components/CategoryDropDown";
 
 function Reviews() {
-  const [reviews, setReviews] = useState("");
+  const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sort, setSort] = useState("created_at");
   const [order, setOrder] = useState("desc");
-  const [selectedCategory, setSelectedCategory] = useState("false");
+  const [selectedCategory, setSelectedCategory] = useState("strategy");
   useEffect(() => {
     getReviews(selectedCategory, sort, order).then((rev) => {
       setReviews(rev);
       setIsLoading(false);
     });
   }, [selectedCategory, sort, order]);
+  
   return (
     <div className="pageContent">
       <h1 className="reviewHeading">Reviews</h1>
       <div className="reviewsPageContainer">
         <div className="reviewContentLeft">
-          <CategoryDropDown id='categorySmall' setSelectedCategory={setSelectedCategory}/>
+          <CategoryDropDown id='categorySmall' setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} className={"catDd"} />
           <CategoryCheckBox setSelectedCategory={setSelectedCategory} />
-          <SortDropdown setSort={setSort} order={order} setOrder={setOrder} />
+          <SortDropdown setSort={setSort} order={order} setOrder={setOrder} sort={sort} />
         </div>
         <div className="reviewContentRight">
           {isLoading ? (

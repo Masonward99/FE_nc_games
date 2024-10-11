@@ -23,14 +23,14 @@ function CategoryCheckBox({ setSelectedCategory }) {
               <label htmlFor="noCat">All</label>
               {categories.map((cat) => {
                 return (
-                  <div key={cat.slug}>
+                  <div key={cat}>
                     <input
                       type="radio"
                       name="catSelector"
-                      value={cat.slug}
-                      id={cat.slug}
+                      value={cat}
+                      id={cat}
                     />
-                    <label htmlFor={cat.slug}>{cat.slug}</label>
+                    <label htmlFor={cat}>{cat}</label>
                   </div>
                 );
               })}

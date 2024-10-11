@@ -29,14 +29,14 @@ textarea::placeholder{
 }
 
 
-.postReviewContainer button {
+/* .postReviewContainer button {
     width: 60%;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
-}
+} */
 #reviewTitleInput {
     background-color: var(--alternate-bg-color);
     width: 100%;
