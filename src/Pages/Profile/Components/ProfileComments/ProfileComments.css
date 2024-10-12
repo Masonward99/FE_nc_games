@@ -1,6 +1,6 @@
 .profile-comment-card {
-    width: 300px;
-    min-height: 100px;
+    width: 18.75rem;
+    min-height: 6.25rem;
     flex-grow: 1;
     background-color: var(--accent-color);
     color: var(--text-color);
