@@ -1,15 +1,21 @@
-.profileCommentCard {
+.profile-comment-card {
     width: 300px;
     min-height: 100px;
     flex-grow: 1;
-    background-color: var(--alternate-bg-color);
-    color: var(--secondary-text-color);
+    background-color: var(--accent-color);
+    color: var(--text-color);
     padding: var(--margin-xxs);
     overflow: hidden;
+    border: 1px solid white ;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
-.profileCommentCard h3 {
-    color: black;
+.profile-comment-title {
+    color: var(--head-text);
     font: var(--p);
     margin: 0;
     display: -webkit-box;
@@ -20,7 +26,7 @@
     overflow: hidden;
 }
 
-.profileCommentCard p {
+.profile-comment-body {
     margin: var(--margin-xxs) 0;
     display: -webkit-box;
     line-clamp: 2;
@@ -29,10 +35,13 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-.commentsList {
+.profile-comments-list {
     display: flex;
     width: 100%;
     flex-flow: row wrap;
     gap: var(--margin-xs);
     align-items: stretch;
+}
+.profile-comment-card:hover{
+    background-color: var(--head-hover);
 }

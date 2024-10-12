@@ -37,3 +37,6 @@
 .footer a:hover svg{
     fill: var(--link-color);
 }
+.footer a {
+    padding: var(--margin-s);
+}
