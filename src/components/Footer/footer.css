@@ -1,0 +1,39 @@
+.footer {
+    width: min(75rem, 100%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--head-text);
+    
+}
+.footer-container {
+    position: relative;
+    bottom: 0;
+    background-color: var(--head-color);
+    width: 100%;
+}
+.footer-links svg{
+    height: 3rem;
+    width: 3rem;
+    fill: var(--head-text);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin-s);
+    margin-bottom: var(--margin-xl);
+    width: min(20rem, 100%);
+    justify-content: space-around;
+}
+.footer p {
+    font: var(--h3);
+}
+.footer a:hover{
+    background-color: var(--head-hover);
+}
+.footer a:hover svg{
+    fill: var(--link-color);
+}

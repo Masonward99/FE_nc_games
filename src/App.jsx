@@ -9,6 +9,7 @@ import { UserContext } from "../Contexts/UserContext";
 import PostReview from "./Pages/PostReview/PostReview";
 import Profile from "./Pages/Profile/Profile";
 import OwnProfile from "./Pages/Profile/OwnProfile";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/addreview" element={<PostReview />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
