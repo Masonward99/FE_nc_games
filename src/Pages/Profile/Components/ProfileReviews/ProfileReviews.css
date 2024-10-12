@@ -1,4 +1,4 @@
-.profileReviewCard {
+.profile-review-card {
     width: 66%;
     max-width: 43.75rem;
     flex-shrink: 0;
@@ -6,11 +6,11 @@
     overflow: hidden;
     position: relative;
 }
-.profile-reviewcard-image{
+.profile-reviewcard-image {
     width: calc(100% - 4px);
 }
 
-.profileReviewCard h3 {
+.profile-review-card-title {
     position: absolute;
     bottom: 0;
     color: white;
@@ -61,14 +61,14 @@
     -o-transform: translate(-50%, -50%);
 }
 .reviews-showcase svg {
-    height: 20px;
-    width: 20px;
+    height: 1.5rem;
+    width: 1.5rem;
     margin: auto;
     fill: white;
 }
-.reviews-showcase button {
-    height: 30px;
-    width: 30px;
+.back-button, .forward-button{
+    height: 2rem;
+    width: 2rem;
     display: flex;
     border-radius: 100%;
     -webkit-border-radius: 100%;
@@ -78,11 +78,11 @@
     padding: var(--margin-xxs);
 }
 
-.profileReviewCard::after{
+.profile-review-card::after{
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
 }
 
-.profileReviewCard :hover{
+.profile-review-card :hover{
     border-color: var(--accent-color);
 }
 
@@ -98,7 +98,7 @@
         -ms-transform: none;
         -o-transform: none;
 }
-    .profileReviewCard{
+    .profile-review-card{
         width: 100%;
         max-width: 50rem;
         flex-shrink: 1;

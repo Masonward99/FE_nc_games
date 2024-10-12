@@ -1,33 +1,29 @@
-.imgText {
-    display: flex;
-    flex-grow: 1;
-    max-height: 60px;
-    flex-direction: column;
-}
-
-.imgLink :hover {
+.user-image-container:hover {
     color:var(--text-color);
     background-color: var(--hover-color);
 }
 
-.userImgContainer {
+.user-image-container {
     display: flex;
     flex-direction: row;
-    max-height: 60px;
-    margin-bottom: 10px;
-    gap:10px;
+    max-height: 4rem;
+    margin-bottom: var(--margin-xs);
+    gap: var(--margin-xs);
     color: var(--secondary-text-color);
+    max-width: max-content;
 }
 
-#userImg {
+.user-image {
     grid-column: 1;
-    height: 60px;
-    width: 60px;
+    height: calc(4rem - 2px);
+    width: calc(4rem - 2px);
     object-fit: contain;
     background-color: white;
     border: 1px solid black;
+    flex-grow: 0;
 }
 
-.userImgContainer p {
+.user-image-text {
     margin: 0;
+    text-wrap: nowrap;
 }

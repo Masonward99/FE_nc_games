@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { postComment } from "../../../../../utils/utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../../../../../Contexts/UserContext";
 import './CreateComment.css'
 import CommentCard from "../CommentCard/CommentCard";
@@ -33,7 +33,7 @@ function CreateComment({ review_id, count, setCount }) {
     return <CommentCard comment={{ author: user.username, body: value, votes: 0, comment_id: 'test', created_at: Date.now() }} remove={false} />
   }
   return (
-    <form onSubmit={handleSubmit} className="addComment ui">
+    <form onSubmit={handleSubmit} className="add-comment ui">
       <label htmlFor="commentInput" className="visually-hidden">Add a comment</label>
       <textarea
         type="textarea"
@@ -42,7 +42,7 @@ function CreateComment({ review_id, count, setCount }) {
         placeholder="Add comment..."
         className="text-input single-review-input"
       />
-      <button type="submit">Post</button>
+      <button type="submit" className="post-button">Post</button>
     </form>
   );
 }

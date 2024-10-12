@@ -6,17 +6,17 @@ function Dropdown({ array, item, setItem, className }) {
         if (event) {
             event.preventDefault();
         }
-         if (
-           list.current.style.display === "none" ||
-           list.current.style.display === ""
-         ) {
-           list.current.style.display = "block";
-         } else {
-           list.current.style.display = "none";
-         }
+        if (
+            list.current.style.display === "none" ||
+            list.current.style.display === ""
+        ) {
+            list.current.style.display = "block";
+        } else {
+            list.current.style.display = "none";
+        }
     }
-    function changeIndex(i) {
-        setItem(i)
+    function changeIndex(item) {
+        setItem(item)
         toggleDropdown()
     }
     return (

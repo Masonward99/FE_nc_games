@@ -11,6 +11,7 @@ export function useUserByUsername(username) {
                 setUser(user)
                 setIsLoading(false)
             })
-    }, [username])
+        },
+    [username])
     return {user, isLoading}
 }

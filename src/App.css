@@ -8,12 +8,41 @@
   flex-direction: column;
   position: relative;
 }
-.pageContent{
+.page-content{
   color: var(--text-color);
-  width: min(calc(1200px - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
+  width: min(calc(75rem - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
   padding: var(--margin-s);
   margin: auto;
   height: 100%;
+  position: relative;
+}
+.link-button {
+  background-color: transparent;
+  border: none;
+  color: var(--link-color)
+}
+
+.link-button:hover {
+  color: var(--link-hover);
+}
+
+.text-input::placeholder {
+  color: var(--main-text-color);
+}
+
+.text-input {
+  background-color: var(--alternate-bg-color);
+  width: calc(100% - 2 * var(--margin-xs));
+  border: 1px solid white;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  font: var(--uih2);
+  color: var(--main-text-color);
+  padding: var(--margin-xs);
+  margin: var(--margin-s) 0;
 }
 
 ul {
@@ -38,11 +67,11 @@ img {
   aspect-ratio: 1.5;
   background-color: black;
   object-fit: contain;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
   border: 2px solid white;
 }
 button {
@@ -58,16 +87,7 @@ button {
   border: 1px solid white;
 }
 
-.pageTitle{
-  margin-bottom: 10px;
-}
-.signIn{
-  height: 65vh;
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-  flex-flow: column;
-}
+
 .SignUpModal{
   background-color: black;
   text-align: left;
@@ -82,8 +102,7 @@ button {
 .SignUpModalContainer{
   background-color: black;
   text-align: left;
-  max-width: max-content;
-  
+  max-width: max-content; 
 }
 
 .HiddenForm{
@@ -132,10 +151,6 @@ button {
   text-align: center;
 }
 
-.checkboxHeading {
-  margin-top: 40px ;
-}
-
 .testBox {
   width: 100%;
 }
@@ -150,18 +165,6 @@ button {
   justify-content: center;
 }
 
-.errorText {
-  background-color: red;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.commentsList {
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-}
 
 .visually-hidden {
   position: absolute;

@@ -11,8 +11,7 @@ function Nav() {
     const sidebar = useRef(null)
     function toggleOpen() {
         if (
-          sidebar.current.style.display === "none" ||
-          sidebar.current.style.display === ""
+          sidebar.current.style.display === ("none" || "") 
         ) {
           sidebar.current.style.display = "block";
         } else {
@@ -20,54 +19,37 @@ function Nav() {
         }
     }
     return (
-      <div className="navbarContainer ui">
-        <ul className="navbar">
-          <li>
-            <Link to="/">
-              <Logo />
-              NC Games
-            </Link>
-          </li>
-          <li className="hideOnMobile">
-            <Link to="/" className="linkBox">
-              Reviews
-            </Link>
-          </li>
-          <li className="hideOnMobile">
-            <Link to="/addreview" className="linkBox">
-              Post Review
-            </Link>
-          </li>
-          <li className="hideOnMobile">
-            <Link to="/login" className="linkBox">
-              {user ? "Profile" : "Login"}
-            </Link>
-          </li>
-          <li onClick={() => toggleOpen()} className="hideOnDesktop">
-            <Hamburger />
-          </li>
-        </ul>
-        <ul className="sidebar" ref={sidebar}>
-          <li onClick={() => toggleOpen()}>
-            <Close />
-          </li>
-          <li>
-            <Link to="/" onClick={toggleOpen}>
-              Reviews
-            </Link>
-          </li>
-          <li>
-            <Link to="/addreview" onClick={toggleOpen}>
-              Post Review
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" onClick={toggleOpen}>
-              {user ? "Profile" : "Login"}
-            </Link>
-          </li>
-        </ul>
-      </div>
+        <div className="navbar-container ui">
+            <ul className="navbar">
+                <li>
+                    <Link to="/"><Logo />NC Games</Link>
+                </li>
+                <li className="hide-on-mobile">
+                    <Link to="/" className="linkBox">Reviews</Link>
+                </li>
+                <li className="hide-on-mobile">
+                    <Link to="/addreview" className="link-box">Post Review</Link>
+                </li>
+                <li className="hide-on-mobile">
+                    <Link to="/login" className="link-box">{user ? "Profile" : "Login"}</Link>
+                </li>
+                <li onClick={() => toggleOpen()} className="hide-on-desktop"><Hamburger /></li>
+            </ul>
+            <ul className="sidebar" ref={sidebar}>
+                <li onClick={() => toggleOpen()}>
+                    <Close />
+                </li>
+                <li>
+                    <Link to="/" onClick={toggleOpen}>Reviews</Link>
+                </li>
+                <li>
+                    <Link to="/addreview" onClick={toggleOpen}>Post Review</Link>
+                </li>
+                <li>
+                    <Link to="/login" onClick={toggleOpen}>{user ? "Profile" : "Login"}</Link>
+                </li>
+            </ul>
+        </div>
     );
 }
 export default Nav

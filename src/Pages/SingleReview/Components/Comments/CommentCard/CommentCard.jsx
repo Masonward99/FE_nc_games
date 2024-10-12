@@ -1,6 +1,6 @@
 import { removeComment } from "../../../../../utils/utils";
 import UserImage from "../../../../../components/UserImage/UserImage";
-import VoteButton from "../../../../../components/VoteButton";
+import VoteButton from "../../../../../components/VoteButtons/VoteButton";
 import "./commentCard.css";
 import Delete from "../../../../../components/icons/Delete";
 
@@ -13,10 +13,14 @@ function CommentCard({ comment, remove, comments, setComments }) {
     removeComment(comment.comment_id).then();
   }
   return (
-    <div className="commentCard">
-      <div className="topCommentCard">
+    <div className="comment-card">
+      <div className="top-comment-card">
         <UserImage username={comment.author} date={comment.created_at} />
-        {remove ? <button onClick={handleDelete} name="delete"><Delete /></button> : null}
+        {remove ? (
+          <button onClick={handleDelete} name="delete">
+            <Delete />
+          </button>
+        ) : null}
         <VoteButton
           type="comments"
           id={comment.comment_id}

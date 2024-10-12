@@ -33,15 +33,15 @@ function SignIn() {
     }
 
     return (
-        <div className="pageContent">
+        <div className="page-content">
                 <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
-                <div className="loginPageContainer">
+                <div className="login-page-container">
                     <h1 className="login-heading">Login</h1>
-                    <form className="loginForm">
+                    <form className="login-form">
                         <label htmlFor="signInEmail" className="visually-hidden">Email</label>
-                        <input type="email" name='email' value={email} className='text-input' onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail" placeholder="Email..."/>
+                        <input type="email" name='email' value={email} className='text-input' onChange={(event) => setEmail(event.target.value)} required={true} id="signInEmail" placeholder="Email..."/>
                         <label htmlFor="signInPassword" className="visually-hidden">Password</label>
-                        <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} name='password' id="signInPassword" className="text-input" placeholder="Password..."/>
+                        <input type='password' value={password} onChange={(event) => setPassword(event.target.value)} name='password' id="signInPassword" className="text-input" placeholder="Password..."/>
                         <button name="submit" onClick={handleSubmit} value='Submit' className="login-button">Login</button>
                     </form>
                     <p>Don't have an account? <button onClick={openModal} className="link-button">Signup</button></p>

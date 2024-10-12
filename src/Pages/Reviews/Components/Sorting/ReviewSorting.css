@@ -1,0 +1,27 @@
+.dropdown-form .up-arrow,
+.dropdown-form .down-arrow {
+    height:20px;
+    width: 20px;
+}
+
+.dropdown-form {
+    display: flex;
+    flex-direction: row;
+    min-width: 200px;
+    align-items: center;
+    gap: var(--margin-xs);
+}
+.dropdown-form .dropdown {
+    margin: 0;
+}
+.order-button {
+    height: 100%;
+}
+
+.category-checkbox-title{
+    font:var(--uih2);
+    margin: var(--margin-xs) 0;
+}
+.category-checkbox-name{
+    font:var(--bigui)
+}

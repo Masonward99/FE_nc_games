@@ -7,14 +7,14 @@ function ProfileTop({ user , setIsModalVisible }) {
       setIsModalVisible(true);
     }
     return (
-        <div className="profileContainer">
+        <div className="profile-container">
             <img src={user.avatar_url} />
-            <div className="profileName">
+            <div className="profile-name">
                 <h1>{user.username} </h1>
                 <p>{user.name}</p>
             </div>
             {signedInUser.user.username == user.username ? (
-            <button onClick={handleSignOut}>sign out</button>
+                <button onClick={handleSignOut}>sign out</button>
             ) : null}
         </div>
     );

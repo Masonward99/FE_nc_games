@@ -1,54 +1,54 @@
-.voteButtons {
+.vote-buttons {
     display: flex;
     flex-direction: row;
-    width: 150px;
-    height: 70px;
-    border-radius: 20px;
+    width: 9rem;
+    height: 4rem;
+    border-radius: 1rem;
     border: 1px solid white;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
     background-color: var(--main-bg-color);
 }
 
-.upSelected{
+.up-selected{
 background-color: var(--green);
 }
 
-.downSelected{
+.down-selected{
     background-color: var(--red);
 }
 
-.voteButtons p {
+.vote-count {
     margin: auto;
     color: white;
 }
 
-.voteButtons button {
+.vote-button {
     background-color: transparent;
     padding: var(--margin-xs);
-    border: 0px;
+    border: 0;
 }
 
-.voteButtons button:hover {
+.vote-button:hover {
     background-color: var(--hover-color);
 }
 
-.voteButtons button:hover > .upArrow{
+.vote-button:hover > .up-arrow{
     stroke: var(--green)
 }
 
-.voteButtons button:hover > .downArrow{
+.vote-button:hover > .down-arrow{
     stroke: var(--red)
 }
 
-.downSelected button .downArrow{
+.down-selected .down-arrow{
     polygon{
         fill: white;
     }
 }
-.upSelected  .upArrow{
+.up-selected .up-arrow{
     polygon{
         fill: white;
     }

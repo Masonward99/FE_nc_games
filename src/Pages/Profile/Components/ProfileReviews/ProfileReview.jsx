@@ -16,20 +16,21 @@ function ProfileReview({ username }) {
     function handleBack() {
         setSelectedReview(prev)
     }
+    
     let prev = calculateIndex(false, selectedReview, reviews.length)
     let next = calculateIndex(true, selectedReview, reviews.length)
     
     { return reviews.length > 0 ? (
-      <>
-        <h2>Reviews</h2>
-        <div className="reviews-showcase">
-            <img src={reviews[prev].review_img_url} className="profile-review-image"/>
-            <button onClick={handleBack} className="back-button"><BackwardArrow/></button>
-            <ProfileReviewCard review={reviews[selectedReview]} />
-            <button onClick={handleForward} className="forward-button"><ForwardArrow/></button>
-            <img src={reviews[next].review_img_url} className="profile-review-image" />
-        </div>
-      </>
+        <>
+            <h2>Reviews</h2>
+            <div className="reviews-showcase">
+                <img src={reviews[prev].review_img_url} className="profile-review-image"/>
+                <button onClick={handleBack} className="back-button"><BackwardArrow/></button>
+                <ProfileReviewCard review={reviews[selectedReview]} />
+                <button onClick={handleForward} className="forward-button"><ForwardArrow/></button>
+                <img src={reviews[next].review_img_url} className="profile-review-image" />
+            </div>
+        </>
     ) : null;
     }
 }
