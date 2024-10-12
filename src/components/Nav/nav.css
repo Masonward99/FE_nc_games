@@ -51,7 +51,7 @@
 }
 .navbar  :hover,
 .sidebar :hover {
-    background-color: var(--alternate-bg-color);
+    background-color: var(--head-hover);
 }
 
 .sidebar {

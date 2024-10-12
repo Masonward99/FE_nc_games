@@ -36,7 +36,7 @@ function SignIn() {
         <div className="pageContent">
                 <SignUpModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
                 <div className="loginPageContainer">
-                    <h1 className="pageHeading">Login</h1>
+                    <h1 className="login-heading">Login</h1>
                     <form className="loginForm">
                         <label htmlFor="signInEmail" className="visually-hidden">Email</label>
                         <input type="email" name='email' value={email} className='text-input' onChange={(e) => setEmail(e.target.value)} required={true} id="signInEmail" placeholder="Email..."/>

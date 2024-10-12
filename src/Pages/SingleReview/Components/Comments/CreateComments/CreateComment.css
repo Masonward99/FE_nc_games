@@ -1,16 +1,11 @@
-.commentTextArea {
-    width: calc(100% - 22px);
+.single-review-input {
     height: 75px;
-    background-color:var(--main-bg-color) ;
-    color: var(--text-color);
-    font:--bigui;
-    border-radius: 15px;
-    padding: 10px;
-    resize: none;
+    resize: vertical;
 }
 .addComment {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .addComment button {
     margin-top: var(--margin-xxs);

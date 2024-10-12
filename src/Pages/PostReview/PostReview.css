@@ -58,6 +58,7 @@ textarea::placeholder{
 }
 .alert-text {
     font: var(--h4);
+    text-wrap: wrap;
 }
 .alert-text button {
     font: var(--h4);

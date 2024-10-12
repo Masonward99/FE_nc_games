@@ -57,3 +57,7 @@
     flex-direction: column;
     text-align: left;
 }
+
+.login-heading {
+    margin: var(--margin-l) 0 ;
+}
