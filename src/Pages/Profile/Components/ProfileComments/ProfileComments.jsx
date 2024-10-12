@@ -8,8 +8,8 @@ function ProfileComments({ username }) {
     return comments.length > 0 ? (
       <>
         <h2>Comments</h2>
-        <ul className="commentsList">
-          {comments.map((comment) => {
+        <ul className="profile-comments-list">
+          {comments.slice(0,6).map((comment) => {
             return <ProfileCommentCard comment={comment} key={comment.id} />;
           })}
         </ul>
