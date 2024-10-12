@@ -135,3 +135,16 @@ export function deleteReviewById(id) {
     return games.delete(`/reviews/${id}`)
         .then(res => console.log(res))
 }
+
+export function calculateIndex(isNext, index, length) {
+  if (isNext) {
+    if (length > index + 1) {
+      return index + 1;
+    }
+    return 0;
+  }
+  if (index > 0) {
+    return index - 1;
+  }
+  return length - 1;
+}
