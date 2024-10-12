@@ -6,7 +6,8 @@ import Mail from "../icons/Mail"
 function Footer() {
     return (
       <div className="footer-container">
-        <div className="footer">
+            <div className="footer">
+
           <p>Mason Ward 2024</p>
           <div className="footer-links">
             <a href="https://github.com/Masonward99" target="blank">
