@@ -1,11 +1,33 @@
 # NC_Games
 
-This is my frontend project from the northcoders bootcamp. During this project I learned about React, Axios and CSS. This project is the first major project I have created using React.
+NC Games is a board game review website that allows users to post reviews of board games, and comment on other users reviews. 
+It builds on the [backend api](https://github.com/Masonward99/nc_games) that I created and also uses firebase to allow user authentication.
 
-The purpose of this project is to create a board games reviews websites, where uses can post reviews, upvote other peoples reviews and leave comments on these reviews. 
+## Features
+- Users can post reviews
+- Users can search for reviews based on genre, number of comments, date posted and number of likes.
+- Users can upvote comments and reviews.
+- Uses firebase authentication to create user accounts.
 
-This builds on my [backend](https://github.com/Masonward99/nc_games) project that I created.
 
-**Minimimum node version v18.14**
+This projected is hosted [here](https://nc-games-mw.netlify.app)
 
-To run this repo use the script `npm run dev` in  the terminal, this will run the repo locally.
+## Tech used
+1. [React](https://react.dev/)
+1. [NodeJs](https://nodejs.org/en)
+1. [Firebase authentication](https://firebase.google.com/docs/auth)
+1. [Axios](https://www.npmjs.com/package/axios)
+1. [React Router](https://reactrouter.com/en/main)
+
+
+## dependencies
+1. NodeJS v(18.14)
+
+## Instalation
+
+* Clone the repository [here](https://github.com/Masonward99/FE_nc_games.git)
+* Run `npm i` to install dependencies.
+
+## Getting started
+
+* Run `npm run dev` in the terminal to run this project locally.
