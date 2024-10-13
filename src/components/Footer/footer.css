@@ -20,24 +20,8 @@
     fill: var(--head-text);
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    gap: var(--margin-s);
-    margin-bottom: var(--margin-m);
-    width: min(20rem, 100%);
-    justify-content: space-around;
-}
+
 .footer-title {
-    font: var(--h3);
+    font: var(--big);
     margin: var(--margin-xs);
-}
-.footer-link:hover{
-    background-color: var(--head-hover);
-}
-.footer-link:hover svg{
-    fill: var(--link-color);
-}
-.footer-link {
-    padding: var(--margin-xs);
 }

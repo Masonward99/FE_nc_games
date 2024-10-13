@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import './Dropdown.css'
 function Dropdown({ array, item, setItem, className }) {
     const list = useRef(null)
