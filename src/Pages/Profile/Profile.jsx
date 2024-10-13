@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useParams } from "react-router-dom";
 import { useUserByUsername } from "../../hooks/useUserByUsername";
-import SignOutModal from "../../modals/SignOutModal";
+import SignOutModal from "../../modals/SignOutModal/SignOutModal";
 import ProfileComments from "./Components/ProfileComments/ProfileComments";
 import ProfileReview from "./Components/ProfileReviews/ProfileReview";
 import SkeletonProfileTop from "./Components/ProfileTop/SkeletonProfileTop";

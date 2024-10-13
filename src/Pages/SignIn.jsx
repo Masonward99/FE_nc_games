@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {  signIn } from "../utils/utils";
 import { useContext, useState } from "react";
 import { auth } from "../../firebase.config";
-import { SignUpModal } from "../modals/SignUpModal";
+import { SignUpModal } from "../modals/SignUpModal/SignUpModal";
 import { UserContext } from "../../Contexts/UserContext";
 import './Signin.css'
 

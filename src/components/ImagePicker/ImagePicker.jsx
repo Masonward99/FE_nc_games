@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './ImagePicker.css'
 
-function ImagePicker({ setFile, defaultSrc, type }) {
+function ImagePicker({ setFile, defaultSrc}) {
   const [invalidFile, setInvalidFile] = useState(false);
   function loadImg(event) {
         if (event.target.files[0].type != 'image/png' && event.target.files[0].type != 'image/jpeg') {
@@ -19,7 +19,7 @@ function ImagePicker({ setFile, defaultSrc, type }) {
   
     return (
         <div className="image-picker">
-            <label htmlFor="imagePicker" className="image-picker-label">Choose Image</label>
+            <label htmlFor="imagePicker" className="image-picker-label" tabIndex={0}>Choose Image</label>
             <input
                 type="file"
                 id="imagePicker"

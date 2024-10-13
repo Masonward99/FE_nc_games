@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom"
 import Delete from "./icons/Delete"
 
 function DeleteButton({ id }) {
-    console.log(id)
     let navigate = useNavigate()
     function handleDelete() {
             deleteReviewById(id)
             .then(()=> navigate('/'))
     }
     return (
-        <button onClick={handleDelete}><Delete/></button>
+        <button onClick={handleDelete} className="delete-button"><Delete/></button>
     )
 }
 export default DeleteButton

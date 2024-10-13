@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../../Contexts/UserContext";
-import SignOutModal from "../../modals/SignOutModal";
+import SignOutModal from "../../modals/SignOutModal/SignOutModal";
 import SkeletonProfileTop from "./Components/ProfileTop/SkeletonProfileTop";
 import ProfileReview from "./Components/ProfileReviews/ProfileReview";
 import ProfileComments from "./Components/ProfileComments/ProfileComments";

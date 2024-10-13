@@ -28,7 +28,6 @@
     width: calc(100% - 2px);
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
     overflow: hidden;
     gap: var(--margin-m);
     position: relative;
@@ -104,6 +103,6 @@
         flex-shrink: 1;
 }
 .reviews-showcase{
-    gap: 0;
+    gap: var(--margin-xs);
 }
 }
