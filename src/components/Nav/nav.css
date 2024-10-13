@@ -3,7 +3,7 @@
     position: sticky;
     top: 0;
     background-color: var(--head-color);
-    height: 70px;
+    height: 4.375rem;
     width: 100%;
     z-index: 9999;
 }
@@ -16,13 +16,13 @@
     align-items: center;
     height: 100%;
     margin: auto;
-    max-width: 1200px;
+    max-width: 75rem;
     color: var(--head-text);
 }
 
 .navbar li {
     height: 100%;
-    max-width: 200px;
+    max-width: 12.5rem;
 }
 .navbar  :first-child{
     margin-right: auto;
@@ -64,7 +64,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 250px;
+    width: 15.625rem;
     background-color: var(--head-color);
     color: var(--head-text);
     display: none 
@@ -82,7 +82,7 @@
     fill: var(--main-bg-color);
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:50rem) {
     .navbar .hide-on-mobile {
         display: none;
     }
@@ -92,7 +92,7 @@
     
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:25rem){
     .sidebar {
         width: 100%;
     }

@@ -34,7 +34,7 @@
 .reviews-sorting-container .category-dropdown {
     display: none;
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width:56.25rem) {
     .reviews-page-container{
         flex-direction: column;
     }
@@ -44,7 +44,7 @@
     .reviews-sorting-container{
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 1rem;
         border: none;
         padding: var(--margin-xs);
         width: calc(100% - 2 * var(--margin-xs));

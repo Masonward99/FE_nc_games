@@ -25,5 +25,5 @@
 
 .user-image-text {
     margin: 0;
-    text-wrap: nowrap;
+    text-wrap: wrap;
 }

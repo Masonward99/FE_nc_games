@@ -3,7 +3,7 @@ import { getReviews } from "../../utils/utils";
 import ReviewCard from "./Components/ReviewCard/ReviewCard";
 import SortDropdown from "./Components/Sorting/SortDropdown";
 import CategoryCheckBox from "./Components/Sorting/CategoryCheckbox";
-import SkeletonReviewCard from "../Profile/Components/ProfileReviews/SkeletonReviewCard";
+import SkeletonReviewCard from "./Components/ReviewCard/SkeletonReviewCard";
 import "./reviews.css";
 import CategoryDropDown from "../../components/CategoryDropdown/CategoryDropDown";
 

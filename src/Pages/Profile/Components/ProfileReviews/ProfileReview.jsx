@@ -3,9 +3,8 @@ import {useReviewsByUsername} from '../../../../hooks/useReviewsByUsername'
 import ProfileReviewCard from "./ProfileReviewCard";
 import './ProfileReviews.css'
 import BackwardArrow from "../../../../components/icons/BackwardArrow";
-import ForwardArrow from "../../../../components/icons/forwardArrow";
 import { calculateIndex } from "../../../../utils/utils";
-
+import ForwardArrow from '../../../../components/icons/ForwardArrow'
 function ProfileReview({ username }) {
     const { reviews } = useReviewsByUsername(username);
     const [selectedReview, setSelectedReview] = useState(0);
