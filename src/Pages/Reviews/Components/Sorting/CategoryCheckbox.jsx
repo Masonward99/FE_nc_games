@@ -30,7 +30,7 @@ function CategoryCheckBox({ setSelectedCategory }) {
                                     value={cat}
                                     id={cat}
                                 />
-                                <label htmlFor={cat} className="catergory-checkbox-name">{cat}</label>
+                                <label htmlFor={cat} className="catergory-checkbox-name">{cat.split('-').join(' ')}</label>
                             </div>
                         );
                     })}

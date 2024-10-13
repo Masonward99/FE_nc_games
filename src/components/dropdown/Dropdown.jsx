@@ -24,7 +24,7 @@ function Dropdown({ array, item, setItem, className }) {
             <div className="dropdown ui">
                 <button onClick={(event)=>toggleDropdown(event)} className='dropdown-button'>{item}</button>
                 <ul className='dropdown-list' ref={list}>
-                    {array.map((element, index) => <li key={index} className='dropdown-item' onClick={()=>changeIndex(element)}>{element}</li>)}
+                    {array.map((element, index) => <li key={index} className='dropdown-item' onClick={()=>changeIndex(element)}>{element.split('-').join(' ')}</li>)}
                 </ul>
             </div>
         </div>
