@@ -1,0 +1,65 @@
+.hidden-form {
+    display: none;
+}
+
+.visible-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-modal {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    justify-content: center;
+    display: flex;
+    padding: var(--margin-m);
+    overflow: hidden;
+    margin: auto;
+    width: min(30rem, calc(100% - 2 * var(--margin-m)));
+    flex-direction: column;
+    
+}
+
+.signup-modal-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.form-title {
+    font: var(--h3);
+    margin: var(--margin-l) 0;
+}
+
+.filled-progress {
+    flex-grow: 1;
+    background-color: var(--accent-color);
+    border: 1px solid black;
+}
+
+.unfilled-progress {
+    flex-grow: 1;
+    background-color: white;
+    border: 1px solid black;
+}
+.progress-bar {
+    display: flex;
+    flex-direction: row;
+    color: var(--head-text);
+    text-align: center;
+}
+
+.modal-close-button svg{
+    margin: auto;
+}
+.form-button {
+    height: 4rem;
+    width: 5rem;
+    align-self: center;
+}

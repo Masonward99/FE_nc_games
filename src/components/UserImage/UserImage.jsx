@@ -5,21 +5,19 @@ import './userImage.css'
 import SkeletonUserImage from "./SkeletonUserImage";
 
 function UserImage({ username, date }) {
-  const { user, isLoading } = useUserByUsername(username);
-  let newDate = calculateTimePassed(date);
-  if (isLoading) {
-    return <SkeletonUserImage />;
-  }
-  return (
-    <Link to={`/profile/${user.username}`} className="imgLink">
-      <div className="userImgContainer">
-        <img src={user.avatar_url} id="userImg"/>
-        <div className="imgText">
-          <p>{username}</p>
-          <p>{newDate}</p>
-        </div>
-      </div>
-    </Link>
-  );
+    const { user, isLoading } = useUserByUsername(username);
+    let newDate = calculateTimePassed(date);
+    if (isLoading) {
+        return <SkeletonUserImage />;
+    }
+    return (
+        <Link to={`/profile/${user.username}`} className="user-image-container">
+            <img src={user.avatar_url} className="user-image"/>
+            <div className="user-image-text-container">
+                <p className="user-image-text">{username}</p>
+                <p className="user-image-text">{newDate}</p>
+            </div>
+        </Link>
+    );
 }
 export default UserImage;

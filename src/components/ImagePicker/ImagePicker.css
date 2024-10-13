@@ -1,6 +1,6 @@
-#output {
+.image-picker-selected-image {
     width: 100%;
-    max-height: 500px;
+    max-height: 31.25rem;
     object-fit: contain;
     margin: var(--margin-xs) 0 ;
 }
@@ -14,11 +14,11 @@
     background-color: var(--alternate-bg-color);
     width: 12.5rem;
     border: 1px solid white;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
     font: var(--uih2);
     color: var(--main-text-color);
     padding: var(--margin-xs);

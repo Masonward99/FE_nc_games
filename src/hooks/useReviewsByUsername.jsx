@@ -9,7 +9,8 @@ export function useReviewsByUsername(username) {
             .then((res) => {
                 setReviews(res)
                 setIsLoading(false)
-        })
-    }, [username])
+            })
+        },
+    [username])
     return {isLoading, reviews}
 }

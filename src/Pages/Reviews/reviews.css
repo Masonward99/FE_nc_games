@@ -1,47 +1,47 @@
-.reviewsPageContainer {
+.reviews-page-container {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.reviewContentLeft {
+.reviews-sorting-container {
     flex-grow: 1;
     padding: var(--margin-xs);
     width: calc(25% - 2* var(--margin-xs));
     border-right: 1px dotted white;
 }
 
-.reviewContentRight {
+.reviews-list-container {
     width:  75%;
 }
 
-.reviewList {
+.reviews-list {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0;
 }
 
-.reviewList li {
+.reviews-list-item {
     margin: auto;
     width: 100%;
 }
 
-.reviewHeading{
+.reviews-page-heading{
     text-align: center;
     margin: var(--margin-l)0 ;
 }
-.reviewContentLeft .catDd {
+.reviews-sorting-container .category-dropdown {
     display: none;
 }
 @media screen and (max-width:900px) {
-    .reviewsPageContainer{
+    .reviews-page-container{
         flex-direction: column;
     }
-    .reviewContentRight {
+    .reviews-list-container{
         width: 100%;
     }
-    .reviewContentLeft{
+    .reviews-sorting-container{
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -49,13 +49,13 @@
         padding: var(--margin-xs);
         width: calc(100% - 2 * var(--margin-xs));
     }
-    .catCheckbox {
+    .category-checkbox {
         display: none;
     }
-    .reviewContentLeft .catDd {
+    .reviews-sorting-container .category-dropdown {
         display: flex;
     }
-    .catDd label{
+    .category-dropdown label{
         margin: auto;
     }
 }

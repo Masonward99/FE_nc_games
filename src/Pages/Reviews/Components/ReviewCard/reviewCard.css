@@ -1,27 +1,22 @@
-.reviewCard {
+.review-card {
     width: cal(100% - 2 *var(--margin-s));
     border-bottom: 1px dotted white;
     margin: auto;
     padding: var(--margin-s);
 }
 
-.reviewCard img {
+.review-card-image {
     width: 100%;
     object-fit: contain;
-    
 }
 
-.reviewCard h3 {
+.review-card-title {
     text-wrap: wrap;
     font: var(--h4);
     margin: var(--margin-m) 0 ;
 }
 
-.reviewCard a {
-    color: white;
-}
-
-.reviewCard:hover {
+.review-card:hover {
     background-color: var(--hover-color);
     border-radius: 20px;
     -webkit-border-radius: 20px;

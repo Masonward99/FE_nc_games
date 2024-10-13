@@ -1,21 +1,3 @@
-.text-input {
-        background-color: var(--alternate-bg-color);
-        width: calc(100% - 2 * var(--margin-xs));
-        border: 1px solid white;
-        border-radius: 20px ;
-        -webkit-border-radius: 20px ;
-        -moz-border-radius: 20px ;
-        -ms-border-radius: 20px ;
-        -o-border-radius: 20px ;
-        font: var(--uih2);
-        color: var(--main-text-color);
-        padding: var(--margin-xs);
-        margin: var(--margin-s) 0;
-}
-
-.text-input::placeholder{
-    color: var(--main-text-color);
-}
 .login-button {
     width: 12.5rem;
     margin: auto;
@@ -35,24 +17,14 @@
     -o-border-radius: 2rem;
 }
 
-.link-button {
-    background-color: transparent;
-    border:none;
-    color: var(--link-color)
-}
-
-.link-button:hover{
-    color: var(--link-hover);
-}
-
-.loginPageContainer {
+.login-page-container {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 25rem;
     margin: auto;
 }
 
-.loginForm {
+.login-form {
     display: flex;
     flex-direction: column;
     text-align: left;

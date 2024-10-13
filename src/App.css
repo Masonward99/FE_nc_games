@@ -8,12 +8,49 @@
   flex-direction: column;
   position: relative;
 }
-.pageContent{
+.page-content{
   color: var(--text-color);
-  width: min(calc(1200px - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
+  width: min(calc(75rem - 2* var(--margin-s)), calc(100% - 2 * var(--margin-s)) );
   padding: var(--margin-s);
   margin: auto;
   height: 100%;
+  position: relative;
+  flex-grow: 1;
+}
+.link-button {
+  background-color: transparent;
+  border: none;
+  color: var(--link-color)
+}
+
+.link-button:hover {
+  color: var(--link-hover);
+}
+
+.text-input::placeholder {
+  color: var(--main-text-color);
+}
+
+.text-input {
+  background-color: var(--alternate-bg-color);
+  width: calc(100% - 2 * var(--margin-xs));
+  border: 1px solid white;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  font: var(--uih2);
+  color: var(--main-text-color);
+  padding: var(--margin-xs);
+  margin: var(--margin-s) 0;
+}
+
+.two-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--margin-l);
 }
 
 ul {
@@ -38,11 +75,11 @@ img {
   aspect-ratio: 1.5;
   background-color: black;
   object-fit: contain;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
   border: 2px solid white;
 }
 button {
@@ -56,111 +93,6 @@ button {
   font: var(--bigui);
   padding: var(--margin-s);
   border: 1px solid white;
-}
-
-.pageTitle{
-  margin-bottom: 10px;
-}
-.signIn{
-  height: 65vh;
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-  flex-flow: column;
-}
-.SignUpModal{
-  background-color: black;
-  text-align: left;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  display: block;
-  padding:10px  ;
-  overflow: hidden;
-  margin: auto;
-}
-.SignUpModalContainer{
-  background-color: black;
-  text-align: left;
-  max-width: max-content;
-  
-}
-
-.HiddenForm{
-  display: none;
-}
-.VisibleForm{
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  width: 400px;
-}
-.progressBar {
-  display: flex;
-  flex-direction: row;
-  
-}
-.filledProgress {
-  flex-grow: 1;
-  background-color: orange;
-  border: 1px solid black;
-  text-align: center;
-  color: black;
-}
-.unfilledProgress {
-  flex-grow: 1;
-  background-color: white;
-  border: 1px solid black;
-  text-align: center;
-  color: black;
-}
-.SignOutModal {
-  height:200px;
-  width: 400px ;
-  background-color: white;
-  border: 1px solid black ;
-}
-.modalDiv {
-  color:black;
-  text-align: center;
-  margin: auto;
-}
-
-.imgPickerProfileTest {
-  max-height: 250px;
-  max-width: 250px;
-  text-align: center;
-}
-
-.checkboxHeading {
-  margin-top: 40px ;
-}
-
-.testBox {
-  width: 100%;
-}
-.testBox img {
-  width: 100%;
-  object-fit: contain;
-}
-
-
-.csstest {
-  height: 100%;
-  justify-content: center;
-}
-
-.errorText {
-  background-color: red;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.commentsList {
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
 }
 
 .visually-hidden {

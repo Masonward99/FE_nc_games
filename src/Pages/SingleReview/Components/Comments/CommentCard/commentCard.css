@@ -1,16 +1,16 @@
-.topCommentCard {
+.top-comment-card {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: var(--margin-s);
 }
-.topCommentCard :first-child{
+.top-comment-card :first-child{
     margin-right: auto;
 }
 
-.commentCard {
-    margin-top: 20px;
+.comment-card {
+    margin-top: var(--margin-m);
     border-bottom: 1px dotted white;
-    padding-bottom: 10px;
+    padding-bottom: var(--margin-xs);
 }
 

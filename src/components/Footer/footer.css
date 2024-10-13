@@ -15,8 +15,8 @@
     width: 100%;
 }
 .footer-links svg{
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     fill: var(--head-text);
 }
 
@@ -24,19 +24,20 @@
     display: flex;
     flex-direction: row;
     gap: var(--margin-s);
-    margin-bottom: var(--margin-xl);
+    margin-bottom: var(--margin-m);
     width: min(20rem, 100%);
     justify-content: space-around;
 }
-.footer p {
+.footer-title {
     font: var(--h3);
+    margin: var(--margin-xs);
 }
-.footer a:hover{
+.footer-link:hover{
     background-color: var(--head-hover);
 }
-.footer a:hover svg{
+.footer-link:hover svg{
     fill: var(--link-color);
 }
-.footer a {
-    padding: var(--margin-s);
+.footer-link {
+    padding: var(--margin-xs);
 }

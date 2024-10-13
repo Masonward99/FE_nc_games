@@ -4,8 +4,8 @@ import ReviewCard from "./Components/ReviewCard/ReviewCard";
 import SortDropdown from "./Components/Sorting/SortDropdown";
 import CategoryCheckBox from "./Components/Sorting/CategoryCheckbox";
 import SkeletonReviewCard from "../Profile/Components/ProfileReviews/SkeletonReviewCard";
-import './reviews.css'
-import CategoryDropDown from "../../components/CategoryDropDown";
+import "./reviews.css";
+import CategoryDropDown from "../../components/CategoryDropdown/CategoryDropDown";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -21,22 +21,31 @@ function Reviews() {
   }, [selectedCategory, sort, order]);
 
   return (
-    <div className="pageContent">
-      <h1 className="reviewHeading">Reviews</h1>
-      <div className="reviewsPageContainer">
-        <div className="reviewContentLeft">
-          <CategoryDropDown id='categorySmall' setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} className={"catDd"} />
+    <div className="page-content">
+      <h1 className="reviews-page-heading">Reviews</h1>
+      <div className="reviews-page-container">
+        <div className="reviews-sorting-container">
+          <CategoryDropDown
+            setSelectedCategory={setSelectedCategory}
+            selectedCategory={selectedCategory}
+            className={"category-dropdown"}
+          />
           <CategoryCheckBox setSelectedCategory={setSelectedCategory} />
-          <SortDropdown setSort={setSort} order={order} setOrder={setOrder} sort={sort} />
+          <SortDropdown
+            setSort={setSort}
+            order={order}
+            setOrder={setOrder}
+            sort={sort}
+          />
         </div>
-        <div className="reviewContentRight">
+        <div className="reviews-list-container">
           {isLoading ? (
             <SkeletonReviewCard count={10} />
           ) : (
-            <ul className="reviewList">
+            <ul className="reviews-list">
               {reviews.map((review) => {
                 return (
-                  <li key={review.review_id}>
+                  <li key={review.review_id} className="reviews-list-item">
                     <ReviewCard review={review} />
                   </li>
                 );

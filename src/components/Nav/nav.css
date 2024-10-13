@@ -1,4 +1,4 @@
-.navbarContainer {
+.navbar-container {
     display: block;
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@
     align-items: center;
     font: var(--h3ui);
 }
-.hideOnDesktop {
+.hide-on-desktop {
     display: flex;
     align-items: center;
      
@@ -72,10 +72,10 @@
 .sidebar li{
     width: 100%;
 }
-.navbar .hideOnDesktop {
+.navbar .hide-on-desktop {
     display: none;
 }
-.logoIcon {
+.logo-icon {
     margin: auto;
     height: 35px;
     width: 35px;
@@ -83,10 +83,10 @@
 }
 
 @media screen and (max-width:800px) {
-    .navbar .hideOnMobile {
+    .navbar .hide-on-mobile {
         display: none;
     }
-    .navbar .hideOnDesktop {
+    .navbar .hide-on-desktop {
         display: block;
     }
     

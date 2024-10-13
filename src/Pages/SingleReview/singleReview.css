@@ -1,27 +1,10 @@
-.singleReview {
+.single-review {
     border: 1px solid white;
-    padding: 10px;
+    padding: var(--margin-xs);
 }
 
-.singleReview img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-}
 
-.singleReviewTop {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.singleReviewTop button {
-    width: 100px;
-    height: 100%;
-}
-
-.pageContent h2 {
-    text-align: left;
+.single-review-comments-heading {
     font: var(--h3);
     margin: var(--margin-m) 0 ;
 }

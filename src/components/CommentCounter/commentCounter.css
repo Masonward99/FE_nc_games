@@ -1,0 +1,22 @@
+.comment-counter {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    gap: var(--margin-xs);
+}
+.num-comments {
+    display: flex;
+    width: 6.25rem;
+    border-radius: 1rem;
+    border: 1px solid white;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    background-color: var(--main-bg-color);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: var(--margin-xs);
+}

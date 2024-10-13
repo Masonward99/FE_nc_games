@@ -25,10 +25,10 @@ function SingleReview() {
     return <SkeletonReviewContent />;
   }
   return (
-    <div className="pageContent">
+    <div className="page-content">
         <ReviewContent review={review} />
         <hr />
-        <h2>Comments</h2>
+        <h2 className="single-review-comments-heading">Comments</h2>
         <CreateComment
           user={user.username}
           review_id={review_id}

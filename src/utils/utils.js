@@ -6,10 +6,10 @@ const games = axios.create({
   baseURL: "https://nc-games-83l3.onrender.com/api"
 });
 
-export function getReviews(cat, sort, order) {
-    if (cat != 'Select category') {
+export function getReviews(category, sort, order) {
+    if (category != 'Select category') {
         return games
-            .get(`/reviews?sort_by=${sort}&&order=${order}&&category=${cat}`)
+            .get(`/reviews?sort_by=${sort}&&order=${order}&&category=${category}`)
             .then(({ data }) => data.reviews);
     } else {
         return games
@@ -27,14 +27,12 @@ export function getComments(review_id) {
     return games.get(`/reviews/${review_id}/comments`)
         .then(({ data })=>data.comments)
 }
-export function patchVotes(id, votes, type) {
+export function patchVotes(id, incVotes, type) {
     if (type == 'review') {
-        console.log('in reviews')
-        return games.patch(`/reviews/${id}`, { inc_votes: votes })
+        return games.patch(`/reviews/${id}`, { inc_votes: incVotes })
             .then(({ data }) => console.log(data.review.votes))
     } else {
-        console.log('in comments')
-        return games.patch(`/comments/${id}`, { inc_votes: votes })
+        return games.patch(`/comments/${id}`, { inc_votes: incVotes })
             .then(({ data }) => console.log(data.comment.votes))
     }
 }
@@ -65,14 +63,12 @@ export function removeComment(id) {
 }
 
 export function createUser(id, name, username, img) {
-    console.log('creating user')
     return games
       .post(`/users/${username}`, { avatar_url: img, name, id })
       .then(({ data }) => data.user);
 }
 
 export function signIn(id) {
-    console.log(id)
     return games
         .get(`/users/id/${id}`)
         .then(({data})=>data.user)
@@ -85,7 +81,6 @@ export function getCommentsByUser(username) {
 }
 
 export function uploadImage(file) {
-    console.log(file)
     const imgRef = ref(storage, `${file.name}`);
     return uploadBytes(imgRef, file)
         .then(snap => getDownloadURL(snap.ref))
@@ -137,14 +132,14 @@ export function deleteReviewById(id) {
 }
 
 export function calculateIndex(isNext, index, length) {
-  if (isNext) {
-    if (length > index + 1) {
-      return index + 1;
+    if (isNext) {
+        if (length > index + 1) {
+            return index + 1;
+        }
+        return 0;
     }
-    return 0;
-  }
-  if (index > 0) {
-    return index - 1;
-  }
-  return length - 1;
+    if (index > 0) {
+        return index - 1;
+    }
+    return length - 1;
 }

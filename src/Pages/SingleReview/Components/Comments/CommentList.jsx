@@ -21,12 +21,7 @@ function CommentList({ comments, setComments }) {
             );
           })}
         </ul>
-      ) : (
-        <p>
-          There are no comments on this review yet, be the first to leave a
-          comment!
-        </p>
-      )}
+      ) : null}
     </>
   );
 }

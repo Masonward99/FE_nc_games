@@ -1,17 +1,17 @@
 .single-review-input {
-    height: 75px;
+    height: 4.5rem;
     resize: vertical;
 }
-.addComment {
+.add-comment {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-.addComment button {
+.post-button {
     margin-top: var(--margin-xxs);
     margin-left: auto;
-    height: 50px;
-    width: 100px;
+    height: 3.125rem;
+    width: 6.25rem;
     flex-grow: 0;
     font: var(--bigui);
 }

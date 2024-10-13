@@ -9,7 +9,7 @@ import { UserContext } from "../Contexts/UserContext";
 import PostReview from "./Pages/PostReview/PostReview";
 import Profile from "./Pages/Profile/Profile";
 import OwnProfile from "./Pages/Profile/OwnProfile";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/footer";
 
 function App() {
   const { user } = useContext(UserContext);
