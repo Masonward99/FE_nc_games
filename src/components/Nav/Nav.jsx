@@ -22,10 +22,10 @@ function Nav() {
         <div className="navbar-container ui">
             <ul className="navbar">
                 <li>
-                    <Link to="/"><Logo />NC Games</Link>
+                    <Link to="/" className="link-box"><Logo />NC Games</Link>
                 </li>
                 <li className="hide-on-mobile">
-                    <Link to="/" className="linkBox">Reviews</Link>
+                    <Link to="/" className="link-box">Reviews</Link>
                 </li>
                 <li className="hide-on-mobile">
                     <Link to="/addreview" className="link-box">Post Review</Link>
@@ -33,20 +33,20 @@ function Nav() {
                 <li className="hide-on-mobile">
                     <Link to="/login" className="link-box">{user ? "Profile" : "Login"}</Link>
                 </li>
-                <li onClick={() => toggleOpen()} className="hide-on-desktop"><Hamburger /></li>
+                <li onClick={toggleOpen} className="hide-on-desktop"><Hamburger /></li>
             </ul>
             <ul className="sidebar" ref={sidebar}>
-                <li onClick={() => toggleOpen()}>
+                <li onClick={ toggleOpen} className="sidebar-link">
                     <Close />
                 </li>
                 <li>
-                    <Link to="/" onClick={toggleOpen}>Reviews</Link>
+                    <Link to="/" onClick={toggleOpen} className="sidebar-link">Reviews</Link>
                 </li>
                 <li>
-                    <Link to="/addreview" onClick={toggleOpen}>Post Review</Link>
+                    <Link to="/addreview" onClick={toggleOpen} className="sidebar-link">Post Review</Link>
                 </li>
                 <li>
-                    <Link to="/login" onClick={toggleOpen}>{user ? "Profile" : "Login"}</Link>
+                    <Link to="/login" onClick={toggleOpen} className="sidebar-link">{user ? "Profile" : "Login"}</Link>
                 </li>
             </ul>
         </div>
