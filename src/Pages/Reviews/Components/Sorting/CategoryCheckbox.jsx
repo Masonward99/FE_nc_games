@@ -3,6 +3,7 @@ import "./ReviewSorting.css"
 
 function CategoryCheckBox({ setSelectedCategory }) {
     const categories = JSON.parse(localStorage.getItem('categories'))
+    console.log(categories)
     if (!categories) {
         useCategories();
     }
