@@ -2,7 +2,6 @@ import { useCategories } from "../../../../hooks/useCategories";
 import "./ReviewSorting.css"
 
 function CategoryCheckBox({ setSelectedCategory }) {
-    localStorage.clear()
     const categories = JSON.parse(localStorage.getItem('categories'))
     if (!categories) {
         useCategories();
