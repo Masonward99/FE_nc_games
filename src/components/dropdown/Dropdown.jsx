@@ -20,14 +20,27 @@ function Dropdown({ array, item, setItem, className }) {
         toggleDropdown()
     }
     return (
-        <div className={className}>
-            <div className="dropdown ui">
-                <button onClick={(event)=>toggleDropdown(event)} className='dropdown-button'>{item}</button>
-                <ul className='dropdown-list' ref={list}>
-                    {array.map((element, index) => <li key={index} className='dropdown-item' onClick={()=>changeIndex(element)}>{element}</li>)}
-                </ul>
-            </div>
+      <div className={className}>
+        <div className="dropdown ui">
+          <button
+            onClick={(event) => toggleDropdown(event)}
+            className="dropdown-button"
+          >
+            {item.split(/[-_]/).join(' ')}
+          </button>
+          <ul className="dropdown-list" ref={list}>
+            {array.map((element, index) => (
+              <li
+                key={index}
+                className="dropdown-item"
+                onClick={() => changeIndex(element)}
+              >
+                {element.split(/[-_]/).join(" ")}
+              </li>
+            ))}
+          </ul>
         </div>
-    )
+      </div>
+    );
 }
 export default Dropdown
