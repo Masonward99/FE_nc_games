@@ -2,9 +2,9 @@ import { useCategories } from "../../hooks/useCategories";
 import Dropdown from "../dropdown/Dropdown";
 
 function CategoryDropDown({ setSelectedCategory, selectedCategory, className }) {
+    useCategories()
     const categories = JSON.parse(localStorage.getItem('categories'))
     if (!categories) {
-        useCategories()
     }
     
     return !categories ? 'Loading...' : (
