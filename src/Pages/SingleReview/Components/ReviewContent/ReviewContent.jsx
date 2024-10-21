@@ -7,7 +7,6 @@ import "./ReviewContent.css";
 
 function ReviewContent({ review }) {
   const { user } = useContext(UserContext);
-  console.log(review.review_body.split('\n').filter(e => e != ''))
   return (
     <div className="single-review-content">
       <div className="single-review-top">
