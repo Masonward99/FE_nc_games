@@ -12,6 +12,7 @@
 
 .single-review-title {
     font: var(--h3);
+    text-wrap: wrap;
 }
 
 .single-review-body{

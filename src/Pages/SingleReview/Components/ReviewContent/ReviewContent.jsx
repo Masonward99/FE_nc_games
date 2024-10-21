@@ -7,6 +7,7 @@ import "./ReviewContent.css";
 
 function ReviewContent({ review }) {
   const { user } = useContext(UserContext);
+  console.log(review.review_body.split('\n').filter(e => e != ''))
   return (
     <div className="single-review-content">
       <div className="single-review-top">
@@ -16,8 +17,8 @@ function ReviewContent({ review }) {
         ) : null}
       </div>
       <h1 className="single-review-title">{review.title}</h1>
-      <img src={review.review_img_url} className="single-review-image"/>
-      <p className="single-review-body">{review.review_body}</p>
+      <img src={review.review_img_url} className="single-review-image" />
+      {review.review_body.split('\n').filter(e=> e!= '').map((element ,index) => <p key={index}> {element}</p>)}
       <CommentCounter review={review} />
     </div>
   );

@@ -27,8 +27,9 @@ function CommentCard({ comment, remove, comments, setComments }) {
           count={comment.votes}
         />
       </div>
-      <p>{comment.body}</p>
+      {comment.body.split('\n').filter(e=> e!='').map((e, i) => <p key={i}>{e}</p>)}
     </div>
   );
+  
 }
 export default CommentCard;
