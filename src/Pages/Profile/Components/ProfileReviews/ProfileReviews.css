@@ -6,6 +6,7 @@
     overflow: hidden;
     position: relative;
 }
+
 .profile-reviewcard-image {
     width: calc(100% - 4px);
 }
@@ -36,6 +37,8 @@
 .profile-review-image{
     width: calc(66% - 4px);
     max-width: 43.75rem;
+    flex-shrink: 0;
+    flex-grow: 1;
 }
 
 .back-button {
